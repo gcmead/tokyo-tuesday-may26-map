@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+<title>Tuesday Tokyo · May 26</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root {
+    --gold: #B8860B; --red: #B5562F; --blue: #2A5A8C; --green: #5E7F4B;
+    --ink: #1F1D1B; --sans: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; font-family: var(--sans); }
+  body { display: flex; flex-direction: column; }
+  header {
+    background: var(--ink); color: white;
+    padding: 0.7rem 1rem; display: flex;
+    justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.4rem;
+  }
+  header h1 { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.3px; }
+  header .sub { font-size: 0.7rem; color: #b0a896; letter-spacing: 0.5px; }
+  .legend {
+    display: flex; gap: 0.7rem; flex-wrap: wrap;
+    padding: 0.5rem 1rem; background: #f4efe5;
+    font-size: 0.72rem; color: #4a4540;
+    border-bottom: 1px solid #e6dfd0;
+  }
+  .legend label { display: flex; align-items: center; gap: 0.3rem; cursor: pointer; user-select: none; }
+  .legend .swatch { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .legend .swatch.locked { background: var(--gold); border: 2px solid #8a6420; }
+  .legend .swatch.major { background: var(--red); }
+  .legend .swatch.bonus { background: var(--blue); }
+  .legend .swatch.station { background: white; border: 2px solid var(--ink); }
+  .legend input { margin: 0; }
+  .locate-btn {
+    margin-left: auto;
+    background: var(--ink); color: white; border: none;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    font-family: var(--sans); font-size: 0.7rem;
+    cursor: pointer; letter-spacing: 0.3px;
+  }
+  .locate-btn:active { background: var(--red); }
+  #map { flex: 1; }
+  .leaflet-popup-content-wrapper { border-radius: 6px; padding: 0; }
+  .leaflet-popup-content { margin: 0; min-width: 260px; max-width: 320px; }
+  .popup { padding: 0.9rem 1rem; font-family: var(--sans); font-size: 0.82rem; line-height: 1.5; }
+  .popup .badge {
+    display: inline-block; font-size: 0.6rem;
+    padding: 0.18rem 0.5rem; border-radius: 2px;
+    text-transform: uppercase; letter-spacing: 1px;
+    font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .popup .badge.locked { background: #FBF1D5; color: #74531a; }
+  .popup .badge.major { background: #F5E0D2; color: #6b3a1c; }
+  .popup .badge.bonus { background: #DBE5F0; color: #1f4570; }
+  .popup .badge.station { background: #E6DFD0; color: #4a4540; }
+  .popup h3 { font-size: 1rem; margin-bottom: 0.4rem; color: var(--ink); }
+  .popup .when { font-size: 0.72rem; color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 0.5rem; }
+  .popup .booking { font-size: 0.72rem; background: #FBF1D5; padding: 0.4rem 0.5rem; border-radius: 3px; margin-bottom: 0.6rem; color: #5a3e10; }
+  .popup .what, .popup .why, .popup .known { font-size: 0.78rem; color: #4a4540; margin-bottom: 0.5rem; }
+  .popup .section-label { font-weight: 700; color: var(--ink); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.4px; }
+  .popup .walk { font-size: 0.75rem; color: #5E7F4B; font-weight: 600; margin-top: 0.5rem; margin-bottom: 0.3rem; }
+  .popup .address { font-size: 0.72rem; color: #6a6055; margin-bottom: 0.4rem; font-style: italic; }
+  .popup .nav-link { display: inline-block; margin-top: 0.3rem; margin-right: 0.6rem; font-size: 0.72rem; color: var(--red); text-decoration: none; font-weight: 600; letter-spacing: 0.3px; }
+  .popup .book-link { display: inline-block; margin-top: 0.3rem; font-size: 0.72rem; color: var(--blue); text-decoration: none; font-weight: 600; letter-spacing: 0.3px; }
+  .pin {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-family: var(--sans); font-size: 0.7rem; font-weight: 700;
+  }
+  .pin.locked { background: var(--gold); width: 36px; height: 36px; font-size: 0.85rem; }
+  .pin.major { background: var(--red); }
+  .pin.bonus { background: var(--blue); width: 22px; height: 22px; font-size: 0.6rem; }
+  .pin.station { background: white; color: var(--ink); border: 2px solid var(--ink); width: 22px; height: 22px; font-size: 0.6rem; }
+  .pin.you { background: #2A8C4F; width: 18px; height: 18px; border: 3px solid white; box-shadow: 0 0 0 4px rgba(42,140,79,0.3); }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Tuesday Tokyo · May 26</h1>
+    <div class="sub">Akihabara audio AM · Kappabashi knives PM · Kokekokko 19:00</div>
+  </div>
+  <button class="locate-btn" id="locate">📍 Where am I</button>
+</header>
+
+<div class="legend">
+  <label><input type="checkbox" id="show-locked" checked> <span class="swatch locked"></span> Locked (1)</label>
+  <label><input type="checkbox" id="show-major" checked> <span class="swatch major"></span> Planned (8)</label>
+  <label><input type="checkbox" id="show-bonus" checked> <span class="swatch bonus"></span> Discovery (7)</label>
+  <label><input type="checkbox" id="show-station" checked> <span class="swatch station"></span> Stations (5)</label>
+</div>
+
+<div id="map"></div>
+
+<script>
+const PINS = [
+  {
+    "cat": "locked",
+    "label": "1",
+    "name": "Syamo Sumibi Kokekokko (Yakitori)",
+    "lat": 35.6929,
+    "lon": 139.6985,
+    "when": "19:00 sharp · 2 adults · counter seating",
+    "booking": "✅ CONCIERGE CONFIRMED · Mr. Gavin Mead · 2 adults · counter · Nishishinjuku B2F · cashless cc only typical",
+    "what": "Specialist shamo (heritage gamecock) yakitori counter, located in basement of Nishi-Shinjuku Itoyama Tower (B2F). Run on the principle that shamo's longer-fibered muscle, slower-growing, free-roaming Japanese gamecock — produces deeper flavor than commodity chicken; the counter cooks parts most yakitori shops can't source.",
+    "why": "Pure single-tradition cuisine, counter intimacy with the grill master in front of you, ingredient-led — exactly the pattern you said you love. Not the streetside Omoide Yokocho stalls (touristy, smoke-blown); this is the serious basement counter version.",
+    "known": "Heritage Japanese shamo chicken (slow-grown free-range), part-by-part skewer omakase including organ meats and tare-glazed thigh-skin, charcoal-grill technique that crisps without drying. Cash/card accepted; counter only.",
+    "address": "1-1-1 Nishishinjuku B2F, Shinjuku-ku · 新宿区⻄新宿1-1-1 B2F",
+    "walk": "Shinjuku station west exit ~7 min walk through Nishi-Shinjuku office canyon · BE ON TIME, counter is tight"
+  },
+  {
+    "cat": "major",
+    "label": "A",
+    "name": "Yodobashi Akiba (4F-5F audio)",
+    "lat": 35.6989,
+    "lon": 139.7717,
+    "when": "~09:45 · daily 09:30-22:00 · tax-free counter B1",
+    "what": "Tokyo's giant electronics flagship, directly outside Akihabara station Showa-dori exit. Floors 4F and 5F are the audio floors — Esoteric, Luxman, Accuphase, McIntosh, Marantz, Yamaha demo rooms with listening stations, plus the standard headphone wall.",
+    "why": "The 'see everything once' opener before the specialist shops. Air-conditioned, English service desk, tax-free counter B1. Lets you calibrate prices before walking to Dynamic Audio.",
+    "known": "Largest single-building electronics retailer in Asia; audio listening rooms where you can A/B amps; the tax-free counter is the cleanest in Akiba.",
+    "walk": "Akihabara station Showa-dori exit, directly opposite the building"
+  },
+  {
+    "cat": "major",
+    "label": "B",
+    "name": "e-Earphone Akihabara flagship (eイヤホン)",
+    "lat": 35.6996,
+    "lon": 139.7716,
+    "when": "11:00 opening · Tue 11-20 · stay 60-90 min",
+    "what": "Multi-floor flagship at Kanda Eight Building (4-6-7 Sotokanda) — the largest headphone and IEM try-before-buy lineup in Japan. Hundreds of models on hot-swap demo rigs, including domestic-only Final Audio, Audio-Technica wood-cup limited drops, and Sony domestic-firmware IEMs.",
+    "why": "THE Akihabara audio destination if you care about headphones or IEMs. Bring your own DAP or use theirs to demo. Patient staff (Google-Translate-friendly when English runs out), passport-required tax-free over ¥5,000.",
+    "known": "Japan's deepest headphone demo wall; rare Japanese boutique brands you can't easily try in the US; international shipping available; the only place to A/B Final Audio's full lineup in one visit.",
+    "address": "Kanda Eight Building, 4-6-7 Sotokanda, Chiyoda-ku",
+    "walk": "5 min walk from Akihabara station Electric Town exit"
+  },
+  {
+    "cat": "major",
+    "label": "C",
+    "name": "Dynamic Audio 5555",
+    "lat": 35.7027,
+    "lon": 139.7717,
+    "when": "Tue 11:00-19:00 (closed Wed — Tue OK)",
+    "what": "Seven-floor hi-fi specialist on Kanda Myojin Street. Each floor a different tier from entry-level integrated amps to ultra-high-end (six-figure-USD speakers, exotic turntables). The serious-listener's Akihabara stop.",
+    "why": "If you want to hear $50k speakers driven by domestic-spec Accuphase, this is the room. Limited English but the gear speaks the language; will ship internationally with warranty caveats — confirm before purchase.",
+    "known": "Best-curated hi-fi listening rooms in Akihabara; full Accuphase + Luxman + Esoteric demo lineup; trade-in program; vintage section on upper floors.",
+    "walk": "~5 min walk from Akihabara station on Kanda Myojin Street · phone 03-3253-5555"
+  },
+  {
+    "cat": "major",
+    "label": "D",
+    "name": "Oyaide Electric (cables + connectors)",
+    "lat": 35.6989,
+    "lon": 139.7714,
+    "when": "Tue 10-19 (closed Sun — Tue OK) · cash + cc",
+    "what": "Flagship of Oyaide — Japanese audio-cable and connector specialist (RCA plugs, XLR plugs, IEC inlets, power cables, DIY parts). Located under JR Sobu Line tracks at 1-4-13 Sotokanda.",
+    "why": "Oyaide gear at Japanese domestic prices is 30-50% cheaper than US distributors AND no voltage issue (cables don't care). The single highest-value-per-dollar audio buy in Akihabara.",
+    "known": "Reference-grade cables for the price; the DIY parts wall (silver-plated copper, exotic dielectric); the gold-standard for IEC and Furutech plug stocks.",
+    "walk": "Under the JR Sobu tracks, 3 min from Akihabara station"
+  },
+  {
+    "cat": "major",
+    "label": "E",
+    "name": "Asakusa Hirayama (lunch · Michelin soba+tempura)",
+    "lat": 35.7115,
+    "lon": 139.7929,
+    "when": "~13:00 lunch · Michelin · pure tradition",
+    "what": "Michelin-listed traditional soba and tempura counter near Asakusa, between Akihabara and Kappabashi geographically. Hand-cut soba, prawn tempura cooked individually, broth pulled fresh.",
+    "why": "Pure single-tradition cuisine, fits the no-fusion rule, perfectly placed as the transition lunch between Akihabara morning and Kappabashi afternoon. Counter format.",
+    "known": "Michelin-recommended; hand-cut soba; tempura technique where each piece comes out individually.",
+    "walk": "Tawaramachi or Asakusa station — convenient transit point between Akihabara and Kappabashi"
+  },
+  {
+    "cat": "major",
+    "label": "F",
+    "name": "Kamata Hakensha (PRIMARY knife shop)",
+    "lat": 35.7128,
+    "lon": 139.7886,
+    "when": "Tue 10:00-18:00 · cash + cc · tax-free counter",
+    "booking": "Bring the friend's loadout printed: Gyuto 240mm SG2/R2, Petty 150mm SG2/R2, Nakiri 165mm VG-10 or SG2, Sujihiki 270mm stainless, Bread knife 240mm Tojiro serrated. Plus whetstone #1000/#6000, flattening plate, ceramic honing rod. Ryusen authorized dealer — lead with SG2 240mm gyuto request.",
+    "what": "Kamata Hakensha (鎌田刃物) — the canonical Kappabashi knife shop for the SG2/R2 powdered-steel buyer. Founded as a traditional cutlery dealer, now stocks 800+ knives across all major Echizen/Sakai/Tosa makers and is an authorized Ryusen dealer (Ryusen makes the SG2 powdered-steel line).",
+    "why": "Your friend specifically called this shop. They demo whetstone sharpening on your actual knives before you leave (per friend's exact instruction). Free engraving on the gyuto (the heirloom piece). Tax-free counter for tourists with passport.",
+    "known": "Internationally-known sharpening class; free name engraving on purchase; 1-2 hr express sharpening service; Ryusen authorized dealer = real SG2 powdered-steel stock.",
+    "address": "2-12-6 Matsugaya, Taito-ku · phone 03-3841-4205",
+    "walk": "Tawaramachi station (Ginza line) Exit 3, ~5 min · Asakusa ~8 min"
+  },
+  {
+    "cat": "major",
+    "label": "G",
+    "name": "Tsubaya (knife shop · backup)",
+    "lat": 35.7137,
+    "lon": 139.7902,
+    "when": "Tue 10-17 · cc-friendly · English staff confirmed",
+    "what": "Tsubaya (つば屋庖丁店) — 1956-founded Kappabashi knife dealer, 1,000+ knives across all major Japanese makers. Cards/Apple Pay accepted (broader than Kamata's payment options).",
+    "why": "If Kamata is out of stock on any specific item from the friend's loadout, walk here next — 3 min away. English staff explicitly stated. Verify SG2 stocking in-person.",
+    "known": "Longest single-shop knife inventory in Kappabashi; explicit English-speaking staff; accepts Visa/MC/Amex/JCB/Apple Pay/Google Pay.",
+    "address": "3-7-2 Nishi-Asakusa, Taito-ku · phone 03-3845-2005",
+    "walk": "3 min walk from Kamata Hakensha, still in Kappabashi cluster"
+  },
+  {
+    "cat": "major",
+    "label": "H",
+    "name": "InterContinental Tokyo Bay (HOME)",
+    "lat": 35.6549,
+    "lon": 139.7591,
+    "when": "home base · room 1221",
+    "what": "Your home base on Tokyo Bay. Yurikamome directly off 3F deck; JR Hamamatsuchō 8 min walk for Yamanote loop.",
+    "walk": "End of night from Shinjuku: JR Yamanote to Hamamatsuchō ~16 min + 8 min walk"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Hi-Fi Do Akihabara (used hi-fi)",
+    "lat": 35.7008,
+    "lon": 139.7714,
+    "when": "Tue 11-20",
+    "what": "Used-audio specialist near Suehirocho station. Vintage McIntosh/JBL/Accuphase/Audio-Technica/Jeff Rowland inventory with 1-year shop warranty.",
+    "why": "If you spot a McIntosh or vintage Accuphase deal here, it could be the trip's hidden hit. Watch the voltage caveat — anything 100V needs a step-down transformer at home.",
+    "known": "Hi-Fi Do is the largest used-audio chain in Japan; 1-year shop warranty on used purchases; the only reliable used-hi-fi room in Akihabara.",
+    "walk": "2 min walk from Suehirocho station · phone 03-5818-4751"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Kama-Asa Shoten (knife shop · 3rd backup)",
+    "lat": 35.7131,
+    "lon": 139.7895,
+    "when": "Tue 11:00-17:30 · English + French staff · free engraving",
+    "what": "Kama-Asa (釜浅商店) — Kappabashi-original since 1908. Sells knives + a curated selection of Japanese ironware and cookware. English + French speaking staff. Free hand-grinder engraving including cursive alphabet.",
+    "why": "Third-tier backup if both Kamata and Tsubaya don't have what you need. Aesthetic is more curated/design-forward than Kamata.",
+    "known": "Free engraving by hand-grinder including cursive; design-shop sensibility; English and French staff.",
+    "walk": "Same Kappabashi cluster, 2 min from Tsubaya"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Ganso Shokuhin Sample-ya (fake-food shop)",
+    "lat": 35.7138,
+    "lon": 139.7898,
+    "when": "Daily 10-17:30",
+    "what": "The original Japanese food-sample maker since 1932. The wax/resin sushi, ramen, parfait models you see in restaurant windows — invented here, still made here. Tiny shop with finished food samples plus keychains, magnets, gift items.",
+    "why": "Quirky 10-min stop on Kappabashi's main street. Karolina-shaped souvenir: a wax sushi piece keychain is the canonical Japan-quirky gift.",
+    "known": "Inventors of the food-sample industry; family-owned since 1932; keychain-sized food samples that are the iconic Kappabashi souvenir.",
+    "walk": "On Kappabashi-dori, 3 min from Kamata Hakensha"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Sensoji Temple (Asakusa quick stop)",
+    "lat": 35.7148,
+    "lon": 139.7967,
+    "when": "Anytime · grounds always open · 15-30 min",
+    "what": "Tokyo's oldest Buddhist temple (645 CE), with the iconic Kaminarimon thunder-gate and a 250m approach lined with traditional snack shops (Nakamise-dori).",
+    "why": "If you have 30 minutes between lunch and Kappabashi, walk through Nakamise-dori — sticky-rice senbei, melon pan, ningyo-yaki. Tourist-heavy but the architecture is worth the walk-through if you've never seen it.",
+    "known": "Tokyo's oldest temple; the Kaminarimon gate with the giant red lantern; Nakamise-dori as the canonical Japanese-temple-approach shopping street.",
+    "walk": "8 min walk from Kappabashi or Tawaramachi station"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Akihabara Radio Center (vintage electronics under tracks)",
+    "lat": 35.6989,
+    "lon": 139.7716,
+    "when": "Daily ~10-19 · cash typical",
+    "what": "The labyrinth of tiny vintage-electronics stalls packed under the JR Yamanote tracks at Akihabara — vacuum tubes, hand-wired switches, vintage transistors, military-surplus connectors, DIY parts.",
+    "why": "Walk-through curiosity for the engineering-minded Gavin. Cash-only, mostly Japanese, vendors are old men who've been there decades.",
+    "known": "Last surviving slice of pre-1980s Akihabara character; THE place in Japan for vintage tubes and DIY parts; cash-and-Japanese-only.",
+    "walk": "Under the JR tracks at Akihabara station Electric Town exit"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Mandarake Complex Akihabara",
+    "lat": 35.7004,
+    "lon": 139.7706,
+    "when": "Daily 12-20",
+    "what": "8-floor flagship of Mandarake, Japan's largest vintage manga/anime/toys/collectibles chain. Includes a serious vintage-vinyl floor (basement) for those who care.",
+    "why": "Skip if not interested in manga/anime culture, BUT the basement vinyl floor is a real used-record stop with deep Japanese jazz, city pop, and vintage J-rock at fair prices.",
+    "known": "Largest vintage subculture inventory in Tokyo; the basement vinyl section is a Japanese-only record-collector destination.",
+    "walk": "5 min walk from Akihabara station"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "BUYING ADVICE — Knives + Audio (read in browser)",
+    "lat": 35.6991,
+    "lon": 139.772,
+    "when": "Reference pin — tap to read",
+    "what": "Pin includes a Knives section (the friend's full loadout + how to ask Kamata for whetstone demo) and an Audio section (voltage warning, warranty trap, Japan-only categories worth buying).",
+    "why": "Carry the loadout on your phone; reference these notes when negotiating with shop staff.",
+    "known": "Synthesizes your friend's expert knife list with verified Akihabara audio research.",
+    "walk": "View at the deployed map URL — the Buying-Advice doc is bundled in the repo: https://gcmead.github.io/tokyo-tuesday-may26-map/BuyingAdvice.html"
+  },
+  {
+    "cat": "station",
+    "label": "S",
+    "name": "Hamamatsuchō (JR Yamanote)",
+    "lat": 35.6553,
+    "lon": 139.7569,
+    "when": "hotel-side · 8 min walk",
+    "what": "JR Yamanote loop. To Akihabara ~12 min northbound; to Shinjuku ~22 min westbound (transfer)."
+  },
+  {
+    "cat": "station",
+    "label": "S",
+    "name": "Akihabara (JR + Hibiya + Tsukuba Express)",
+    "lat": 35.6984,
+    "lon": 139.7731,
+    "when": "audio district · Yodobashi · e-Earphone",
+    "what": "Use Electric Town exit for e-Earphone, Dynamic Audio, Oyaide; Showa-dori exit for Yodobashi."
+  },
+  {
+    "cat": "station",
+    "label": "S",
+    "name": "Tawaramachi (Ginza line)",
+    "lat": 35.7115,
+    "lon": 139.7886,
+    "when": "Kappabashi access · Exit 3",
+    "what": "5 min walk to Kamata Hakensha. Ginza line connects to Shinjuku via Akasaka-mitsuke → Marunouchi line transfer."
+  },
+  {
+    "cat": "station",
+    "label": "S",
+    "name": "Asakusa (Ginza + Toei Asakusa lines)",
+    "lat": 35.7113,
+    "lon": 139.7967,
+    "when": "Sensoji · Asakusa Hirayama lunch",
+    "what": "Ginza line terminus. 5 min walk to Sensoji; 7 min to Kappabashi."
+  },
+  {
+    "cat": "station",
+    "label": "S",
+    "name": "Shinjuku (JR + multiple)",
+    "lat": 35.6896,
+    "lon": 139.7006,
+    "when": "Kokekokko dinner",
+    "what": "West exit + 7 min walk to Kokekokko. Back to hotel: Yamanote to Hamamatsuchō, ~16 min."
+  }
+];
+
+const map = L.map('map').setView([35.69966190476192, 139.77110476190475], 14);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap', maxZoom: 19
+}).addTo(map);
+
+const groups = { locked: L.layerGroup(), major: L.layerGroup(), bonus: L.layerGroup(), station: L.layerGroup() };
+
+function appleMapsLink(lat, lon, name) {
+  return 'https://maps.apple.com/?q=' + encodeURIComponent(name) + '&ll=' + lat + ',' + lon;
+}
+function googleMapsLink(lat, lon, name) {
+  return 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lon + '&query_place_id=' + encodeURIComponent(name);
+}
+
+PINS.forEach(p => {
+  const icon = L.divIcon({
+    className: '',
+    html: '<div class="pin ' + p.cat + '">' + p.label + '</div>',
+    iconSize: p.cat === 'locked' ? [36, 36] : (p.cat === 'major' ? [28, 28] : [22, 22]),
+    iconAnchor: p.cat === 'locked' ? [18, 18] : (p.cat === 'major' ? [14, 14] : [11, 11])
+  });
+  const marker = L.marker([p.lat, p.lon], { icon });
+
+  const sections = [];
+  const badgeLabel = p.cat === 'locked' ? 'LOCKED' : p.cat === 'major' ? 'planned' : p.cat === 'bonus' ? 'discovery' : 'station';
+  sections.push('<span class="badge ' + p.cat + '">' + badgeLabel + '</span>');
+  sections.push('<h3>' + p.name + '</h3>');
+  if (p.when) sections.push('<div class="when">' + p.when + '</div>');
+  if (p.booking) sections.push('<div class="booking">' + p.booking + '</div>');
+  if (p.what) sections.push('<div class="what"><span class="section-label">What it is — </span>' + p.what + '</div>');
+  if (p.why) sections.push('<div class="why"><span class="section-label">Why for you — </span>' + p.why + '</div>');
+  if (p.known) sections.push('<div class="known"><span class="section-label">Known for — </span>' + p.known + '</div>');
+  if (p.address) sections.push('<div class="address">' + p.address + '</div>');
+  if (p.walk) sections.push('<div class="walk">↪ ' + p.walk + '</div>');
+  if (p.cat !== 'station') {
+    sections.push('<a class="nav-link" href="' + appleMapsLink(p.lat, p.lon, p.name) + '" target="_blank">Apple Maps →</a>');
+    sections.push('<a class="nav-link" href="' + googleMapsLink(p.lat, p.lon, p.name) + '" target="_blank">Google Maps →</a>');
+  }
+  if (p.book) sections.push('<br><a class="book-link" href="' + p.book + '" target="_blank">Book / reserve →</a>');
+
+  marker.bindPopup('<div class="popup">' + sections.join('') + '</div>');
+  groups[p.cat].addLayer(marker);
+});
+
+groups.locked.addTo(map);
+groups.major.addTo(map);
+groups.bonus.addTo(map);
+groups.station.addTo(map);
+
+const all = PINS.map(p => [p.lat, p.lon]);
+if (all.length) map.fitBounds(all, { padding: [30, 30] });
+
+['locked', 'major', 'bonus', 'station'].forEach(cat => {
+  document.getElementById('show-' + cat).addEventListener('change', e => {
+    if (e.target.checked) groups[cat].addTo(map);
+    else map.removeLayer(groups[cat]);
+  });
+});
+
+// Live location — first-fix-center-only; tap button to re-center on demand
+let userMarker = null, userCircle = null, watchId = null, firstFix = true;
+const locateBtn = document.getElementById('locate');
+
+function startTracking() {
+  if (!navigator.geolocation) { alert('Geolocation not supported on this device.'); return; }
+  locateBtn.textContent = '📍 Locating…';
+  firstFix = true;
+  watchId = navigator.geolocation.watchPosition(pos => {
+    const { latitude, longitude, accuracy } = pos.coords;
+    if (userMarker) map.removeLayer(userMarker);
+    if (userCircle) map.removeLayer(userCircle);
+    userMarker = L.marker([latitude, longitude], {
+      icon: L.divIcon({ className: '', html: '<div class="pin you"></div>', iconSize: [18,18], iconAnchor: [9,9] })
+    }).addTo(map);
+    userCircle = L.circle([latitude, longitude], {
+      radius: accuracy, color: '#2A8C4F', fillColor: '#2A8C4F', fillOpacity: 0.1, weight: 1
+    }).addTo(map);
+    if (firstFix) {
+      map.setView([latitude, longitude], Math.max(map.getZoom(), 15));
+      firstFix = false;
+    }
+    locateBtn.textContent = '📍 Re-center';
+  }, err => {
+    alert('Location error: ' + err.message);
+    locateBtn.textContent = '📍 Where am I';
+    watchId = null;
+  }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 5000 });
+}
+
+locateBtn.addEventListener('click', () => {
+  if (watchId === null) startTracking();
+  else if (userMarker) map.setView(userMarker.getLatLng(), Math.max(map.getZoom(), 15));
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Tuesday Tokyo · May 26</name>
+  <description><![CDATA[Akihabara audio AM · Kappabashi knives PM · Kokekokko 19:00]]></description>
+
+  <Style id="locked"><IconStyle><scale>1.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-stars.png</href></Icon></IconStyle></Style>
+  <Style id="major"><IconStyle><scale>1.1</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon></IconStyle></Style>
+  <Style id="bonus"><IconStyle><scale>0.9</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href></Icon></IconStyle></Style>
+  <Style id="station"><IconStyle><scale>0.9</scale><Icon><href>https://maps.google.com/mapfiles/kml/shapes/rail.png</href></Icon></IconStyle></Style>
+
+  <Folder>
+    <name>LOCKED — confirmed bookings / hard anchors</name>
+    <Placemark>
+      <name>Syamo Sumibi Kokekokko (Yakitori)</name>
+      <description><![CDATA[<b>19:00 sharp · 2 adults · counter seating</b><br><br><b>BOOKING:</b> ✅ CONCIERGE CONFIRMED · Mr. Gavin Mead · 2 adults · counter · Nishishinjuku B2F · cashless cc only typical<br><br><b>WHAT IT IS:</b> Specialist shamo (heritage gamecock) yakitori counter, located in basement of Nishi-Shinjuku Itoyama Tower (B2F). Run on the principle that shamo's longer-fibered muscle, slower-growing, free-roaming Japanese gamecock — produces deeper flavor than commodity chicken; the counter cooks parts most yakitori shops can't source.<br><br><b>WHY FOR YOU:</b> Pure single-tradition cuisine, counter intimacy with the grill master in front of you, ingredient-led — exactly the pattern you said you love. Not the streetside Omoide Yokocho stalls (touristy, smoke-blown); this is the serious basement counter version.<br><br><b>KNOWN FOR:</b> Heritage Japanese shamo chicken (slow-grown free-range), part-by-part skewer omakase including organ meats and tare-glazed thigh-skin, charcoal-grill technique that crisps without drying. Cash/card accepted; counter only.<br><br>Address: 1-1-1 Nishishinjuku B2F, Shinjuku-ku · 新宿区⻄新宿1-1-1 B2F<br><br><b>↪ Shinjuku station west exit ~7 min walk through Nishi-Shinjuku office canyon · BE ON TIME, counter is tight</b>]]></description>
+      <styleUrl>#locked</styleUrl>
+      <Point><coordinates>139.6985,35.6929,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <Folder>
+    <name>MAJOR — the planned spine</name>
+    <Placemark>
+      <name>Yodobashi Akiba (4F-5F audio)</name>
+      <description><![CDATA[<b>~09:45 · daily 09:30-22:00 · tax-free counter B1</b><br><br><b>WHAT IT IS:</b> Tokyo's giant electronics flagship, directly outside Akihabara station Showa-dori exit. Floors 4F and 5F are the audio floors — Esoteric, Luxman, Accuphase, McIntosh, Marantz, Yamaha demo rooms with listening stations, plus the standard headphone wall.<br><br><b>WHY FOR YOU:</b> The 'see everything once' opener before the specialist shops. Air-conditioned, English service desk, tax-free counter B1. Lets you calibrate prices before walking to Dynamic Audio.<br><br><b>KNOWN FOR:</b> Largest single-building electronics retailer in Asia; audio listening rooms where you can A/B amps; the tax-free counter is the cleanest in Akiba.<br><br><b>↪ Akihabara station Showa-dori exit, directly opposite the building</b>]]></description>
+      <styleUrl>#major</styleUrl>
+      <Point><coordinates>139.7717,35.6989,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>e-Earphone Akihabara flagship (eイヤホン)</name>
+      <description><![CDATA[<b>11:00 opening · Tue 11-20 · stay 60-90 min</b><br><br><b>WHAT IT IS:</b> Multi-floor flagship at Kanda Eight Building (4-6-7 Sotokanda) — the largest headphone and IEM try-before-buy lineup in Japan. Hundreds of models on hot-swap demo rigs, including domestic-only Final Audio, Audio-Technica wood-cup limited drops, and Sony domestic-firmware IEMs.<br><br><b>WHY FOR YOU:</b> THE Akihabara audio destination if you care about headphones or IEMs. Bring your own DAP or use theirs to demo. Patient staff (Google-Translate-friendly when English runs out), passport-required tax-free over ¥5,000.<br><br><b>KNOWN FOR:</b> Japan's deepest headphone demo wall; rare Japanese boutique brands you can't easily try in the US; international shipping available; the only place to A/B Final Audio's full lineup in one visit.<br><br>Address: Kanda Eight Building, 4-6-7 Sotokanda, Chiyoda-ku<br><br><b>↪ 5 min walk from Akihabara station Electric Town exit</b>]]></description>
+      <styleUrl>#major</styleUrl>
+      <Point><coordinates>139.7716,35.6996,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Dynamic Audio 5555</name>
+      <description><![CDATA[<b>Tue 11:00-19:00 (closed Wed — Tue OK)</b><br><br><b>WHAT IT IS:</b> Seven-floor hi-fi specialist on Kanda Myojin Street. Each floor a different tier from entry-level integrated amps to ultra-high-end (six-figure-USD speakers, exotic turntables). The serious-listener's Akihabara stop.<br><br><b>WHY FOR YOU:</b> If you want to hear $50k speakers driven by domestic-spec Accuphase, this is the room. Limited English but the gear speaks the language; will ship internationally with warranty caveats — confirm before purchase.<br><br><b>KNOWN FOR:</b> Best-curated hi-fi listening rooms in Akihabara; full Accuphase + Luxman + Esoteric demo lineup; trade-in program; vintage section on upper floors.<br><br><b>↪ ~5 min walk from Akihabara station on Kanda Myojin Street · phone 03-3253-5555</b>]]></description>
+      <styleUrl>#major</styleUrl>
+      <Point><coordinates>139.7717,35.7027,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Oyaide Electric (cables + connectors)</name>
+      <description><![CDATA[<b>Tue 10-19 (closed Sun — Tue OK) · cash + cc</b><br><br><b>WHAT IT IS:</b> Flagship of Oyaide — Japanese audio-cable and connector specialist (RCA plugs, XLR plugs, IEC inlets, power cables, DIY parts). Located under JR Sobu Line tracks at 1-4-13 Sotokanda.<br><br><b>WHY FOR YOU:</b> Oyaide gear at Japanese domestic prices is 30-50% cheaper than US distributors AND no voltage issue (cables don't care). The single highest-value-per-dollar audio buy in Akihabara.<br><br><b>KNOWN FOR:</b> Reference-grade cables for the price; the DIY parts wall (silver-plated copper, exotic dielectric); the gold-standard for IEC and Furutech plug stocks.<br><br><b>↪ Under the JR Sobu tracks, 3 min from Akihabara station</b>]]></description>
+      <styleUrl>#major</styleUrl>
+      <Point><coordinates>139.7714,35.6989,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Asakusa Hirayama (lunch · Michelin soba+tempura)</name>
+      <description><![CDATA[<b>~13:00 lunch · Michelin · pure tradition</b><br><br><b>WHAT IT IS:</b> Michelin-listed traditional soba and tempura counter near Asakusa, between Akihabara and Kappabashi geographically. Hand-cut soba, prawn tempura cooked individually, broth pulled fresh.<br><br><b>WHY FOR YOU:</b> Pure single-tradition cuisine, fits the no-fusion rule, perfectly placed as the transition lunch between Akihabara morning and Kappabashi afternoon. Counter format.<br><br><b>KNOWN FOR:</b> Michelin-recommended; hand-cut soba; tempura technique where each piece comes out individually.<br><br><b>↪ Tawaramachi or Asakusa station — convenient transit point between Akihabara and Kappabashi</b>]]></description>
+      <styleUrl>#major</styleUrl>
+      <Point><coordinates>139.7929,35.7115,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kamata Hakensha (PRIMARY knife shop)</name>
+      <description><![CDATA[<b>Tue 10:00-18:00 · cash + cc · tax-free counter</b><br><br><b>BOOKING:</b> Bring the friend's loadout printed: Gyuto 240mm SG2/R2, Petty 150mm SG2/R2, Nakiri 165mm VG-10 or SG2, Sujihiki 270mm stainless, Bread knife 240mm Tojiro serrated. Plus whetstone #1000/#6000, flattening plate, ceramic honing rod. Ryusen authorized dealer — lead with SG2 240mm gyuto request.<br><br><b>WHAT IT IS:</b> Kamata Hakensha (鎌田刃物) — the canonical Kappabashi knife shop for the SG2/R2 powdered-steel buyer. Founded as a traditional cutlery dealer, now stocks 800+ knives across all major Echizen/Sakai/Tosa makers and is an authorized Ryusen dealer (Ryusen makes the SG2 powdered-steel line).<br><br><b>WHY FOR YOU:</b> Your friend specifically called this shop. They demo whetstone sharpening on your actual knives before you leave (per friend's exact instruction). Free engraving on the gyuto (the heirloom piece). Tax-free counter for tourists with passport.<br><br><b>KNOWN FOR:</b> Internationally-known sharpening class; free name engraving on purchase; 1-2 hr express sharpening service; Ryusen authorized dealer = real SG2 powdered-steel stock.<br><br>Address: 2-12-6 Matsugaya, Taito-ku · phone 03-3841-4205<br><br><b>↪ Tawaramachi station (Ginza line) Exit 3, ~5 min · Asakusa ~8 min</b>]]></description>
+      <styleUrl>#major</styleUrl>
+      <Point><coordinates>139.7886,35.7128,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tsubaya (knife shop · backup)</name>
+      <description><![CDATA[<b>Tue 10-17 · cc-friendly · English staff confirmed</b><br><br><b>WHAT IT IS:</b> Tsubaya (つば屋庖丁店) — 1956-founded Kappabashi knife dealer, 1,000+ knives across all major Japanese makers. Cards/Apple Pay accepted (broader than Kamata's payment options).<br><br><b>WHY FOR YOU:</b> If Kamata is out of stock on any specific item from the friend's loadout, walk here next — 3 min away. English staff explicitly stated. Verify SG2 stocking in-person.<br><br><b>KNOWN FOR:</b> Longest single-shop knife inventory in Kappabashi; explicit English-speaking staff; accepts Visa/MC/Amex/JCB/Apple Pay/Google Pay.<br><br>Address: 3-7-2 Nishi-Asakusa, Taito-ku · phone 03-3845-2005<br><br><b>↪ 3 min walk from Kamata Hakensha, still in Kappabashi cluster</b>]]></description>
+      <styleUrl>#major</styleUrl>
+      <Point><coordinates>139.7902,35.7137,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>InterContinental Tokyo Bay (HOME)</name>
+      <description><![CDATA[<b>home base · room 1221</b><br><br><b>WHAT IT IS:</b> Your home base on Tokyo Bay. Yurikamome directly off 3F deck; JR Hamamatsuchō 8 min walk for Yamanote loop.<br><br><b>↪ End of night from Shinjuku: JR Yamanote to Hamamatsuchō ~16 min + 8 min walk</b>]]></description>
+      <styleUrl>#major</styleUrl>
+      <Point><coordinates>139.7591,35.6549,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <Folder>
+    <name>BONUS — discovery zone</name>
+    <Placemark>
+      <name>Hi-Fi Do Akihabara (used hi-fi)</name>
+      <description><![CDATA[<b>Tue 11-20</b><br><br><b>WHAT IT IS:</b> Used-audio specialist near Suehirocho station. Vintage McIntosh/JBL/Accuphase/Audio-Technica/Jeff Rowland inventory with 1-year shop warranty.<br><br><b>WHY FOR YOU:</b> If you spot a McIntosh or vintage Accuphase deal here, it could be the trip's hidden hit. Watch the voltage caveat — anything 100V needs a step-down transformer at home.<br><br><b>KNOWN FOR:</b> Hi-Fi Do is the largest used-audio chain in Japan; 1-year shop warranty on used purchases; the only reliable used-hi-fi room in Akihabara.<br><br><b>↪ 2 min walk from Suehirocho station · phone 03-5818-4751</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7714,35.7008,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Kama-Asa Shoten (knife shop · 3rd backup)</name>
+      <description><![CDATA[<b>Tue 11:00-17:30 · English + French staff · free engraving</b><br><br><b>WHAT IT IS:</b> Kama-Asa (釜浅商店) — Kappabashi-original since 1908. Sells knives + a curated selection of Japanese ironware and cookware. English + French speaking staff. Free hand-grinder engraving including cursive alphabet.<br><br><b>WHY FOR YOU:</b> Third-tier backup if both Kamata and Tsubaya don't have what you need. Aesthetic is more curated/design-forward than Kamata.<br><br><b>KNOWN FOR:</b> Free engraving by hand-grinder including cursive; design-shop sensibility; English and French staff.<br><br><b>↪ Same Kappabashi cluster, 2 min from Tsubaya</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7895,35.7131,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Ganso Shokuhin Sample-ya (fake-food shop)</name>
+      <description><![CDATA[<b>Daily 10-17:30</b><br><br><b>WHAT IT IS:</b> The original Japanese food-sample maker since 1932. The wax/resin sushi, ramen, parfait models you see in restaurant windows — invented here, still made here. Tiny shop with finished food samples plus keychains, magnets, gift items.<br><br><b>WHY FOR YOU:</b> Quirky 10-min stop on Kappabashi's main street. Karolina-shaped souvenir: a wax sushi piece keychain is the canonical Japan-quirky gift.<br><br><b>KNOWN FOR:</b> Inventors of the food-sample industry; family-owned since 1932; keychain-sized food samples that are the iconic Kappabashi souvenir.<br><br><b>↪ On Kappabashi-dori, 3 min from Kamata Hakensha</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7898,35.7138,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Sensoji Temple (Asakusa quick stop)</name>
+      <description><![CDATA[<b>Anytime · grounds always open · 15-30 min</b><br><br><b>WHAT IT IS:</b> Tokyo's oldest Buddhist temple (645 CE), with the iconic Kaminarimon thunder-gate and a 250m approach lined with traditional snack shops (Nakamise-dori).<br><br><b>WHY FOR YOU:</b> If you have 30 minutes between lunch and Kappabashi, walk through Nakamise-dori — sticky-rice senbei, melon pan, ningyo-yaki. Tourist-heavy but the architecture is worth the walk-through if you've never seen it.<br><br><b>KNOWN FOR:</b> Tokyo's oldest temple; the Kaminarimon gate with the giant red lantern; Nakamise-dori as the canonical Japanese-temple-approach shopping street.<br><br><b>↪ 8 min walk from Kappabashi or Tawaramachi station</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7967,35.7148,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Akihabara Radio Center (vintage electronics under tracks)</name>
+      <description><![CDATA[<b>Daily ~10-19 · cash typical</b><br><br><b>WHAT IT IS:</b> The labyrinth of tiny vintage-electronics stalls packed under the JR Yamanote tracks at Akihabara — vacuum tubes, hand-wired switches, vintage transistors, military-surplus connectors, DIY parts.<br><br><b>WHY FOR YOU:</b> Walk-through curiosity for the engineering-minded Gavin. Cash-only, mostly Japanese, vendors are old men who've been there decades.<br><br><b>KNOWN FOR:</b> Last surviving slice of pre-1980s Akihabara character; THE place in Japan for vintage tubes and DIY parts; cash-and-Japanese-only.<br><br><b>↪ Under the JR tracks at Akihabara station Electric Town exit</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7716,35.6989,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Mandarake Complex Akihabara</name>
+      <description><![CDATA[<b>Daily 12-20</b><br><br><b>WHAT IT IS:</b> 8-floor flagship of Mandarake, Japan's largest vintage manga/anime/toys/collectibles chain. Includes a serious vintage-vinyl floor (basement) for those who care.<br><br><b>WHY FOR YOU:</b> Skip if not interested in manga/anime culture, BUT the basement vinyl floor is a real used-record stop with deep Japanese jazz, city pop, and vintage J-rock at fair prices.<br><br><b>KNOWN FOR:</b> Largest vintage subculture inventory in Tokyo; the basement vinyl section is a Japanese-only record-collector destination.<br><br><b>↪ 5 min walk from Akihabara station</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7706,35.7004,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>BUYING ADVICE — Knives + Audio (read in browser)</name>
+      <description><![CDATA[<b>Reference pin — tap to read</b><br><br><b>WHAT IT IS:</b> Pin includes a Knives section (the friend's full loadout + how to ask Kamata for whetstone demo) and an Audio section (voltage warning, warranty trap, Japan-only categories worth buying).<br><br><b>WHY FOR YOU:</b> Carry the loadout on your phone; reference these notes when negotiating with shop staff.<br><br><b>KNOWN FOR:</b> Synthesizes your friend's expert knife list with verified Akihabara audio research.<br><br><b>↪ View at the deployed map URL — the Buying-Advice doc is bundled in the repo: https://gcmead.github.io/tokyo-tuesday-may26-map/BuyingAdvice.html</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.772,35.6991,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <Folder>
+    <name>STATIONS — transit hubs</name>
+    <Placemark>
+      <name>Hamamatsuchō (JR Yamanote)</name>
+      <description><![CDATA[<b>hotel-side · 8 min walk</b><br><br><b>WHAT IT IS:</b> JR Yamanote loop. To Akihabara ~12 min northbound; to Shinjuku ~22 min westbound (transfer).]]></description>
+      <styleUrl>#station</styleUrl>
+      <Point><coordinates>139.7569,35.6553,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Akihabara (JR + Hibiya + Tsukuba Express)</name>
+      <description><![CDATA[<b>audio district · Yodobashi · e-Earphone</b><br><br><b>WHAT IT IS:</b> Use Electric Town exit for e-Earphone, Dynamic Audio, Oyaide; Showa-dori exit for Yodobashi.]]></description>
+      <styleUrl>#station</styleUrl>
+      <Point><coordinates>139.7731,35.6984,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tawaramachi (Ginza line)</name>
+      <description><![CDATA[<b>Kappabashi access · Exit 3</b><br><br><b>WHAT IT IS:</b> 5 min walk to Kamata Hakensha. Ginza line connects to Shinjuku via Akasaka-mitsuke → Marunouchi line transfer.]]></description>
+      <styleUrl>#station</styleUrl>
+      <Point><coordinates>139.7886,35.7115,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Asakusa (Ginza + Toei Asakusa lines)</name>
+      <description><![CDATA[<b>Sensoji · Asakusa Hirayama lunch</b><br><br><b>WHAT IT IS:</b> Ginza line terminus. 5 min walk to Sensoji; 7 min to Kappabashi.]]></description>
+      <styleUrl>#station</styleUrl>
+      <Point><coordinates>139.7967,35.7113,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Shinjuku (JR + multiple)</name>
+      <description><![CDATA[<b>Kokekokko dinner</b><br><br><b>WHAT IT IS:</b> West exit + 7 min walk to Kokekokko. Back to hotel: Yamanote to Hamamatsuchō, ~16 min.]]></description>
+      <styleUrl>#station</styleUrl>
+      <Point><coordinates>139.7006,35.6896,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+</Document>
+</kml>

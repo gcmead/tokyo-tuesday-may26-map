@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
-<title>Tuesday Buying Advice — Kappabashi knives + Akihabara audio</title>
+<title>Buying Guide — Kappabashi knives + Akihabara audio</title>
 <style>
   :root {
     --ink: #1F1D1B; --red: #B5562F; --gold: #B8860B; --blue: #2A5A8C; --paper: #FAF7F2;
@@ -15,107 +15,534 @@
   h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.3px; }
   .sub { font-size: 0.85rem; color: #6a6055; margin-top: 0.3rem; }
   section { margin-bottom: 2.2rem; }
-  h2 { font-size: 1.2rem; font-weight: 700; color: var(--red); border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; margin-bottom: 0.8rem; }
-  h3 { font-size: 1rem; font-weight: 700; margin-top: 1.2rem; margin-bottom: 0.4rem; color: var(--ink); }
+  h2 { font-size: 1.2rem; font-weight: 700; color: var(--red); border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; margin-bottom: 0.8rem; margin-top: 1.5rem; }
+  h3 { font-size: 1rem; font-weight: 700; margin-top: 1.3rem; margin-bottom: 0.4rem; color: var(--ink); }
+  h4 { font-size: 0.92rem; font-weight: 700; margin-top: 1rem; margin-bottom: 0.3rem; color: #4a4540; }
   p { margin-bottom: 0.7rem; font-size: 0.92rem; }
   ul, ol { margin-left: 1.4rem; margin-bottom: 0.9rem; }
   li { margin-bottom: 0.35rem; font-size: 0.92rem; }
-  code { background: #efe7d8; padding: 0.08rem 0.3rem; border-radius: 3px; font-size: 0.85rem; }
+  code, .kanji { background: #efe7d8; padding: 0.08rem 0.3rem; border-radius: 3px; font-size: 0.85rem; }
   .warn { background: #FBE5D8; border-left: 4px solid var(--red); padding: 0.7rem 0.9rem; margin: 0.7rem 0; border-radius: 0 4px 4px 0; font-size: 0.88rem; }
   .tip { background: #FBF1D5; border-left: 4px solid var(--gold); padding: 0.7rem 0.9rem; margin: 0.7rem 0; border-radius: 0 4px 4px 0; font-size: 0.88rem; }
   .info { background: #DBE5F0; border-left: 4px solid var(--blue); padding: 0.7rem 0.9rem; margin: 0.7rem 0; border-radius: 0 4px 4px 0; font-size: 0.88rem; }
+  .script-box { background: #1F1D1B; color: white; padding: 1rem; border-radius: 6px; margin: 1rem 0; font-size: 0.92rem; line-height: 1.65; font-style: italic; }
+  .script-box .label { font-style: normal; font-size: 0.68rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem; }
   table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-size: 0.85rem; }
   th, td { text-align: left; padding: 0.4rem 0.5rem; border-bottom: 1px solid #ddd; vertical-align: top; }
   th { background: #efe7d8; font-weight: 700; }
   .back-link { display: inline-block; margin-top: 1.5rem; padding: 0.4rem 0.9rem; background: var(--ink); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 600; }
+  .ext-link { color: var(--blue); text-decoration: underline; }
+
+  /* Visual blocks */
+  .visual-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin: 1rem 0; }
+  .visual-row.two { grid-template-columns: 1fr 1fr; }
+  .visual-card { background: white; border: 1px solid #e0d8c5; border-radius: 6px; padding: 0.7rem; text-align: center; }
+  .visual-card svg { width: 100%; height: 100px; }
+  .visual-card .name { font-weight: 700; font-size: 0.82rem; margin-top: 0.3rem; color: var(--ink); }
+  .visual-card .caption { font-size: 0.74rem; color: #6a6055; margin-top: 0.2rem; line-height: 1.4; }
+
+  .maker-card { background: white; border: 1px solid #e0d8c5; border-radius: 6px; padding: 1rem; margin: 0.7rem 0; }
+  .maker-card .maker-name { font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+  .maker-card .maker-japanese { font-size: 0.78rem; color: #8a8175; margin-left: 0.4rem; }
+  .maker-card .maker-tagline { color: var(--red); font-size: 0.82rem; font-weight: 600; margin: 0.3rem 0 0.6rem 0; text-transform: uppercase; letter-spacing: 0.5px; }
+  .maker-card .price { float: right; background: var(--gold); color: white; padding: 0.18rem 0.5rem; border-radius: 3px; font-size: 0.7rem; font-weight: 700; }
+  .maker-card svg.preview { width: 100%; height: 80px; margin: 0.5rem 0; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Tuesday Buying Advice</h1>
-  <div class="sub">Kappabashi knives + Akihabara audio · for Gavin · May 26 2026</div>
+  <h1>Tuesday Buying Guide v2</h1>
+  <div class="sub">Kappabashi knives (Yu Kurosaki / Takamura / Ryusen) + Akihabara audio · Gavin, May 26 2026</div>
 </header>
 
+<!-- =================== KNIVES =================== -->
 <section>
-<h2>Part 1: Knives at Kappabashi (Kamata Hakensha)</h2>
+<h2>Part 1: Knives — what to ask for, and what to look at</h2>
 
-<p>The friend's loadout, ordered exactly. Walk in with this list printed or on screen. Kamata Hakensha is a Ryusen authorized dealer — Ryusen makes the SG2 powdered-steel line your friend specified.</p>
+<p>You're shopping at <strong>Kamata Hakensha</strong> (Ryusen-authorized, also stocks Kurosaki and Takamura — all three are Echizen makers). Tax-free, free engraving, whetstone demo on request. Tue 10:00–18:00.</p>
+
+<p>Goal: stainless or stainless-clad (Keys humidity), screaming edge, heirloom-grade craft. Below is the actual top tier, plus the glossary of cool features so you can talk to the staff like you know what you're looking at.</p>
+
+
+<h2>The top three makers (any of these is the right pick)</h2>
+
+<div class="maker-card">
+  <span class="price">~¥38-55k / gyuto</span>
+  <div class="maker-name">Yu Kurosaki <span class="maker-japanese">黒崎 優</span></div>
+  <div class="maker-tagline">⭐ Coolest factor · most beautiful</div>
+  <svg class="preview" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+    <!-- Gyuto silhouette with hammered tsuchime pattern -->
+    <defs>
+      <pattern id="tsuchime" x="0" y="0" width="14" height="10" patternUnits="userSpaceOnUse">
+        <ellipse cx="7" cy="5" rx="5" ry="3" fill="none" stroke="#888" stroke-width="0.6"/>
+      </pattern>
+    </defs>
+    <!-- Blade -->
+    <path d="M 30 50 Q 60 30 200 22 L 340 22 L 345 32 L 345 38 L 200 50 Z" fill="url(#tsuchime)" stroke="#444" stroke-width="1.2"/>
+    <!-- Edge line -->
+    <path d="M 30 50 Q 60 30 200 22 L 340 22" fill="none" stroke="#222" stroke-width="0.5"/>
+    <!-- Handle -->
+    <rect x="345" y="26" width="50" height="22" rx="3" fill="#5b3a1a" stroke="#2a1a05" stroke-width="1"/>
+    <line x1="358" y1="27" x2="358" y2="47" stroke="#2a1a05" stroke-width="0.6"/>
+    <line x1="370" y1="27" x2="370" y2="47" stroke="#2a1a05" stroke-width="0.6"/>
+    <line x1="382" y1="27" x2="382" y2="47" stroke="#2a1a05" stroke-width="0.6"/>
+  </svg>
+  <p style="font-size:0.86rem;margin-top:0.4rem;">Born 1978, third-generation Echizen smith. His signature hammered finishes (<strong>Senko</strong> "flash", <strong>Fujin</strong> "wind god") look like rippling water or rain on steel. R2 powdered steel core, stainless-clad. Routinely called the most beautiful production Japanese knives in production today. Same sharpness as Ryusen Blazen, significantly higher craft pedigree and visual drama.</p>
+  <p style="font-size:0.82rem;color:#6a6055;">Look for: <strong>Senko R2</strong> (flash pattern), <strong>Fujin R2</strong> (raindrop pattern), <strong>Shizuku R2</strong> (water-drop). Octagonal wa-handle, often turquoise-stabilized or black pakka.</p>
+  <p><a class="ext-link" href="https://yu-kurosaki.com/en/" target="_blank">Yu Kurosaki official →</a> · <a class="ext-link" href="https://www.knifewear.com/collections/yu-kurosaki" target="_blank">Knifewear catalog photos →</a></p>
+</div>
+
+<div class="maker-card">
+  <span class="price">~¥30-45k / gyuto</span>
+  <div class="maker-name">Takamura <span class="maker-japanese">高村刃物</span></div>
+  <div class="maker-tagline">⭐ Sharpest-out-of-box · the laser</div>
+  <svg class="preview" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+    <!-- Migaki polished gyuto -->
+    <linearGradient id="migaki" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="50%" stop-color="#bababa"/>
+      <stop offset="100%" stop-color="#9a9a9a"/>
+    </linearGradient>
+    <path d="M 30 50 Q 60 30 200 22 L 340 22 L 345 32 L 345 38 L 200 50 Z" fill="url(#migaki)" stroke="#333" stroke-width="1.2"/>
+    <path d="M 30 50 Q 60 30 200 22 L 340 22" fill="none" stroke="#222" stroke-width="0.5"/>
+    <!-- Maker mark -->
+    <text x="180" y="40" font-family="serif" font-size="7" fill="#444" font-style="italic">TAKAMURA</text>
+    <!-- Handle -->
+    <rect x="345" y="26" width="50" height="22" rx="3" fill="#3a2510" stroke="#1a0e02" stroke-width="1"/>
+  </svg>
+  <p style="font-size:0.86rem;margin-top:0.4rem;">Takamura family, Echizen. R2 powdered steel. Famous for the <strong>thinnest grind on the production market</strong> — "laser cut" feel out of the box. Sharper at the edge than most other R2 knives because of geometry, not steel chemistry. Used by Michelin chefs (René Redzepi at Noma, others). Minimalist aesthetic — no Damascus drama, just clean polished steel.</p>
+  <p style="font-size:0.82rem;color:#6a6055;">Look for: <strong>Migaki</strong> (polished, the classic), <strong>Hana</strong> (more refined, slightly thicker spine), <strong>Pro</strong> (yo-handle Western style for restaurant use). The Migaki is the cult pick.</p>
+  <p><a class="ext-link" href="https://www.knifewear.com/collections/takamura" target="_blank">Knifewear catalog photos →</a> · <a class="ext-link" href="https://www.chefknivestogo.com/takr2.html" target="_blank">CKTG R2 listings →</a></p>
+</div>
+
+<div class="maker-card">
+  <span class="price">~¥30-50k / gyuto</span>
+  <div class="maker-name">Ryusen Blazen <span class="maker-japanese">龍泉 ブレイズン</span></div>
+  <div class="maker-tagline">Safe top-tier · the mainstream excellent pick</div>
+  <svg class="preview" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="tsuchime2" x="0" y="0" width="16" height="12" patternUnits="userSpaceOnUse">
+        <circle cx="8" cy="6" r="3" fill="none" stroke="#888" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <path d="M 30 50 Q 60 30 200 22 L 340 22 L 345 32 L 345 38 L 200 50 Z" fill="url(#tsuchime2)" stroke="#444" stroke-width="1.2"/>
+    <path d="M 30 50 Q 60 30 200 22 L 340 22" fill="none" stroke="#222" stroke-width="0.5"/>
+    <!-- Handle (octagonal pakka) -->
+    <polygon points="345,28 395,28 395,32 393,46 347,46 345,32" fill="#3a2510" stroke="#1a0e02" stroke-width="1"/>
+  </svg>
+  <p style="font-size:0.86rem;margin-top:0.4rem;">Ryusen's flagship line. SG2 (= R2) powdered steel, stainless-clad, tsuchime hammered finish. 63 HRC. Excellent line, top 15% of Japanese kitchen knives by every measure. Your friend's original recommendation. Solid choice — just less cool-factor than Kurosaki and less laser-feel than Takamura.</p>
+  <p style="font-size:0.82rem;color:#6a6055;">Look for: <strong>Blazen tsuchime</strong> (hammered), <strong>Blazen Damascus</strong> (multi-layer pattern).</p>
+  <p><a class="ext-link" href="https://ryusen-hamono.com/en/" target="_blank">Ryusen official →</a></p>
+</div>
+
+<div class="tip"><strong>The honest ranking:</strong> Kurosaki for cool + craft, Takamura for raw sharpness, Ryusen Blazen for the safe excellent pick. Any of the three is a knife you'll own forever. Pick at Kamata standing there with all three in hand — your eye will tell you.</p></div>
+
+
+<!-- =============== STEEL =============== -->
+<h2>Steel cheat-sheet (what's in the blade)</h2>
 
 <table>
-  <tr><th>Knife</th><th>Spec</th><th>Why this one</th></tr>
-  <tr><td>Gyuto</td><td>240mm SG2/R2 powdered steel</td><td>The hero. Everyday do-everything blade, takes the most extreme edge, holds it longest. Spend here.</td></tr>
-  <tr><td>Petty</td><td>150mm SG2/R2</td><td>Match the gyuto steel so one sharpening feel covers both most-used blades.</td></tr>
-  <tr><td>Nakiri</td><td>165mm VG-10 or SG2</td><td>Flat vegetable knife. VG-10 is fine if saving — still wickedly sharp, easy upkeep.</td></tr>
-  <tr><td>Sujihiki</td><td>270mm stainless</td><td>Fish knife. Double-bevel slicer — no single-bevel deba/yanagiba learning curve.</td></tr>
-  <tr><td>Bread knife</td><td>240mm stainless serrated</td><td>Buy-once item. Tojiro is the value pick everyone swears by; shop will have nicer.</td></tr>
+  <tr><th>Steel</th><th>Type</th><th>HRC</th><th>Keys OK?</th><th>Notes</th></tr>
+  <tr><td><strong>SG2 / R2</strong></td><td>Stainless powdered</td><td>63</td><td>✓</td><td>The sweet spot. Sharp, holds edge, stain-resistant. <em>Same steel, two names.</em></td></tr>
+  <tr><td><strong>VG-10</strong></td><td>Stainless</td><td>60-61</td><td>✓</td><td>Mid-upper, very common, easier to sharpen. Fine for nakiri-tier.</td></tr>
+  <tr><td><strong>ZDP-189</strong></td><td>Stainless powdered</td><td>67</td><td>✓</td><td>Harder than R2, longer edge life, more brittle. Don't chop bone.</td></tr>
+  <tr><td><strong>AUS-10 / Ginsanko</strong></td><td>Stainless</td><td>60</td><td>✓</td><td>Mid-tier stainless. Decent but Blazen blows it away.</td></tr>
+  <tr><td><strong>White #2 (Shirogami)</strong></td><td>Carbon</td><td>62</td><td>✗</td><td>Scary sharp but rusts overnight in Keys air. Skip.</td></tr>
+  <tr><td><strong>Blue Super (Aogami)</strong></td><td>Carbon</td><td>64</td><td>✗</td><td>Same problem. Carbon = no for the Keys.</td></tr>
+  <tr><td><strong>Honyaki</strong></td><td>Mono-steel forge</td><td>varies</td><td>✗</td><td>Single-steel hand-forged. Beautiful but maintenance-heavy.</td></tr>
 </table>
 
-<h3>Sharpening kit (also Kamata)</h3>
+<div class="info"><strong>Your sweet spot: anything stainless-clad with an SG2/R2 core.</strong> Kurosaki, Takamura, and Ryusen Blazen all qualify.</div>
+
+
+<!-- =============== FINISHES =============== -->
+<h2>Finishes (what the blade LOOKS like)</h2>
+
+<p>This is where the cool factor lives. Same R2 steel can come in any of these finishes — the smith decides. At Kamata you'll see all of them on display.</p>
+
+<div class="visual-row">
+  <div class="visual-card">
+    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <pattern id="tsuchime3" x="0" y="0" width="14" height="10" patternUnits="userSpaceOnUse">
+        <ellipse cx="7" cy="5" rx="5" ry="3" fill="none" stroke="#888" stroke-width="0.6"/>
+      </pattern>
+      <rect x="5" y="10" width="90" height="40" fill="url(#tsuchime3)" stroke="#444" stroke-width="0.8"/>
+    </svg>
+    <div class="name">Tsuchime <span class="kanji">槌目</span></div>
+    <div class="caption">Hammered dimples. Both decorative AND functional (food releases off the dimples instead of sticking). The most common cool finish. <strong>Kurosaki Senko + Ryusen Blazen both use this.</strong></div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="damascus" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#d8d8d8"/>
+          <stop offset="50%" stop-color="#aaa"/>
+          <stop offset="100%" stop-color="#d8d8d8"/>
+        </linearGradient>
+      </defs>
+      <rect x="5" y="10" width="90" height="40" fill="url(#damascus)" stroke="#444" stroke-width="0.8"/>
+      <path d="M 5 20 Q 25 14 50 22 T 95 18" fill="none" stroke="#666" stroke-width="0.6"/>
+      <path d="M 5 28 Q 28 22 50 30 T 95 26" fill="none" stroke="#666" stroke-width="0.6"/>
+      <path d="M 5 36 Q 30 30 52 38 T 95 34" fill="none" stroke="#666" stroke-width="0.6"/>
+      <path d="M 5 44 Q 26 38 50 46 T 95 42" fill="none" stroke="#666" stroke-width="0.6"/>
+    </svg>
+    <div class="name">Damascus <span class="kanji">ダマスカス</span></div>
+    <div class="caption">Multi-layer folded cladding. Wood-grain or wave pattern in the steel. Decorative — the core steel does the cutting, the Damascus is the sandwich. Cool factor very high.</div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="suminagashi" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#444"/>
+          <stop offset="50%" stop-color="#aaa"/>
+          <stop offset="100%" stop-color="#333"/>
+        </linearGradient>
+      </defs>
+      <rect x="5" y="10" width="90" height="40" fill="url(#suminagashi)" stroke="#222" stroke-width="0.8"/>
+      <path d="M 5 18 C 30 12, 50 30, 95 16" fill="none" stroke="#222" stroke-width="0.8"/>
+      <path d="M 5 26 C 30 20, 55 40, 95 24" fill="none" stroke="#222" stroke-width="0.8"/>
+      <path d="M 5 36 C 30 30, 55 46, 95 32" fill="none" stroke="#222" stroke-width="0.8"/>
+      <path d="M 5 44 C 30 38, 55 50, 95 40" fill="none" stroke="#222" stroke-width="0.8"/>
+    </svg>
+    <div class="name">Suminagashi <span class="kanji">墨流</span></div>
+    <div class="caption">"Ink-flow" Damascus. Higher contrast, more organic flowing pattern than standard Damascus. The cult-aesthetic pick.</div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <linearGradient id="migaki2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#f0f0f0"/>
+        <stop offset="50%" stop-color="#c5c5c5"/>
+        <stop offset="100%" stop-color="#a0a0a0"/>
+      </linearGradient>
+      <rect x="5" y="10" width="90" height="40" fill="url(#migaki2)" stroke="#333" stroke-width="0.8"/>
+    </svg>
+    <div class="name">Migaki <span class="kanji">磨</span></div>
+    <div class="caption">Polished mirror finish. Minimalist, clean. <strong>Takamura's signature look</strong> — the laser. No decoration, all steel.</div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="10" width="90" height="40" fill="#2a2a2a" stroke="#000" stroke-width="0.8"/>
+      <circle cx="20" cy="22" r="1.2" fill="#444"/>
+      <circle cx="35" cy="28" r="0.9" fill="#444"/>
+      <circle cx="55" cy="20" r="1.4" fill="#444"/>
+      <circle cx="72" cy="30" r="0.8" fill="#444"/>
+      <circle cx="85" cy="24" r="1.1" fill="#444"/>
+      <circle cx="28" cy="38" r="1.0" fill="#444"/>
+      <circle cx="60" cy="40" r="0.9" fill="#444"/>
+      <circle cx="78" cy="42" r="1.2" fill="#444"/>
+      <rect x="5" y="42" width="90" height="8" fill="#d8d8d8"/>
+    </svg>
+    <div class="name">Kurouchi <span class="kanji">黒打</span></div>
+    <div class="caption">Forge-finish black coating left on the spine, polished only at the edge. Rustic, traditional, working-knife aesthetic. Carbon-steel signal (often).</div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="10" width="90" height="40" fill="#c8c8c8" stroke="#444" stroke-width="0.8"/>
+      <circle cx="15" cy="18" r="0.6" fill="#888"/>
+      <circle cx="25" cy="22" r="0.5" fill="#888"/>
+      <circle cx="35" cy="16" r="0.7" fill="#888"/>
+      <circle cx="48" cy="24" r="0.5" fill="#888"/>
+      <circle cx="60" cy="20" r="0.6" fill="#888"/>
+      <circle cx="72" cy="28" r="0.5" fill="#888"/>
+      <circle cx="82" cy="22" r="0.6" fill="#888"/>
+      <circle cx="20" cy="32" r="0.6" fill="#888"/>
+      <circle cx="40" cy="36" r="0.5" fill="#888"/>
+      <circle cx="55" cy="32" r="0.6" fill="#888"/>
+      <circle cx="70" cy="40" r="0.5" fill="#888"/>
+      <circle cx="85" cy="36" r="0.6" fill="#888"/>
+      <circle cx="30" cy="42" r="0.5" fill="#888"/>
+      <circle cx="50" cy="44" r="0.6" fill="#888"/>
+      <circle cx="78" cy="44" r="0.5" fill="#888"/>
+    </svg>
+    <div class="name">Nashiji <span class="kanji">梨地</span></div>
+    <div class="caption">"Pear skin" matte stippled finish. Subtler than tsuchime — flat with tiny dimples. Modern minimalist look.</div>
+  </div>
+</div>
+
+
+<!-- =============== HANDLE =============== -->
+<h2>Handle types (the thing you hold)</h2>
+
+<div class="visual-row two">
+  <div class="visual-card">
+    <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+      <!-- Wa handle - side view -->
+      <polygon points="20,30 120,28 130,40 130,44 120,52 20,50" fill="#5b3a1a" stroke="#2a1a05" stroke-width="1"/>
+      <polygon points="120,28 130,40 130,44 120,52" fill="#1a0e02" stroke="#000" stroke-width="0.5"/>
+      <!-- Tang going into the knife -->
+      <rect x="130" y="38" width="60" height="6" fill="#aaa" stroke="#666" stroke-width="0.5"/>
+      <!-- Cross section indicator (octagonal) -->
+      <g transform="translate(60,60)">
+        <polygon points="0,0 8,0 12,4 12,8 8,12 0,12 -4,8 -4,4" fill="none" stroke="#444" stroke-width="0.8"/>
+        <text x="-12" y="22" font-size="6" fill="#666">octagonal cross-section</text>
+      </g>
+    </svg>
+    <div class="name">Wa-handle <span class="kanji">和柄</span></div>
+    <div class="caption">Japanese traditional. Octagonal or D-shape, hidden tang, no rivets. Lighter, blade-forward balance, more nimble. Wood: ho, magnolia, ebony, pakka. <strong>Default for Kurosaki + Ryusen.</strong></div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+      <!-- Yo handle - Western, riveted -->
+      <path d="M 130 30 L 30 35 L 30 50 L 130 55 Z" fill="#3a2510" stroke="#1a0e02" stroke-width="1"/>
+      <!-- Bolster -->
+      <rect x="125" y="28" width="12" height="32" fill="#aaa" stroke="#666" stroke-width="0.6"/>
+      <!-- Tang visible through handle scales -->
+      <line x1="30" y1="42" x2="130" y2="42" stroke="#666" stroke-width="0.4" stroke-dasharray="2,1"/>
+      <!-- Rivets -->
+      <circle cx="50" cy="42" r="3" fill="#888" stroke="#444" stroke-width="0.5"/>
+      <circle cx="80" cy="42" r="3" fill="#888" stroke="#444" stroke-width="0.5"/>
+      <circle cx="110" cy="42" r="3" fill="#888" stroke="#444" stroke-width="0.5"/>
+      <!-- Blade tang going in -->
+      <rect x="137" y="40" width="50" height="4" fill="#aaa"/>
+    </svg>
+    <div class="name">Yo-handle <span class="kanji">洋柄</span></div>
+    <div class="caption">Western-style. Riveted scales over visible tang, bolster at the front. Heavier, blade-rear balance, more conventional. <strong>Takamura Pro uses this</strong> for restaurant ergonomics.</div>
+  </div>
+</div>
+
+<div class="tip"><strong>Pick wa for craft + lighter feel.</strong> Pick yo if you want the chef-knife feel you're already used to. Either works in the Keys.</div>
+
+
+<!-- =============== PROFILES =============== -->
+<h2>Knife profiles (the shape of the blade)</h2>
+
+<p>Your friend's loadout is the standard Western-influenced double-bevel set: gyuto + petty + nakiri + sujihiki + bread. But there are cool profile variants worth knowing about — especially the kiritsuke-style tips that make any knife look dramatically more "Japanese."</p>
+
+<div class="visual-row">
+  <div class="visual-card">
+    <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+      <!-- Standard gyuto -->
+      <path d="M 20 50 Q 50 28 130 22 L 165 22 L 170 30 L 170 38 L 130 50 Z" fill="#c5c5c5" stroke="#222" stroke-width="0.8"/>
+    </svg>
+    <div class="name">Gyuto <span class="kanji">牛刀</span></div>
+    <div class="caption">"Beef knife" — Japanese take on the Western chef's knife. Curved belly for rocking cuts. The default workhorse.</div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+      <!-- Kiritsuke-gyuto - angled tip -->
+      <path d="M 20 50 Q 60 28 165 22 L 175 22 L 175 28 L 175 38 L 130 50 Z" fill="#c5c5c5" stroke="#222" stroke-width="0.8"/>
+      <!-- Sharp angled tip emphasized -->
+      <path d="M 165 22 L 175 22 L 175 28" fill="none" stroke="#a00" stroke-width="1.5"/>
+    </svg>
+    <div class="name">Kiritsuke-gyuto <span class="kanji">切付牛刀</span></div>
+    <div class="caption"><strong>The cool one.</strong> Gyuto profile with an angled "kiritsuke" tip. Same function as a gyuto + dramatic looks. Pure Japanese aesthetic moment.</div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+      <!-- Bunka -->
+      <path d="M 25 50 L 120 28 L 165 28 L 175 22 L 175 32 L 165 38 L 120 50 Z" fill="#c5c5c5" stroke="#222" stroke-width="0.8"/>
+      <path d="M 165 28 L 175 22" fill="none" stroke="#a00" stroke-width="1.5"/>
+    </svg>
+    <div class="name">Bunka <span class="kanji">文化</span></div>
+    <div class="caption">Santoku-like with a kiritsuke-style angled tip. More versatile than nakiri, more interesting-looking than santoku.</div>
+  </div>
+</div>
+
+<div class="info"><strong>The "level-up" ask:</strong> instead of a plain 240mm gyuto, ask for a <strong>240mm kiritsuke-gyuto</strong> (sometimes called K-tip gyuto). Same workhorse function, the angled tip makes it visually striking and signals serious-Japanese-knife. Yu Kurosaki does these beautifully. Takamura's Hana line has K-tip options.</div>
+
+
+<!-- =============== BEVELS =============== -->
+<h2>Bevels (the grind of the edge)</h2>
+
+<div class="visual-row two">
+  <div class="visual-card">
+    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cross-section -->
+      <text x="20" y="14" font-size="9" font-weight="700" fill="#222">cross-section view</text>
+      <!-- Symmetric double bevel -->
+      <polygon points="100,30 130,75 100,85 70,75" fill="#d0d0d0" stroke="#222" stroke-width="1"/>
+      <line x1="100" y1="85" x2="100" y2="90" stroke="#a00" stroke-width="1.5"/>
+      <text x="105" y="92" font-size="7" fill="#a00">edge</text>
+      <!-- Both sides symmetric labels -->
+      <text x="30" y="55" font-size="7" fill="#666">left bevel</text>
+      <text x="140" y="55" font-size="7" fill="#666">right bevel</text>
+      <!-- Arrows -->
+      <path d="M 75 50 L 90 60" fill="none" stroke="#666" stroke-width="0.5" marker-end="url(#arr)"/>
+      <path d="M 125 50 L 110 60" fill="none" stroke="#666" stroke-width="0.5" marker-end="url(#arr)"/>
+    </svg>
+    <div class="name">Double-bevel <span class="kanji">両刃</span></div>
+    <div class="caption">Symmetric edge ground both sides. <strong>Your whole loadout is this.</strong> Both-handed, easy to sharpen, no learning curve. Default for gyuto / petty / nakiri / sujihiki / bunka.</div>
+  </div>
+  <div class="visual-card">
+    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+      <text x="20" y="14" font-size="9" font-weight="700" fill="#222">cross-section view</text>
+      <!-- Asymmetric single bevel -->
+      <polygon points="100,30 130,75 90,85 90,30" fill="#d0d0d0" stroke="#222" stroke-width="1"/>
+      <line x1="90" y1="85" x2="90" y2="90" stroke="#a00" stroke-width="1.5"/>
+      <text x="95" y="92" font-size="7" fill="#a00">edge</text>
+      <text x="40" y="55" font-size="7" fill="#666">flat back</text>
+      <text x="135" y="55" font-size="7" fill="#666">single bevel</text>
+    </svg>
+    <div class="name">Single-bevel <span class="kanji">片刃</span></div>
+    <div class="caption">Ground one side only. Pure Japanese tradition (deba, yanagiba, usuba). Right-hand default; lefties pay extra. <strong>Skip for your loadout</strong> — your friend explicitly chose the sujihiki over yanagiba to avoid the single-bevel learning curve.</div>
+  </div>
+</div>
+
+
+<!-- =============== COOL FEATURES =============== -->
+<h2>Cool features to ask about (signals you know what's up)</h2>
+
+<h4>Saya (wooden sheath)</h4>
+<p>Most quality Japanese knives ship with a <strong>magnolia wood saya</strong> (ho-no-ki) — a sliding wooden sheath that protects the edge and lets you store the knife horizontally. Some have a <strong>nakago pin</strong> (small dowel that holds the saya on). Cool factor: real magnolia + custom-fit saya per knife.</p>
 <ul>
-  <li><strong>Combination whetstone #1000/#6000</strong> — one stone, both jobs (sharpen + polish)</li>
-  <li><strong>Flattening plate</strong> (or cheap #220 stone) — keeps the stone itself flat, don't skip</li>
-  <li><strong>Ceramic honing rod</strong> — quick between-sharpening touch-up · NEVER a steel rod</li>
+  <li>Ask: <em>"Is the saya included? Magnolia?"</em></li>
+  <li>Custom-fit saya are sometimes upcharged for special-shape knives.</li>
 </ul>
 
-<div class="tip"><strong>The ask at Kamata:</strong> "Stainless or stainless-clad, screaming edge, easy upkeep — Ryusen SG2 240mm gyuto and 150mm petty if available." Then ask for a whetstone demo on your actual knives before you leave. They run a sharpening class internationally — they will demo. Match their low angle, three or four passes a side on #1000 when the edge slips, finish on #6000.</div>
-
-<div class="info"><strong>Routine at home (Keys):</strong> With SG2 and normal home use, full sharpening every few months only. Ceramic rod handles the in-between. No electric grinder anywhere near these knives.</div>
-
-<h3>Logistics</h3>
+<h4>Spine + choil treatment</h4>
+<p>On premium knives, the <strong>spine</strong> (top of the blade) is rounded/polished and the <strong>choil</strong> (the curve where the blade meets the handle) is rounded too. Cheap knives leave both sharp. Rounded spine + choil = comfort over long prep sessions, AND a sign the smith finished the knife properly.</p>
 <ul>
-  <li><strong>Engraving:</strong> Free at Kamata. Ask for engraving on the gyuto only (the heirloom piece). Stamp goes on the spine, not the blade face.</li>
-  <li><strong>Tax-free:</strong> Yes, dedicated counter — bring passports.</li>
-  <li><strong>Payment:</strong> Cash + credit card accepted at Kamata.</li>
-  <li><strong>Shipping home:</strong> Don't ship — pack the knives in checked luggage in a hard case, wrapped in tea towels (TSA doesn't allow knives in carry-on). Saya covers (wooden sheaths) included with most SG2 knives.</li>
-  <li><strong>Backups if Kamata is out:</strong> Tsubaya (3 min walk, cards inc Apple Pay) then Kama-Asa (designed-shop sensibility, free engraving including cursive).</li>
+  <li>Ask: <em>"Is the spine and choil rounded?"</em></li>
+  <li>Run your thumb along the spine — should feel smooth, not sharp.</li>
 </ul>
+
+<h4>Forging method</h4>
+<p>Three tiers of construction:</p>
+<ul>
+  <li><strong>Hand-forged</strong> (tagane / utsushi) — smith hammers the steel into shape. Cool. ¥¥¥</li>
+  <li><strong>Hand-finished</strong> — machine-forged blank, then hand-ground and hand-finished. Most premium knives are this. ¥¥</li>
+  <li><strong>Stamped / laser-cut</strong> — entry-level. ¥</li>
+</ul>
+<ul>
+  <li>Ask: <em>"Hand-forged or machine-forged blank?"</em> Takamura and Kurosaki are hand-finished from forged blanks; small artisan smiths (Shibata, some Wakui) are fully hand-forged.</li>
+</ul>
+
+<h4>Heat treatment</h4>
+<p>The smith's heat-treat process is what makes SG2 actually sharp. Kurosaki and Takamura are famous for their heat-treat — same steel, different smith, very different feel.</p>
+<ul>
+  <li>Ask: <em>"What's the HRC?"</em> 63 for R2/SG2 is the spec; some smiths push 64.</li>
+</ul>
+
+<h4>Handle materials</h4>
+<ul>
+  <li><strong>Octagonal pakka wood</strong> — standard premium. Waterproof composite.</li>
+  <li><strong>Ho / magnolia wood</strong> — traditional Japanese. Lighter, needs occasional oiling.</li>
+  <li><strong>Stabilized burl</strong> — custom, expensive, beautiful (think rare maple burl).</li>
+  <li><strong>Ebony or rosewood</strong> — premium, traditional, dark.</li>
+  <li><strong>Buffalo horn ferrule</strong> — the black collar between handle and blade — a premium-signal.</li>
+  <li><strong>Mokume-gane bolster</strong> — mixed-metal Damascus on the bolster. Very high-end. ¥¥¥</li>
+</ul>
+
+<h4>Engraving / customization</h4>
+<ul>
+  <li><strong>Kanji</strong> — Japanese characters of your name (free at Kamata, picks 3 kanji that sound like "Gavin").</li>
+  <li><strong>Cursive English</strong> — your name in English (Kama-Asa does this best).</li>
+  <li><strong>Placement</strong> — spine (most common, doesn't disrupt blade face) vs blade face (more visible, slightly less classy).</li>
+</ul>
+
+
+<!-- =============== UPDATED SCRIPT =============== -->
+<h2>The updated script for Kamata</h2>
+
+<div class="script-box">
+<div class="label">Walk in and lead with this</div>
+"I want the coolest, sharpest, best stainless-clad kitchen knives you have for a home cook. Florida humidity, no carbon. Show me Yu Kurosaki Senko R2 and Takamura R2 in 240 gyuto and 150 petty — whichever you like the look of, I'll match the nakiri 165 and sujihiki 270 in the same line. Plus a Tojiro bread knife 240. I'm interested in kiritsuke-tip versions if you have them. Magnolia saya included on everything. Whetstone demo on the gyuto before I leave. Engraving in kanji on the gyuto only, on the spine."
+</div>
+
+<p>That single ask covers: brand preference, profile preference (open to kiritsuke), the steel match across gyuto/petty, saya, demo, engraving placement, and engraving style. Kamata's staff will know exactly what tier you're shopping at.</p>
+
+<h4>Follow-up questions to ask while they show you knives</h4>
+<ul>
+  <li><em>"What's the HRC?"</em> (63 minimum for R2)</li>
+  <li><em>"Is this hand-forged or hand-finished from a forged blank?"</em></li>
+  <li><em>"Is the spine and choil rounded?"</em></li>
+  <li><em>"What handle wood — pakka, magnolia, or something else?"</em></li>
+  <li><em>"Do you have any kiritsuke-tip variants of this in stock?"</em></li>
+  <li><em>"How thick is it behind the edge?"</em> (sharpness comes from thinness — Takamura wins here)</li>
+  <li><em>"Single-bevel or double?"</em> (always double for this loadout)</li>
+  <li><em>"What's the recommended sharpening angle?"</em> (usually 12-15° for R2)</li>
+</ul>
+
+
+<!-- =============== PRACTICAL =============== -->
+<h2>Practical (engraving, tax-free, getting it home)</h2>
+
+<ul>
+  <li><strong>Tax-free:</strong> Yes. Bring passports.</li>
+  <li><strong>Engraving:</strong> Free at Kamata, free at Kama-Asa (3rd backup), free at Tsubaya. Takes ~10 min per knife. Spine engraving is more classic than blade-face.</li>
+  <li><strong>Shipping vs carry:</strong> NEVER ship — pack in checked luggage in a hard case, wrapped in tea towels. TSA doesn't allow knives in carry-on, and Japan Post / international knife shipping has customs paperwork pain.</li>
+  <li><strong>Saya:</strong> All quality knives come with one. Magnolia is standard. If you're flying with the knives, pop the sayas on for transit.</li>
+  <li><strong>At home in the Keys:</strong> wipe dry after every use, store in a knife block or magnetic strip (NOT loose in a drawer where they'll chip each other), full sharpening every 3-6 months on the #1000 then #6000, ceramic rod between sharpenings.</li>
+</ul>
+
+
+<!-- =============== HOME ROUTINE =============== -->
+<h2>The home sharpening routine (your friend's, refined)</h2>
+
+<ol>
+  <li><strong>Daily / every-few-uses:</strong> 3-4 passes per side on the ceramic honing rod. Low angle (~12-15°). Realigns the edge without removing steel.</li>
+  <li><strong>Every 3-6 months:</strong> Full sharpen on the combination whetstone.
+    <ul>
+      <li>Soak the stone 5-10 min in water</li>
+      <li>#1000 side first. 3-4 passes per side, low angle, full length of blade in one stroke</li>
+      <li>Check sharpness on paper / tomato skin</li>
+      <li>Flip to #6000 side. 2-3 passes per side. Mirror polish.</li>
+      <li>Wipe clean, dry the blade, light coat of food-grade mineral oil if storing for weeks</li>
+    </ul>
+  </li>
+  <li><strong>Every few full-sharpens:</strong> Flatten the stone on the #220 / flattening plate. Skipping this = your edges get uneven.</li>
+  <li><strong>NEVER:</strong> electric grinder, steel honing rod (use ceramic only), dishwasher, knife block where blades touch each other.</li>
+</ol>
+
+<div class="tip"><strong>At Kamata, have the staff demo this on your actual gyuto.</strong> Match their angle exactly — body memory beats reading instructions. Their sharpening class is internationally known.</div>
 
 </section>
 
-<section>
-<h2>Part 2: Audio at Akihabara</h2>
 
-<p>Five shops, ranked by what's actually unique. Tuesday is favorable — everything on this list is open Tuesday (Oyaide closes Sundays only, would have been the trap).</p>
+<!-- =================== AUDIO =================== -->
+<section>
+<h2>Part 2: Audio at Akihabara (preserved + refined)</h2>
+
+<p>Five shops, ranked by what's actually unique. All open Tuesday. (Oyaide closes Sundays, would have been the trap.)</p>
 
 <h3>The route</h3>
 <ol>
-  <li><strong>Yodobashi Akiba 4F-5F</strong> (09:30 opens) — calibration browse, see what's what across all major hi-fi brands</li>
-  <li><strong>e-Earphone Akihabara flagship</strong> (11:00 opens) — THE headphone/IEM destination, hundreds of try-before-buy demos</li>
-  <li><strong>Dynamic Audio 5555</strong> — seven floors of hi-fi specialty, $50k speakers driven by domestic-spec Accuphase</li>
-  <li><strong>Oyaide Electric</strong> — Japanese audio cables/connectors at domestic prices (30-50% cheaper than US distributors)</li>
-  <li><strong>Hi-Fi Do</strong> — used Accuphase/McIntosh/Luxman with 1-year shop warranty</li>
+  <li><strong>Yodobashi Akiba 4F-5F</strong> (09:30 opens) — calibration browse</li>
+  <li><strong>e-Earphone Akihabara flagship</strong> (11:00 opens) — headphones and IEMs, hundreds of try-before-buy demos</li>
+  <li><strong>Dynamic Audio 5555</strong> — seven floors of hi-fi specialty</li>
+  <li><strong>Oyaide Electric</strong> — cables, the actual buy</li>
+  <li><strong>Hi-Fi Do</strong> — used Accuphase / McIntosh / Luxman</li>
 </ol>
 
-<h3>What's worth buying in Japan that you can't get good in the US</h3>
+<h3>What to actually buy (given your Orchard Audio Starkrimson + PecanPi stack)</h3>
+
+<h4>1. Oyaide cables — highest-ROI Japan buy, no voltage issue</h4>
 <ul>
-  <li><strong>Final Audio full line</strong> — Japanese boutique IEM/headphone maker with domestic packaging/spec. The A-series flagships are the standout.</li>
-  <li><strong>Sony domestic-firmware IEMs</strong> — JPN firmware enables LDAC and DSEE Extreme features that are region-locked elsewhere.</li>
-  <li><strong>Audio-Technica Japan-exclusive limited runs</strong> — wood-cup ATH-W series and HL-series tunings not sold in US. Drops sell out.</li>
-  <li><strong>Oyaide cables and connectors</strong> — 30-50% off US distributor pricing, no voltage concern (cables don't care), worth the suitcase weight.</li>
-  <li><strong>Used high-end at Hi-Fi Do / Dynamic Audio</strong> — Accuphase, Luxman vintage at JPY prices. But factor voltage + warranty (see below).</li>
+  <li><strong>TUNAMI GPX-R V2 power cables</strong> (~¥40k each) — one for Starkrimson, one for PecanPi</li>
+  <li><strong>Continental 5S V2 USB-A → USB-B</strong> — clean handoff to external DAC if you go that route</li>
+  <li><strong>NEO d+ Class A RCA pair</strong> (~¥15k/m) — A/B against current interconnects</li>
+  <li><strong>PA-23 inline USB filter</strong> — Pi-based streamers genuinely benefit</li>
+</ul>
+<p style="font-size:0.86rem;">Fits in carry-on. ~¥120k tax-free total. The actual buy of the day.</p>
+
+<h4>2. Furutech power conditioning — voltage caveat</h4>
+<p>Domestic-spec Furutech e-TP80 NCF or e-TP609 NCF, 40% cheaper than US. <strong>Voltage trap:</strong> 100V Japan units, would need step-down at home. Skip unless committing to a 100V chain.</p>
+
+<h4>3. Headphones beyond Bose QC Ultra</h4>
+<ul>
+  <li><strong>Sony WH-1000XM6</strong> — slight ANC edge, better SQ, Japan-domestic firmware</li>
+  <li><strong>B&W PX8</strong> — significantly better SQ than QC Ultra, slightly worse ANC. Wood-walnut Japan edition is gorgeous</li>
+  <li><strong>Sennheiser HD 800 S</strong> — reference open-back for classical. Pair with Starkrimson at home</li>
+  <li><strong>Audio-Technica ATH-WP900</strong> — JAPAN-ONLY wood-cup over-ear. The classical pick</li>
+  <li><strong>Final Audio A8000 IEM</strong> — Japan flagship beryllium single-DD. Reference for classical via Tidal on flights</li>
+  <li><strong>Sony IER-Z1R IEM</strong> — Japan-domestic flagship, three-way hybrid. Cult favorite</li>
 </ul>
 
-<div class="warn"><strong>VOLTAGE WARNING.</strong> Japan is 100V mains. US grid runs 117-125V (Florida Keys included). Running a Japanese amp on US mains overheats the transformer, damages voltage regulators, shortens tube life. Required: step-down transformer sized at calculated VA × 1.25 (ACUPWR or similar, ~$200-400 for serious amps). <strong>Headphones, IEMs, passive cables: NO ISSUE.</strong></div>
+<div class="warn"><strong>VOLTAGE WARNING.</strong> Japan 100V, Florida Keys 117-125V. Tube amps and class-A integrateds get fried without a step-down. <strong>Headphones, IEMs, cables: no issue.</strong></div>
 
-<div class="warn"><strong>WARRANTY TRAP.</strong> Accuphase, Luxman, Esoteric will NOT honor warranty on gray-market export units. Service must go back to Japan. Factor into anything &gt;$3k. For used purchases at Hi-Fi Do you get a 1-year shop warranty — but that ends when the unit leaves Japan.</div>
+<div class="warn"><strong>WARRANTY TRAP.</strong> Accuphase, Luxman, Esoteric won't honor warranty on gray-market export. Used Hi-Fi Do purchases get 1-year shop warranty that ends when the unit leaves Japan.</div>
 
-<div class="info"><strong>Safe-buy zone:</strong> e-Earphone, Yodobashi, Dynamic Audio, Hi-Fi Do, Oyaide. AVOID: street vendors and back-alley "outlet" shops selling sealed Sony/Sennheiser/Apple at suspiciously low prices — counterfeit IEMs are a documented Akihabara problem (Sennheiser IE-series in particular).</div>
+<div class="info"><strong>Safe-buy zone:</strong> e-Earphone, Yodobashi, Dynamic Audio, Hi-Fi Do, Oyaide. AVOID street vendors selling sealed Sony/Sennheiser at suspiciously low prices — counterfeit IEMs are a documented Akihabara problem.</div>
 
-<h3>Where to focus given the loadout you have</h3>
-<ul>
-  <li>If you're an <strong>IEM/portable person</strong>: e-Earphone is the only must-do. Plan 60-90 min minimum there. Bring your own DAP or use theirs.</li>
-  <li>If you want a <strong>hi-fi anchor purchase</strong>: Dynamic Audio's listening rooms are the room to commit in. But factor voltage and warranty.</li>
-  <li>If you want <strong>maximum value-per-dollar</strong>: Oyaide cables. Fits in carry-on. Zero voltage concerns. 30-50% savings.</li>
-  <li>If you're a <strong>vintage collector</strong>: Hi-Fi Do is the only stop that matters. Bring patience.</li>
-</ul>
-
-<h3>What NOT to bother with</h3>
-<ul>
-  <li>Radio Kaikan — post-2014 rebuild, now ~90% anime/hobby. Not the audio mecca it was pre-2011.</li>
-  <li>Anything 100V tube amp or class-A integrated unless committed to step-down transformer expense.</li>
-  <li>Cheap Bluetooth speakers and TWS earbuds — same price as Amazon, no advantage.</li>
-</ul>
+<h4>4. Real power-conditioning advice (you asked about your YaeCCC variac)</h4>
+<p>Your YaeCCC is a voltage transformer, not a power conditioner — it regulates voltage but doesn't filter RFI/EMI or provide surge protection. For the Starkrimson + PecanPi the highest-ROI upgrades, in order:</p>
+<ol>
+  <li><strong>Dedicated 20A circuit from your panel</strong> ($300-600 electrician). Single biggest improvement.</li>
+  <li><strong>AudioQuest Niagara 1200 (~$1000 US)</strong> — engineered for class-D amps + streamers in same chain. Separate isolated outlet banks for digital vs analog.</li>
+  <li><strong>Furman Elite-15 PFi (~$650 US)</strong> — value pick if Niagara is overkill.</li>
+</ol>
+<p>Buy these in the US (not Japan) — voltage trap on Japanese-domestic versions.</p>
 
 </section>
 

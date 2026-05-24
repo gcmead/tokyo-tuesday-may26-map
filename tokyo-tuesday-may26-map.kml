@@ -116,6 +116,55 @@
     </Placemark>
 
     <Placemark>
+      <name>Don Quijote Akihabara (ドン・キホーテ秋葉原店)</name>
+      <description><![CDATA[<b>Daily ~09:00-05:00 (next day) · tax-free counter</b><br><br><b>WHAT IT IS:</b> The iconic Akihabara branch of Japan's chaos-discount mega-chain. Multi-floor labyrinth: discount snacks, beauty, electronics, costumes, novelty Kit-Kats, sex shop, knockoff souvenirs. The 8F houses the AKB48 Theater, Japan's biggest girl-group's permanent performance space.<br><br><b>WHY FOR YOU:</b> If you've never seen a Don Quijote, this is the canonical experience — sensory overload Tokyo retail. Late-night option (open until 5am). Half-tourist half-locals stocking up on cheap snacks at 2am.<br><br><b>KNOWN FOR:</b> Open until 5am most nights; AKB48 Theater on 8F (tickets via lottery); the densest single-building retail experience in Tokyo.<br><br>Address: 4-3-3 Sotokanda, Chiyoda-ku · 5 min walk from Akihabara station Electric Town exit<br><br><b>↪ 5 min walk from Akihabara station Electric Town exit · between e-Earphone and Yodobashi</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7716,35.7006,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>LOVOT MUSEUM Akihabara</name>
+      <description><![CDATA[<b>Daily 11:00-19:00 · ~¥1,500 entry · 30-60 min</b><br><br><b>WHAT IT IS:</b> Showroom + cafe for LOVOT — Groove X's companion robot (¥600k each at retail). A touch-and-play floor where you can hold, pet, and interact with 6-8 LOVOTs at once. The robots are emotional companions, not utility robots — they purr, recognize faces, learn personalities.<br><br><b>WHY FOR YOU:</b> Quintessential Japanese AI-robotics moment — Japan leads the world on companion robots, and this is the only public showroom where you can actually interact with LOVOTs. Karolina will love the hold-a-robot experience; Gavin will be interested in the engineering (computer vision + emotion-modeling system).<br><br><b>KNOWN FOR:</b> Groove X is the Tokyo-based startup behind LOVOT; the showroom doubles as a cafe so you can sit with the robots over coffee; the largest LOVOT installation accessible to the public.<br><br>Address: Akihabara UDX Building 2F, 4-14-1 Sotokanda, Chiyoda-ku<br><br><b>↪ Inside Akihabara UDX building, 3 min walk from Akihabara station Electric Town exit</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7733,35.6997,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Yodobashi Akiba — Floors 5F/6F/7F (bleeding-edge tech + robots)</name>
+      <description><![CDATA[<b>Daily 09:30-22:00 · tax-free B1</b><br><br><b>WHAT IT IS:</b> Beyond the audio floors: 5F cameras + drones (Insta360, DJI, Sony A1 II, Canon R5 II); 6F smart home + AI gadgets (Apple Vision Pro demo, Meta Quest 3S, Rabbit R1, Humane successors, Xreal AR glasses, smart speakers with on-device LLMs); 7F toys + robots (AIBO display, Robi 3, Vstone Robovie, Kondo KHR humanoid kits — Japan's serious hobbyist robotics scene).<br><br><b>WHY FOR YOU:</b> Single largest showcase of bleeding-edge consumer tech in Tokyo. Three floors deep, all hands-on demo. Go after audio (already pin B) and stay 60-90 min upstairs.<br><br><b>KNOWN FOR:</b> AIBO interactive demo; AR/VR full lineup demo-able; Japanese hobbyist humanoid robotics kits not sold outside Japan.<br><br>Address: 1-1 Kanda Hanaoka-cho, Chiyoda-ku · directly outside Akihabara station Showa-dori exit<br><br><b>↪ Direct from Akihabara station Showa-dori exit · take elevator to 5F-7F after the audio floors</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7717,35.6989,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Tsukumo eX. (ツクモex.)</name>
+      <description><![CDATA[<b>Daily 10:00-21:00 · cash + cc · tax-free</b><br><br><b>WHAT IT IS:</b> PC builders' mecca in Akihabara. Multi-floor PC parts and custom builds: latest Nvidia 50-series GPUs, AMD CPUs, water-cooling rigs, premium mechanical keyboards (Topre Realforce, HHKB, Filco), eGPUs, premium monitors. Custom-build counter where techs assemble in front of you.<br><br><b>WHY FOR YOU:</b> If you want to see what serious PC enthusiasts are building in 2026, this is the floor. Premium mechanical-keyboard wall alone is worth the stop (HHKB and Realforce are Japan-domestic priced 30% less than US).<br><br><b>KNOWN FOR:</b> The largest PC parts retailer in Akihabara; English-speaking enthusiast staff; the keyboard wall is the cult attraction; custom-build service while you wait.<br><br>Address: 1-9-7 Sotokanda, Chiyoda-ku<br><br><b>↪ 3 min walk from Akihabara station Electric Town exit</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.771,35.6997,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Sofmap AKIBA Amusement-kan</name>
+      <description><![CDATA[<b>Daily 11:00-21:00 · tax-free</b><br><br><b>WHAT IT IS:</b> Multi-floor used + new electronics retailer. Best place to see slightly-older bleeding edge at lower prices — VR headsets one generation back, last-year's flagship phones unlocked, used MacBooks/iPads, retro tech mixed with current.<br><br><b>WHY FOR YOU:</b> If you want last-gen iPad Pro or used flagship Android at substantial discount, Sofmap has Tokyo's most-mathematically-honest used-electronics pricing. Their used iPhone wall is famously fair.<br><br><b>KNOWN FOR:</b> The most-trusted used-electronics chain in Tokyo; clearly-tiered grading (A/B/C condition with photos); 30-day warranty on used items.<br><br>Address: 1-10-8 Sotokanda, Chiyoda-ku<br><br><b>↪ 2 min walk from Akihabara station Electric Town exit</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7715,35.6997,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Asobitcity Akihabara (DIY robotics + maker)</name>
+      <description><![CDATA[<b>Daily 10:30-20:00</b><br><br><b>WHAT IT IS:</b> Robotics kits + DIY electronics retailer. Real engineering supply: Arduino, Raspberry Pi, robot arm kits, drone parts, sensors, soldering benches, 3D-printer filament. The maker-culture floor of Akihabara.<br><br><b>WHY FOR YOU:</b> If you're at all interested in building something — drone, home automation, simple robot — this is where the parts come from. Browse-able even if you don't buy. Gavin's engineering thread + the bleeding-edge ask both fit.<br><br><b>KNOWN FOR:</b> Japan's main hobbyist electronics retailer; Arduino + Pi authorized; the maker community's central supply point in Tokyo.<br><br>Address: 1-13-2 Sotokanda, Chiyoda-ku<br><br><b>↪ 3 min walk from Akihabara station Electric Town exit</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7708,35.6991,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>Akihabara Radio Kaikan (modern floors 1-6F)</name>
+      <description><![CDATA[<b>Daily 10:00-20:00</b><br><br><b>WHAT IT IS:</b> Despite the anime/hobby reputation, floors 1-6 of Radio Kaikan still house legit current-electronics shops mixed with the figure/cosplay floors. Includes Cospa (functional-tech cosplay accessories with embedded electronics, LEDs, sensors) and Ami Ami (mecha/figure-tech, current Gundam/transformer kits at scale).<br><br><b>WHY FOR YOU:</b> Brief 15-20 min walkthrough of the Radio Kaikan modern floors gives a sense of the figure-tech subculture intersection with consumer electronics — the actual living Akihabara.<br><br><b>KNOWN FOR:</b> Post-2014 rebuild; 90% anime/hobby BUT the electronics-adjacent floors are still real; the cosplay-tech corner (Cospa) is unique to Japan.<br><br>Address: 1-15-16 Sotokanda, Chiyoda-ku · immediately outside Akihabara station Electric Town exit<br><br><b>↪ Direct outside Akihabara station Electric Town exit</b>]]></description>
+      <styleUrl>#bonus</styleUrl>
+      <Point><coordinates>139.7716,35.6988,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
       <name>Mandarake Complex Akihabara</name>
       <description><![CDATA[<b>Daily 12-20</b><br><br><b>WHAT IT IS:</b> 8-floor flagship of Mandarake, Japan's largest vintage manga/anime/toys/collectibles chain. Includes a serious vintage-vinyl floor (basement) for those who care.<br><br><b>WHY FOR YOU:</b> Skip if not interested in manga/anime culture, BUT the basement vinyl floor is a real used-record stop with deep Japanese jazz, city pop, and vintage J-rock at fair prices.<br><br><b>KNOWN FOR:</b> Largest vintage subculture inventory in Tokyo; the basement vinyl section is a Japanese-only record-collector destination.<br><br><b>↪ 5 min walk from Akihabara station</b>]]></description>
       <styleUrl>#bonus</styleUrl>

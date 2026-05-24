@@ -9,19 +9,40 @@
 <style>
   :root {
     --gold: #B8860B; --red: #B5562F; --blue: #2A5A8C; --green: #5E7F4B;
-    --ink: #1F1D1B; --sans: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --ink: #1F1D1B; --paper: #FAF7F2; --sans: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; font-family: var(--sans); }
   body { display: flex; flex-direction: column; }
   header {
     background: var(--ink); color: white;
-    padding: 0.7rem 1rem; display: flex;
-    justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 0.4rem;
+    padding: 0.6rem 1rem 0; display: flex;
+    flex-direction: column; gap: 0.4rem;
   }
+  .header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
   header h1 { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.3px; }
   header .sub { font-size: 0.7rem; color: #b0a896; letter-spacing: 0.5px; }
+  .locate-btn {
+    background: #333; color: white; border: 1px solid #555;
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    font-family: var(--sans); font-size: 0.7rem;
+    cursor: pointer; letter-spacing: 0.3px;
+  }
+  .locate-btn:active { background: var(--red); }
+
+  /* Tabs */
+  .tabs { display: flex; gap: 0.4rem; margin-top: 0.3rem; }
+  .tab {
+    background: transparent; color: #b0a896; border: none;
+    padding: 0.5rem 1rem; cursor: pointer;
+    font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.4px; text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .tab.active { color: white; border-bottom-color: var(--gold); }
+  .tab:not(.active):hover { color: #ddd; }
+
   .legend {
     display: flex; gap: 0.7rem; flex-wrap: wrap;
     padding: 0.5rem 1rem; background: #f4efe5;
@@ -35,15 +56,60 @@
   .legend .swatch.bonus { background: var(--blue); }
   .legend .swatch.station { background: white; border: 2px solid var(--ink); }
   .legend input { margin: 0; }
-  .locate-btn {
-    margin-left: auto;
-    background: var(--ink); color: white; border: none;
-    padding: 0.3rem 0.6rem; border-radius: 4px;
-    font-family: var(--sans); font-size: 0.7rem;
-    cursor: pointer; letter-spacing: 0.3px;
-  }
-  .locate-btn:active { background: var(--red); }
+
   #map { flex: 1; }
+  #list-view { flex: 1; overflow-y: auto; background: var(--paper); display: none; }
+  #list-view.active { display: block; }
+  #map.hidden { display: none; }
+
+  /* List view */
+  .list-section { margin: 0 0 1rem 0; }
+  .list-section-header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--ink); color: white;
+    padding: 0.5rem 1rem; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .list-section-header .count { float: right; color: #b0a896; }
+  .list-section-header.locked { background: var(--gold); }
+  .list-section-header.major { background: var(--red); }
+  .list-section-header.bonus { background: var(--blue); }
+  .list-section-header.station { background: #6a6055; }
+
+  .list-card {
+    background: white; padding: 0.9rem 1rem;
+    border-bottom: 1px solid #e6dfd0;
+    font-size: 0.85rem; line-height: 1.5;
+  }
+  .list-card .label-badge {
+    display: inline-block; width: 26px; height: 26px; border-radius: 50%;
+    text-align: center; line-height: 22px; color: white; font-weight: 700;
+    font-size: 0.8rem; margin-right: 0.5rem; vertical-align: middle;
+    border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .list-card .label-badge.locked { background: var(--gold); }
+  .list-card .label-badge.major { background: var(--red); }
+  .list-card .label-badge.bonus { background: var(--blue); }
+  .list-card .label-badge.station { background: white; color: var(--ink); border-color: var(--ink); }
+  .list-card .name { font-size: 1rem; font-weight: 700; color: var(--ink); display: inline; }
+  .list-card .when { font-size: 0.72rem; color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin: 0.4rem 0; }
+  .list-card .booking { font-size: 0.75rem; background: #FBF1D5; padding: 0.5rem 0.7rem; border-radius: 4px; margin: 0.4rem 0; color: #5a3e10; }
+  .list-card .what, .list-card .why, .list-card .known { font-size: 0.82rem; color: #4a4540; margin: 0.4rem 0; }
+  .list-card .section-label { font-weight: 700; color: var(--ink); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.4px; }
+  .list-card .walk { font-size: 0.78rem; color: var(--green); font-weight: 600; margin: 0.4rem 0; }
+  .list-card .address { font-size: 0.74rem; color: #6a6055; margin: 0.3rem 0; font-style: italic; }
+  .list-card .links { margin-top: 0.6rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .list-card .links a {
+    display: inline-block; padding: 0.35rem 0.7rem;
+    background: #f4efe5; border-radius: 4px;
+    font-size: 0.74rem; font-weight: 600; text-decoration: none;
+    color: var(--ink); border: 1px solid #e0d8c5;
+  }
+  .list-card .links a.book { background: var(--blue); color: white; border-color: var(--blue); }
+  .list-card .links a.apple { background: var(--ink); color: white; border-color: var(--ink); }
+  .list-card .links a.google { background: var(--red); color: white; border-color: var(--red); }
+
+  /* Popup (Map view) */
   .leaflet-popup-content-wrapper { border-radius: 6px; padding: 0; }
   .leaflet-popup-content { margin: 0; min-width: 260px; max-width: 320px; }
   .popup { padding: 0.9rem 1rem; font-family: var(--sans); font-size: 0.82rem; line-height: 1.5; }
@@ -62,10 +128,18 @@
   .popup .booking { font-size: 0.72rem; background: #FBF1D5; padding: 0.4rem 0.5rem; border-radius: 3px; margin-bottom: 0.6rem; color: #5a3e10; }
   .popup .what, .popup .why, .popup .known { font-size: 0.78rem; color: #4a4540; margin-bottom: 0.5rem; }
   .popup .section-label { font-weight: 700; color: var(--ink); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.4px; }
-  .popup .walk { font-size: 0.75rem; color: #5E7F4B; font-weight: 600; margin-top: 0.5rem; margin-bottom: 0.3rem; }
+  .popup .walk { font-size: 0.75rem; color: var(--green); font-weight: 600; margin-top: 0.5rem; margin-bottom: 0.3rem; }
   .popup .address { font-size: 0.72rem; color: #6a6055; margin-bottom: 0.4rem; font-style: italic; }
-  .popup .nav-link { display: inline-block; margin-top: 0.3rem; margin-right: 0.6rem; font-size: 0.72rem; color: var(--red); text-decoration: none; font-weight: 600; letter-spacing: 0.3px; }
-  .popup .book-link { display: inline-block; margin-top: 0.3rem; font-size: 0.72rem; color: var(--blue); text-decoration: none; font-weight: 600; letter-spacing: 0.3px; }
+  .popup .nav-link {
+    display: inline-block; margin-top: 0.3rem; margin-right: 0.6rem;
+    font-size: 0.72rem; color: var(--red); text-decoration: none;
+    font-weight: 600; letter-spacing: 0.3px;
+  }
+  .popup .book-link {
+    display: inline-block; margin-top: 0.3rem;
+    font-size: 0.72rem; color: var(--blue); text-decoration: none;
+    font-weight: 600; letter-spacing: 0.3px;
+  }
   .pin {
     width: 28px; height: 28px; border-radius: 50%;
     border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
@@ -82,21 +156,28 @@
 <body>
 
 <header>
-  <div>
-    <h1>Tuesday Tokyo · May 26</h1>
-    <div class="sub">Akihabara audio AM · Kappabashi knives PM · Kokekokko 19:00</div>
+  <div class="header-top">
+    <div>
+      <h1>Tuesday Tokyo · May 26</h1>
+      <div class="sub">Akihabara audio AM · Kappabashi knives PM · Kokekokko 19:00</div>
+    </div>
+    <button class="locate-btn" id="locate">📍 Where am I</button>
   </div>
-  <button class="locate-btn" id="locate">📍 Where am I</button>
+  <div class="tabs">
+    <button class="tab active" id="tab-map">Map</button>
+    <button class="tab" id="tab-list">List</button>
+  </div>
 </header>
 
-<div class="legend">
+<div class="legend" id="legend">
   <label><input type="checkbox" id="show-locked" checked> <span class="swatch locked"></span> Locked (1)</label>
   <label><input type="checkbox" id="show-major" checked> <span class="swatch major"></span> Planned (8)</label>
-  <label><input type="checkbox" id="show-bonus" checked> <span class="swatch bonus"></span> Discovery (7)</label>
+  <label><input type="checkbox" id="show-bonus" checked> <span class="swatch bonus"></span> Discovery (14)</label>
   <label><input type="checkbox" id="show-station" checked> <span class="swatch station"></span> Stations (5)</label>
 </div>
 
 <div id="map"></div>
+<div id="list-view"></div>
 
 <script>
 const PINS = [
@@ -275,6 +356,97 @@ const PINS = [
   {
     "cat": "bonus",
     "label": "·",
+    "name": "Don Quijote Akihabara (ドン・キホーテ秋葉原店)",
+    "lat": 35.7006,
+    "lon": 139.7716,
+    "when": "Daily ~09:00-05:00 (next day) · tax-free counter",
+    "what": "The iconic Akihabara branch of Japan's chaos-discount mega-chain. Multi-floor labyrinth: discount snacks, beauty, electronics, costumes, novelty Kit-Kats, sex shop, knockoff souvenirs. The 8F houses the AKB48 Theater, Japan's biggest girl-group's permanent performance space.",
+    "why": "If you've never seen a Don Quijote, this is the canonical experience — sensory overload Tokyo retail. Late-night option (open until 5am). Half-tourist half-locals stocking up on cheap snacks at 2am.",
+    "known": "Open until 5am most nights; AKB48 Theater on 8F (tickets via lottery); the densest single-building retail experience in Tokyo.",
+    "address": "4-3-3 Sotokanda, Chiyoda-ku · 5 min walk from Akihabara station Electric Town exit",
+    "walk": "5 min walk from Akihabara station Electric Town exit · between e-Earphone and Yodobashi"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "LOVOT MUSEUM Akihabara",
+    "lat": 35.6997,
+    "lon": 139.7733,
+    "when": "Daily 11:00-19:00 · ~¥1,500 entry · 30-60 min",
+    "what": "Showroom + cafe for LOVOT — Groove X's companion robot (¥600k each at retail). A touch-and-play floor where you can hold, pet, and interact with 6-8 LOVOTs at once. The robots are emotional companions, not utility robots — they purr, recognize faces, learn personalities.",
+    "why": "Quintessential Japanese AI-robotics moment — Japan leads the world on companion robots, and this is the only public showroom where you can actually interact with LOVOTs. Karolina will love the hold-a-robot experience; Gavin will be interested in the engineering (computer vision + emotion-modeling system).",
+    "known": "Groove X is the Tokyo-based startup behind LOVOT; the showroom doubles as a cafe so you can sit with the robots over coffee; the largest LOVOT installation accessible to the public.",
+    "address": "Akihabara UDX Building 2F, 4-14-1 Sotokanda, Chiyoda-ku",
+    "walk": "Inside Akihabara UDX building, 3 min walk from Akihabara station Electric Town exit"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Yodobashi Akiba — Floors 5F/6F/7F (bleeding-edge tech + robots)",
+    "lat": 35.6989,
+    "lon": 139.7717,
+    "when": "Daily 09:30-22:00 · tax-free B1",
+    "what": "Beyond the audio floors: 5F cameras + drones (Insta360, DJI, Sony A1 II, Canon R5 II); 6F smart home + AI gadgets (Apple Vision Pro demo, Meta Quest 3S, Rabbit R1, Humane successors, Xreal AR glasses, smart speakers with on-device LLMs); 7F toys + robots (AIBO display, Robi 3, Vstone Robovie, Kondo KHR humanoid kits — Japan's serious hobbyist robotics scene).",
+    "why": "Single largest showcase of bleeding-edge consumer tech in Tokyo. Three floors deep, all hands-on demo. Go after audio (already pin B) and stay 60-90 min upstairs.",
+    "known": "AIBO interactive demo; AR/VR full lineup demo-able; Japanese hobbyist humanoid robotics kits not sold outside Japan.",
+    "address": "1-1 Kanda Hanaoka-cho, Chiyoda-ku · directly outside Akihabara station Showa-dori exit",
+    "walk": "Direct from Akihabara station Showa-dori exit · take elevator to 5F-7F after the audio floors"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Tsukumo eX. (ツクモex.)",
+    "lat": 35.6997,
+    "lon": 139.771,
+    "when": "Daily 10:00-21:00 · cash + cc · tax-free",
+    "what": "PC builders' mecca in Akihabara. Multi-floor PC parts and custom builds: latest Nvidia 50-series GPUs, AMD CPUs, water-cooling rigs, premium mechanical keyboards (Topre Realforce, HHKB, Filco), eGPUs, premium monitors. Custom-build counter where techs assemble in front of you.",
+    "why": "If you want to see what serious PC enthusiasts are building in 2026, this is the floor. Premium mechanical-keyboard wall alone is worth the stop (HHKB and Realforce are Japan-domestic priced 30% less than US).",
+    "known": "The largest PC parts retailer in Akihabara; English-speaking enthusiast staff; the keyboard wall is the cult attraction; custom-build service while you wait.",
+    "address": "1-9-7 Sotokanda, Chiyoda-ku",
+    "walk": "3 min walk from Akihabara station Electric Town exit"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Sofmap AKIBA Amusement-kan",
+    "lat": 35.6997,
+    "lon": 139.7715,
+    "when": "Daily 11:00-21:00 · tax-free",
+    "what": "Multi-floor used + new electronics retailer. Best place to see slightly-older bleeding edge at lower prices — VR headsets one generation back, last-year's flagship phones unlocked, used MacBooks/iPads, retro tech mixed with current.",
+    "why": "If you want last-gen iPad Pro or used flagship Android at substantial discount, Sofmap has Tokyo's most-mathematically-honest used-electronics pricing. Their used iPhone wall is famously fair.",
+    "known": "The most-trusted used-electronics chain in Tokyo; clearly-tiered grading (A/B/C condition with photos); 30-day warranty on used items.",
+    "address": "1-10-8 Sotokanda, Chiyoda-ku",
+    "walk": "2 min walk from Akihabara station Electric Town exit"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Asobitcity Akihabara (DIY robotics + maker)",
+    "lat": 35.6991,
+    "lon": 139.7708,
+    "when": "Daily 10:30-20:00",
+    "what": "Robotics kits + DIY electronics retailer. Real engineering supply: Arduino, Raspberry Pi, robot arm kits, drone parts, sensors, soldering benches, 3D-printer filament. The maker-culture floor of Akihabara.",
+    "why": "If you're at all interested in building something — drone, home automation, simple robot — this is where the parts come from. Browse-able even if you don't buy. Gavin's engineering thread + the bleeding-edge ask both fit.",
+    "known": "Japan's main hobbyist electronics retailer; Arduino + Pi authorized; the maker community's central supply point in Tokyo.",
+    "address": "1-13-2 Sotokanda, Chiyoda-ku",
+    "walk": "3 min walk from Akihabara station Electric Town exit"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Akihabara Radio Kaikan (modern floors 1-6F)",
+    "lat": 35.6988,
+    "lon": 139.7716,
+    "when": "Daily 10:00-20:00",
+    "what": "Despite the anime/hobby reputation, floors 1-6 of Radio Kaikan still house legit current-electronics shops mixed with the figure/cosplay floors. Includes Cospa (functional-tech cosplay accessories with embedded electronics, LEDs, sensors) and Ami Ami (mecha/figure-tech, current Gundam/transformer kits at scale).",
+    "why": "Brief 15-20 min walkthrough of the Radio Kaikan modern floors gives a sense of the figure-tech subculture intersection with consumer electronics — the actual living Akihabara.",
+    "known": "Post-2014 rebuild; 90% anime/hobby BUT the electronics-adjacent floors are still real; the cosplay-tech corner (Cospa) is unique to Japan.",
+    "address": "1-15-16 Sotokanda, Chiyoda-ku · immediately outside Akihabara station Electric Town exit",
+    "walk": "Direct outside Akihabara station Electric Town exit"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
     "name": "Mandarake Complex Akihabara",
     "lat": 35.7004,
     "lon": 139.7706,
@@ -342,20 +514,25 @@ const PINS = [
     "what": "West exit + 7 min walk to Kokekokko. Back to hotel: Yamanote to Hamamatsuchō, ~16 min."
   }
 ];
+const COUNTS = {"locked":1,"major":8,"bonus":14,"station":5};
 
-const map = L.map('map').setView([35.69966190476192, 139.77110476190475], 14);
+// Business-name links (NOT coordinates) — opens the actual business listing
+function appleMapsLink(p) {
+  const q = p.address ? (p.name + ', ' + p.address) : p.name;
+  return 'https://maps.apple.com/?q=' + encodeURIComponent(q);
+}
+function googleMapsLink(p) {
+  const q = p.address ? (p.name + ', ' + p.address) : p.name;
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+}
+
+// ===== MAP VIEW =====
+const map = L.map('map').setView([35.69962142857144, 139.77123928571427], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap', maxZoom: 19
 }).addTo(map);
 
 const groups = { locked: L.layerGroup(), major: L.layerGroup(), bonus: L.layerGroup(), station: L.layerGroup() };
-
-function appleMapsLink(lat, lon, name) {
-  return 'https://maps.apple.com/?q=' + encodeURIComponent(name) + '&ll=' + lat + ',' + lon;
-}
-function googleMapsLink(lat, lon, name) {
-  return 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lon + '&query_place_id=' + encodeURIComponent(name);
-}
 
 PINS.forEach(p => {
   const icon = L.divIcon({
@@ -377,10 +554,8 @@ PINS.forEach(p => {
   if (p.known) sections.push('<div class="known"><span class="section-label">Known for — </span>' + p.known + '</div>');
   if (p.address) sections.push('<div class="address">' + p.address + '</div>');
   if (p.walk) sections.push('<div class="walk">↪ ' + p.walk + '</div>');
-  if (p.cat !== 'station') {
-    sections.push('<a class="nav-link" href="' + appleMapsLink(p.lat, p.lon, p.name) + '" target="_blank">Apple Maps →</a>');
-    sections.push('<a class="nav-link" href="' + googleMapsLink(p.lat, p.lon, p.name) + '" target="_blank">Google Maps →</a>');
-  }
+  sections.push('<a class="nav-link" href="' + appleMapsLink(p) + '" target="_blank">Apple Maps →</a>');
+  sections.push('<a class="nav-link" href="' + googleMapsLink(p) + '" target="_blank">Google Maps →</a>');
   if (p.book) sections.push('<br><a class="book-link" href="' + p.book + '" target="_blank">Book / reserve →</a>');
 
   marker.bindPopup('<div class="popup">' + sections.join('') + '</div>');
@@ -402,7 +577,71 @@ if (all.length) map.fitBounds(all, { padding: [30, 30] });
   });
 });
 
-// Live location — first-fix-center-only; tap button to re-center on demand
+// ===== LIST VIEW =====
+const listView = document.getElementById('list-view');
+const categories = [
+  { cat: 'locked', title: 'Locked — confirmed bookings / hard anchors' },
+  { cat: 'major', title: 'Planned — the day spine' },
+  { cat: 'bonus', title: 'Discovery — wander if time allows' },
+  { cat: 'station', title: 'Stations — transit hubs' }
+];
+
+let listHtml = '';
+categories.forEach(({ cat, title }) => {
+  const pins = PINS.filter(p => p.cat === cat);
+  if (!pins.length) return;
+  listHtml += '<div class="list-section">';
+  listHtml += '<div class="list-section-header ' + cat + '">' + title + ' <span class="count">' + pins.length + '</span></div>';
+  pins.forEach(p => {
+    const parts = [];
+    parts.push('<span class="label-badge ' + cat + '">' + p.label + '</span>');
+    parts.push('<span class="name">' + p.name + '</span>');
+    if (p.when) parts.push('<div class="when">' + p.when + '</div>');
+    if (p.booking) parts.push('<div class="booking">' + p.booking + '</div>');
+    if (p.what) parts.push('<div class="what"><span class="section-label">What it is — </span>' + p.what + '</div>');
+    if (p.why) parts.push('<div class="why"><span class="section-label">Why for you — </span>' + p.why + '</div>');
+    if (p.known) parts.push('<div class="known"><span class="section-label">Known for — </span>' + p.known + '</div>');
+    if (p.address) parts.push('<div class="address">📍 ' + p.address + '</div>');
+    if (p.walk) parts.push('<div class="walk">↪ ' + p.walk + '</div>');
+
+    let links = '<div class="links">';
+    links += '<a class="apple" href="' + appleMapsLink(p) + '" target="_blank">Apple Maps</a>';
+    links += '<a class="google" href="' + googleMapsLink(p) + '" target="_blank">Google Maps</a>';
+    if (p.book) links += '<a class="book" href="' + p.book + '" target="_blank">Book / reserve →</a>';
+    links += '</div>';
+    parts.push(links);
+
+    listHtml += '<div class="list-card">' + parts.join('') + '</div>';
+  });
+  listHtml += '</div>';
+});
+listView.innerHTML = listHtml;
+
+// ===== TAB SWITCHING =====
+const mapEl = document.getElementById('map');
+const legend = document.getElementById('legend');
+const tabMap = document.getElementById('tab-map');
+const tabList = document.getElementById('tab-list');
+
+function showMap() {
+  tabMap.classList.add('active');
+  tabList.classList.remove('active');
+  mapEl.classList.remove('hidden');
+  listView.classList.remove('active');
+  legend.style.display = '';
+  setTimeout(() => map.invalidateSize(), 50);
+}
+function showList() {
+  tabList.classList.add('active');
+  tabMap.classList.remove('active');
+  mapEl.classList.add('hidden');
+  listView.classList.add('active');
+  legend.style.display = 'none';
+}
+tabMap.addEventListener('click', showMap);
+tabList.addEventListener('click', showList);
+
+// ===== LIVE LOCATION =====
 let userMarker = null, userCircle = null, watchId = null, firstFix = true;
 const locateBtn = document.getElementById('locate');
 

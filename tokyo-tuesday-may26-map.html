@@ -171,7 +171,7 @@
 
 <div class="legend" id="legend">
   <label><input type="checkbox" id="show-locked" checked> <span class="swatch locked"></span> Locked (1)</label>
-  <label><input type="checkbox" id="show-major" checked> <span class="swatch major"></span> Planned (7)</label>
+  <label><input type="checkbox" id="show-major" checked> <span class="swatch major"></span> Planned (11)</label>
   <label><input type="checkbox" id="show-bonus" checked> <span class="swatch bonus"></span> Discovery (14)</label>
   <label><input type="checkbox" id="show-station" checked> <span class="swatch station"></span> Stations (7)</label>
 </div>
@@ -223,18 +223,68 @@ const PINS = [
   },
   {
     "cat": "major",
-    "label": "C",
-    "name": "Hantei (はん亭) — kushiage in a 1899 wooden machiya",
-    "lat": 35.71949,
-    "lon": 139.76137,
-    "when": "Tue lunch 11:30-15:00 (last seating 14:00) · book ahead · ¥3,630 lunch course",
-    "booking": "BOOK AHEAD via TableCheck — often fully booked, 90-min seating limit. Aim for 12:00 seating. English flow at tablecheck.com/en/hantei-nezu.",
-    "what": "Kushiage (deep-fried meat/seafood/vegetable skewers, served in rounds of 3) inside a three-story wooden machiya built 1899 (Registered Tangible Cultural Property). The staff paces the courses for you — rounds keep coming until you wave them off. The Hiruzen lunch course is 8 kushiage + sides + rice + dessert for ¥3,630.",
-    "why": "Single-tradition pure cuisine — kushiage is a Tokyo specialty done at the source. Meat and seafood forward (chicken, beef, pork, scallops, prawns, fish, with some vegetables for balance — not vegetarian). The 1899 wooden building is itself worth the visit. Walking distance from Nezu Shrine. Perfect bridge between Nezu morning and Yanaka afternoon.",
-    "known": "1899 three-story wooden machiya (Registered Tangible Cultural Property); kushiage rounds paced by staff; ¥3,630 lunch is a fraction of dinner pricing; English picture menu; couple-friendly.",
-    "address": "2-12-15 Nezu, Bunkyo-ku · 文京区根津2-12-15",
-    "walk": "From Nezu Shrine: 5 min walk south · Nezu station (Chiyoda line) 3 min walk",
-    "book": "https://www.tablecheck.com/en/hantei-nezu"
+    "label": "L1",
+    "name": "LUNCH OPT 1 · Teuchi Soba Yanaka (手打ち蕎麦 やなか)",
+    "lat": 35.71945,
+    "lon": 139.7677,
+    "when": "Tue 11:30-14:30 · LO 14:00 · cash only · ¥1,000-2,000",
+    "what": "Handmade soba counter, 22-seat calm room. Stone-mill self-milled buckwheat. Locals' lunch spot, no English fanfare. Pure soba craft — chef mills the grain himself.",
+    "why": "Walk-up soba in a quiet room with regulars. Pure single-tradition cuisine, ¥1,300 buys you the ni-shoku seiro (two-grain seiro) which is the order. Cash only, Japanese menu.",
+    "known": "Stone-milled buckwheat done on-site; ni-shoku seiro (two-grain seiro) is the signature; not on English-language guides.",
+    "address": "1-1-18 Yanaka, Taito-ku · 110-0001",
+    "walk": "5 min walk south from Nezu Shrine · OR 8 min walk from Yanaka Ginza"
+  },
+  {
+    "cat": "major",
+    "label": "L2",
+    "name": "LUNCH OPT 2 · Ramen Ittoku (らーめん いっとく)",
+    "lat": 35.73009,
+    "lon": 139.76238,
+    "when": "Tue 11:00-22:30 continuous · ~¥900-1,200 · counter",
+    "what": "Local chuka-soba (Tokyo shoyu ramen) counter near Sendagi. Chicken-bone shoyu broth, regulars-driven, no English menu. The Yanesen ramen workshop.",
+    "why": "Walk-up ramen, continuous service through the afternoon (most ramen shops break for nap), local clientele not tourists. Order shoyu ramen or toku-tamago tsukemen.",
+    "known": "Chicken-bone shoyu (lighter than tonkotsu, classic Tokyo style); continuous open hours; no English signage = the test.",
+    "address": "3-49-10 Sendagi, Bunkyo-ku · 113-0022",
+    "walk": "6 min walk north from Yanaka Ginza · 3 min from Sendagi station Chiyoda line"
+  },
+  {
+    "cat": "major",
+    "label": "L3",
+    "name": "LUNCH OPT 3 · Tonkatsu Mitsuya (とんかつ三矢)",
+    "lat": 35.7228,
+    "lon": 139.76265,
+    "when": "Tue 11:00-22:00 · LO 21:00 · cards + cash · ~¥1,100-1,300",
+    "what": "Tonkatsu specialist near Sendagi. ¥1,100 toku-lunch rosu-katsu set (loin cutlet, miso soup, rice, pickles, cabbage). Free refills on tonjiru, cabbage, rice, pickles at lunch.",
+    "why": "Walk-up tonkatsu, locals-focused, no closed days (open every Tue), pork sauté set ¥1,300 is the other order. Cards accepted (uncommon for this tier).",
+    "known": "Free-refill cabbage at lunch (standard for proper tonkatsu shops but disappearing); the rosu-katsu lunch under ¥1,200; no English menu.",
+    "address": "2-43-3 Sendagi, Bunkyo-ku, Yamanaka Bldg 1F · 113-0022",
+    "walk": "4 min walk from Nezu Shrine · 280m from Sendagi station"
+  },
+  {
+    "cat": "major",
+    "label": "L4",
+    "name": "LUNCH OPT 4 · Inageya (稲毛屋) — unagi since 1927",
+    "lat": 35.73038,
+    "lon": 139.76188,
+    "when": "Tue 11:30-14:00 · LO 13:00 · ARRIVE BY 12:30 · ¥1,000-2,000 lunch",
+    "what": "Unagi (freshwater eel) restaurant since 1927. Both Kanto-style (steamed then grilled, fluffy) and Kansai-style (grilled only, crispier) on the menu — rare to find both at one shop. ~40 sake list for evening but lunch is focused. Old-shop wooden interior, locals + sake-heads, not on English guides.",
+    "why": "Walk-up unagi at a 1927 institution that isn't tourist-famous. Closed Wed/Thu so Tue is the day. Lunch sets ¥1,000-2,000 — fraction of dinner cost.",
+    "known": "1927 founding; both Kanto and Kansai eel styles; deep sake list; wooden interior; Tue/Fri/Sat lunch only window.",
+    "address": "3-49-4 Sendagi, Bunkyo-ku · 113-0022",
+    "walk": "5 min walk north from Yanaka Ginza · adjacent to Ramen Ittoku"
+  },
+  {
+    "cat": "major",
+    "label": "L5",
+    "name": "LUNCH OPT 5 · Yanaka Fujiya (谷中冨じ家) — fishmonger teishoku",
+    "lat": 35.727,
+    "lon": 139.7651,
+    "when": "Tue 11:30-13:40 LO · ARRIVE BY 12:30 · 25 seats · ¥1,500-2,000",
+    "what": "Family-run teishoku (Japanese set meal) shop on Yomise-dori. Run by a fishmonger family — the fish is sourced 4am Toyosu daily by the fish shop next door. Aji-fry set ¥1,845, gindara saikyo-zuke (miso-marinated black cod) signature with 20/day limit.",
+    "why": "Walk-up, no reservation, fish sourced same-day from Toyosu. 25 seats (5 counter + 12 table + 8 tatami). The strongest local-craft lunch pick — fishmonger-direct seafood at workman's prices.",
+    "known": "Same-family fishmonger next door (the fish provenance); gindara saikyo-zuke 20/day cap (sells out by 13:00 if popular); Sundays closed only.",
+    "address": "3-42-16 Sendagi, Bunkyo-ku (on Yomise-dori) · 113-0022",
+    "walk": "3 min walk south of Yanaka Ginza on Yomise-dori · 280m from Sendagi station"
   },
   {
     "cat": "major",
@@ -522,7 +572,7 @@ const PINS = [
     "what": "West exit + 7 min walk to Kokekokko. From Ueno: Yamanote ~25 min."
   }
 ];
-const COUNTS = {"locked":1,"major":7,"bonus":14,"station":7};
+const COUNTS = {"locked":1,"major":11,"bonus":14,"station":7};
 
 // Business-name links (NOT coordinates) — opens the actual business listing
 function appleMapsLink(p) {
@@ -535,7 +585,7 @@ function googleMapsLink(p) {
 }
 
 // ===== MAP VIEW =====
-const map = L.map('map').setView([35.71143344827586, 139.76338310344826], 13);
+const map = L.map('map').setView([35.71338787878788, 139.76352878787876], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap', maxZoom: 19
 }).addTo(map);

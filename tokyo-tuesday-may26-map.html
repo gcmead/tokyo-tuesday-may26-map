@@ -159,7 +159,7 @@
   <div class="header-top">
     <div>
       <h1>Tuesday Tokyo · May 26</h1>
-      <div class="sub">Akihabara audio AM · Kappabashi knives PM · Kokekokko 19:00</div>
+      <div class="sub">Tsukiji dawn · Yanaka shitamachi · Kokekokko 19:00 (yakitori)</div>
     </div>
     <button class="locate-btn" id="locate">📍 Where am I</button>
   </div>
@@ -172,7 +172,7 @@
 <div class="legend" id="legend">
   <label><input type="checkbox" id="show-locked" checked> <span class="swatch locked"></span> Locked (1)</label>
   <label><input type="checkbox" id="show-major" checked> <span class="swatch major"></span> Planned (8)</label>
-  <label><input type="checkbox" id="show-bonus" checked> <span class="swatch bonus"></span> Discovery (14)</label>
+  <label><input type="checkbox" id="show-bonus" checked> <span class="swatch bonus"></span> Discovery (7)</label>
   <label><input type="checkbox" id="show-station" checked> <span class="swatch station"></span> Stations (5)</label>
 </div>
 
@@ -188,285 +188,195 @@ const PINS = [
     "lat": 35.6929,
     "lon": 139.6985,
     "when": "19:00 sharp · 2 adults · counter seating",
-    "booking": "✅ CONCIERGE CONFIRMED · Mr. Gavin Mead · 2 adults · counter · Nishishinjuku B2F · cashless cc only typical",
-    "what": "Specialist shamo (heritage gamecock) yakitori counter, located in basement of Nishi-Shinjuku Itoyama Tower (B2F). Run on the principle that shamo's longer-fibered muscle, slower-growing, free-roaming Japanese gamecock — produces deeper flavor than commodity chicken; the counter cooks parts most yakitori shops can't source.",
-    "why": "Pure single-tradition cuisine, counter intimacy with the grill master in front of you, ingredient-led — exactly the pattern you said you love. Not the streetside Omoide Yokocho stalls (touristy, smoke-blown); this is the serious basement counter version.",
-    "known": "Heritage Japanese shamo chicken (slow-grown free-range), part-by-part skewer omakase including organ meats and tare-glazed thigh-skin, charcoal-grill technique that crisps without drying. Cash/card accepted; counter only.",
+    "booking": "✅ CONCIERGE CONFIRMED · Mr. Gavin Mead · 2 adults · counter · Nishishinjuku B2F · cashless cc typical",
+    "what": "Specialist shamo (heritage gamecock) yakitori counter in the basement of Nishi-Shinjuku Itoyama Tower. Cooks heritage Japanese gamecock — slower-growing, free-roaming, longer-fibered muscle = deeper flavor than commodity chicken. Part-by-part skewer omakase including organ meats and tare-glazed thigh-skin.",
+    "why": "Pure single-tradition cuisine, counter intimacy with the grill master in front of you, ingredient-led — exactly your pattern. NOT the streetside Omoide Yokocho stalls (touristy, smoke-blown); this is the serious basement counter version.",
+    "known": "Heritage Japanese shamo chicken; part-by-part skewer omakase; charcoal-grill technique; counter only.",
     "address": "1-1-1 Nishishinjuku B2F, Shinjuku-ku · 新宿区⻄新宿1-1-1 B2F",
-    "walk": "Shinjuku station west exit ~7 min walk through Nishi-Shinjuku office canyon · BE ON TIME, counter is tight"
+    "walk": "Shinjuku station west exit ~7 min walk through Nishi-Shinjuku office canyon · BE ON TIME"
   },
   {
     "cat": "major",
     "label": "A",
-    "name": "Yodobashi Akiba (4F-5F audio)",
-    "lat": 35.6989,
-    "lon": 139.7717,
-    "when": "~09:45 · daily 09:30-22:00 · tax-free counter B1",
-    "what": "Tokyo's giant electronics flagship, directly outside Akihabara station Showa-dori exit. Floors 4F and 5F are the audio floors — Esoteric, Luxman, Accuphase, McIntosh, Marantz, Yamaha demo rooms with listening stations, plus the standard headphone wall.",
-    "why": "The 'see everything once' opener before the specialist shops. Air-conditioned, English service desk, tax-free counter B1. Lets you calibrate prices before walking to Dynamic Audio.",
-    "known": "Largest single-building electronics retailer in Asia; audio listening rooms where you can A/B amps; the tax-free counter is the cleanest in Akiba.",
-    "walk": "Akihabara station Showa-dori exit, directly opposite the building"
+    "name": "Tsukiji Outer Market (08:00 arrival)",
+    "lat": 35.6654,
+    "lon": 139.7705,
+    "when": "08:00 · alive-and-humming hour · ~2 hrs · cash mostly",
+    "what": "The outer market of the historic Tsukiji wholesale fish market (the inner wholesale operation moved to Toyosu in 2018, but the OUTER market — the food-and-knife retail and standing-eating-counters lane — stayed intact and is thriving). 5 narrow blocks of vendors selling sushi, tamagoyaki, uni, scallops grilled over coals, oysters, sliced maguro cheek, fresh wasabi, ceramics, knives.",
+    "why": "Karolina's market thread at its purest. Mid-morning breakfast = grazing your way through a 400-vendor lane of Tokyo's best raw materials. Original Monday plan; shifted to today.",
+    "known": "Standing-counter sushi at the source (the boats unload at 03:00; the best stuff hits the outer-market counters by 07:00). Cash mostly. The energy is the experience.",
+    "address": "5 Chome, Tsukiji, Chuo-ku",
+    "walk": "From hotel: 8 min walk to Hamamatsuchō → Yamanote 1 stop to Shimbashi → Hibiya line 2 stops to Tsukiji · ~22 min · OR ~25 min walk along the bay"
   },
   {
     "cat": "major",
     "label": "B",
-    "name": "e-Earphone Akihabara flagship (eイヤホン)",
-    "lat": 35.6996,
-    "lon": 139.7716,
-    "when": "11:00 opening · Tue 11-20 · stay 60-90 min",
-    "what": "Multi-floor flagship at Kanda Eight Building (4-6-7 Sotokanda) — the largest headphone and IEM try-before-buy lineup in Japan. Hundreds of models on hot-swap demo rigs, including domestic-only Final Audio, Audio-Technica wood-cup limited drops, and Sony domestic-firmware IEMs.",
-    "why": "THE Akihabara audio destination if you care about headphones or IEMs. Bring your own DAP or use theirs to demo. Patient staff (Google-Translate-friendly when English runs out), passport-required tax-free over ¥5,000.",
-    "known": "Japan's deepest headphone demo wall; rare Japanese boutique brands you can't easily try in the US; international shipping available; the only place to A/B Final Audio's full lineup in one visit.",
-    "address": "Kanda Eight Building, 4-6-7 Sotokanda, Chiyoda-ku",
-    "walk": "5 min walk from Akihabara station Electric Town exit"
+    "name": "Sushi-Dai / Daiwa Sushi (Tsukiji standing sushi)",
+    "lat": 35.6651,
+    "lon": 139.7708,
+    "when": "~08:30 if you want sushi for breakfast · queues form",
+    "what": "Two famous standing-sushi counters in the Tsukiji Outer Market. Sushi-Dai is the historic name (relocated post-2018), Daiwa is its near-twin. Both serve omakase nigiri from the day's auction, 10-15 pieces, ~¥4-5k.",
+    "why": "Sushi-for-breakfast at the source. The lines are real (45-90 min) — go EARLY (08:00 arrival = ~30 min wait) or skip in favor of standing tamagoyaki + uni at vendors.",
+    "known": "Daiwa is generally faster line than Sushi-Dai; both pour first cup of green tea immediately upon seating; tuna cuts include otoro on most omakase.",
+    "walk": "Inside the Tsukiji Outer Market area"
   },
   {
     "cat": "major",
     "label": "C",
-    "name": "Dynamic Audio 5555",
-    "lat": 35.7027,
-    "lon": 139.7717,
-    "when": "Tue 11:00-19:00 (closed Wed — Tue OK)",
-    "what": "Seven-floor hi-fi specialist on Kanda Myojin Street. Each floor a different tier from entry-level integrated amps to ultra-high-end (six-figure-USD speakers, exotic turntables). The serious-listener's Akihabara stop.",
-    "why": "If you want to hear $50k speakers driven by domestic-spec Accuphase, this is the room. Limited English but the gear speaks the language; will ship internationally with warranty caveats — confirm before purchase.",
-    "known": "Best-curated hi-fi listening rooms in Akihabara; full Accuphase + Luxman + Esoteric demo lineup; trade-in program; vintage section on upper floors.",
-    "walk": "~5 min walk from Akihabara station on Kanda Myojin Street · phone 03-3253-5555"
+    "name": "Tsukiji vendor crawl (grazing, ~90 min)",
+    "lat": 35.6654,
+    "lon": 139.7702,
+    "when": "08:00-10:00 · grazing pace · cash",
+    "what": "Walk the lanes once before committing. Must-eat stalls: Yamacho or Marutomo for tamagoyaki-on-a-stick (¥150), Marutake for uni in the shell, oyster bars for raw oysters, scallop skewer over coals at Kitsune, maguro cheek skewers, fresh wasabi root from Yamamoto Yamasa-en. Most stalls cash only.",
+    "why": "Grazing beats committing to one sit-down meal. You hit 6-8 vendors in 90 min, eat a full breakfast across them, total ~¥3-4k each.",
+    "known": "Tamagoyaki on a stick is the iconic Tsukiji bite; uni-in-the-shell is the splurge; ceramics shops scattered through the lanes if you want a small pottery piece.",
+    "walk": "Just walk the lanes"
   },
   {
     "cat": "major",
     "label": "D",
-    "name": "Oyaide Electric (cables + connectors)",
-    "lat": 35.6989,
-    "lon": 139.7714,
-    "when": "Tue 10-19 (closed Sun — Tue OK) · cash + cc",
-    "what": "Flagship of Oyaide — Japanese audio-cable and connector specialist (RCA plugs, XLR plugs, IEC inlets, power cables, DIY parts). Located under JR Sobu Line tracks at 1-4-13 Sotokanda.",
-    "why": "Oyaide gear at Japanese domestic prices is 30-50% cheaper than US distributors AND no voltage issue (cables don't care). The single highest-value-per-dollar audio buy in Akihabara.",
-    "known": "Reference-grade cables for the price; the DIY parts wall (silver-plated copper, exotic dielectric); the gold-standard for IEC and Furutech plug stocks.",
-    "walk": "Under the JR Sobu tracks, 3 min from Akihabara station"
+    "name": "Yanaka Ginza shopping street (10:30 arrival)",
+    "lat": 35.727,
+    "lon": 139.766,
+    "when": "10:30 · old-Tokyo shitamachi · ~90 min walk",
+    "what": "A 170m covered shopping street in Yanaka — one of central Tokyo's few preserved shitamachi (old-town low-city) neighborhoods. Survived WWII firebombing intact. ~70 small shops: dried fish, croquettes, dorayaki, rice crackers, ceramics, small antiques. Cats everywhere (Yanaka is famously cat-friendly).",
+    "why": "Old Tokyo that doesn't exist elsewhere in central Tokyo. The wooden buildings, the cats, the family-run shops that haven't changed in 50 years. Karolina's market+craft thread, Gavin's pre-war thread — both fed here.",
+    "known": "The Yuyake Dandan stairs at the entrance (sunset overlook); the seven lucky cats hidden in shop signs; Kanekichi-en tea shop; Hibikiya for dorayaki; Niku no Suzuki for ¥100 menchi-katsu (deep-fried beef cake) eaten standing.",
+    "address": "Yanaka 3-chome area, Taito-ku",
+    "walk": "From Tsukiji: Hibiya line to Roppongi → Chiyoda line to Sendagi (~25 min) · OR JR to Nippori + 5 min walk"
   },
   {
     "cat": "major",
     "label": "E",
-    "name": "Asakusa Hirayama (lunch · Michelin soba+tempura)",
-    "lat": 35.7115,
-    "lon": 139.7929,
-    "when": "~13:00 lunch · Michelin · pure tradition",
-    "what": "Michelin-listed traditional soba and tempura counter near Asakusa, between Akihabara and Kappabashi geographically. Hand-cut soba, prawn tempura cooked individually, broth pulled fresh.",
-    "why": "Pure single-tradition cuisine, fits the no-fusion rule, perfectly placed as the transition lunch between Akihabara morning and Kappabashi afternoon. Counter format.",
-    "known": "Michelin-recommended; hand-cut soba; tempura technique where each piece comes out individually.",
-    "walk": "Tawaramachi or Asakusa station — convenient transit point between Akihabara and Kappabashi"
+    "name": "Yanaka Reien (Cemetery) walk-through",
+    "lat": 35.7269,
+    "lon": 139.7692,
+    "when": "After Yanaka Ginza · ~30 min · free · always open",
+    "what": "Tokyo's most atmospheric Edo-era cemetery. 100,000+ graves including the last Tokugawa shogun (Yoshinobu). Cherry-tree-lined central avenue (Sakura-dori). Cats live here. The cemetery is a public walking park as much as a graveyard — locals jog here.",
+    "why": "The opposite of central Tokyo's chaos. Quiet, leafy, contemplative, distinctly old-Tokyo. 30 min through Sakura-dori, exits near Yanaka Ginza.",
+    "known": "Tokugawa Yoshinobu's grave (last shogun, 1837-1913); the wide cherry-blossom avenue (May = leafy green, not pink); the cats that have lived here for generations.",
+    "walk": "Connects Yanaka Ginza to Nippori station naturally"
   },
   {
     "cat": "major",
     "label": "F",
-    "name": "Kamata Hakensha (PRIMARY knife shop)",
-    "lat": 35.7128,
-    "lon": 139.7886,
-    "when": "Tue 10:00-18:00 · cash + cc · tax-free counter",
-    "booking": "Bring the friend's loadout printed: Gyuto 240mm SG2/R2, Petty 150mm SG2/R2, Nakiri 165mm VG-10 or SG2, Sujihiki 270mm stainless, Bread knife 240mm Tojiro serrated. Plus whetstone #1000/#6000, flattening plate, ceramic honing rod. Ryusen authorized dealer — lead with SG2 240mm gyuto request.",
-    "what": "Kamata Hakensha (鎌田刃物) — the canonical Kappabashi knife shop for the SG2/R2 powdered-steel buyer. Founded as a traditional cutlery dealer, now stocks 800+ knives across all major Echizen/Sakai/Tosa makers and is an authorized Ryusen dealer (Ryusen makes the SG2 powdered-steel line).",
-    "why": "Your friend specifically called this shop. They demo whetstone sharpening on your actual knives before you leave (per friend's exact instruction). Free engraving on the gyuto (the heirloom piece). Tax-free counter for tourists with passport.",
-    "known": "Internationally-known sharpening class; free name engraving on purchase; 1-2 hr express sharpening service; Ryusen authorized dealer = real SG2 powdered-steel stock.",
-    "address": "2-12-6 Matsugaya, Taito-ku · phone 03-3841-4205",
-    "walk": "Tawaramachi station (Ginza line) Exit 3, ~5 min · Asakusa ~8 min"
+    "name": "Kayaba Coffee (Yanaka lunch / coffee)",
+    "lat": 35.7187,
+    "lon": 139.772,
+    "when": "Open Tue ~08-18 · breakfast/lunch + coffee · cash + cc",
+    "what": "Historic Yanaka kissaten (coffee shop) in a 1916 wooden two-story house. Reopened 2009 after a restoration that preserved the original interior. Coffee, egg sandwiches, light lunch.",
+    "why": "Lunch in a 110-year-old wooden Yanaka building. Egg sandwich is the canonical order. The room is the experience.",
+    "known": "The 1916 building (one of the oldest still-operating Tokyo cafes); the egg sandwich (rumored Tokyo's best); the second-floor tatami room you can sit upstairs in.",
+    "address": "6-1-29 Yanaka, Taito-ku · 5 min walk from Nezu or Sendagi",
+    "walk": "Between Yanaka Ginza and the cemetery, walking route"
   },
   {
     "cat": "major",
     "label": "G",
-    "name": "Tsubaya (knife shop · backup)",
-    "lat": 35.7137,
-    "lon": 139.7902,
-    "when": "Tue 10-17 · cc-friendly · English staff confirmed",
-    "what": "Tsubaya (つば屋庖丁店) — 1956-founded Kappabashi knife dealer, 1,000+ knives across all major Japanese makers. Cards/Apple Pay accepted (broader than Kamata's payment options).",
-    "why": "If Kamata is out of stock on any specific item from the friend's loadout, walk here next — 3 min away. English staff explicitly stated. Verify SG2 stocking in-person.",
-    "known": "Longest single-shop knife inventory in Kappabashi; explicit English-speaking staff; accepts Visa/MC/Amex/JCB/Apple Pay/Google Pay.",
-    "address": "3-7-2 Nishi-Asakusa, Taito-ku · phone 03-3845-2005",
-    "walk": "3 min walk from Kamata Hakensha, still in Kappabashi cluster"
+    "name": "SCAI The Bathhouse (contemporary art in old bathhouse)",
+    "lat": 35.7176,
+    "lon": 139.77,
+    "when": "Tue 12:00-18:00 (verify — closed some weekdays) · free · ~20 min",
+    "what": "Contemporary art gallery in a 200-year-old converted public bathhouse (sento). Shiraishi Contemporary Art's flagship. Rotating exhibitions of Japanese and international contemporary artists.",
+    "why": "Old Tokyo + contemporary art crossover. The bathhouse building alone is worth the 20-min stop. Verify it's open Tuesday before going (closed some weekdays).",
+    "known": "The 200-year sento building (preserved exterior); Mariko Mori and other major Japanese contemporary artists have shown here; quietly one of Tokyo's most-respected small galleries.",
+    "address": "6-1-23 Yanaka, Taito-ku",
+    "walk": "2 min from Kayaba Coffee"
   },
   {
     "cat": "major",
     "label": "H",
-    "name": "InterContinental Tokyo Bay (HOME)",
+    "name": "InterContinental Tokyo Bay (HOTEL — afternoon decompress)",
     "lat": 35.6549,
     "lon": 139.7591,
-    "when": "home base · room 1221",
-    "what": "Your home base on Tokyo Bay. Yurikamome directly off 3F deck; JR Hamamatsuchō 8 min walk for Yamanote loop.",
-    "walk": "End of night from Shinjuku: JR Yamanote to Hamamatsuchō ~16 min + 8 min walk"
+    "when": "~15:00-17:30 · rest before dinner",
+    "what": "Back to hotel for an afternoon decompress before the Shinjuku dinner. Tuesday is a foot-heavy morning (Tsukiji + Yanaka) — bank some energy.",
+    "why": "Kokekokko is 19:00 in Shinjuku, 30 min from hotel. You'll want a shower + 60 min of rest before the dinner.",
+    "walk": "From Yanaka: Chiyoda line Sendagi → Hibiya → Yurikamome to Takeshiba OR JR Nippori → Yamanote to Hamamatsuchō. ~40 min."
   },
   {
     "cat": "bonus",
     "label": "·",
-    "name": "Hi-Fi Do Akihabara (used hi-fi)",
-    "lat": 35.7008,
-    "lon": 139.7714,
-    "when": "Tue 11-20",
-    "what": "Used-audio specialist near Suehirocho station. Vintage McIntosh/JBL/Accuphase/Audio-Technica/Jeff Rowland inventory with 1-year shop warranty.",
-    "why": "If you spot a McIntosh or vintage Accuphase deal here, it could be the trip's hidden hit. Watch the voltage caveat — anything 100V needs a step-down transformer at home.",
-    "known": "Hi-Fi Do is the largest used-audio chain in Japan; 1-year shop warranty on used purchases; the only reliable used-hi-fi room in Akihabara.",
-    "walk": "2 min walk from Suehirocho station · phone 03-5818-4751"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Kama-Asa Shoten (knife shop · 3rd backup)",
-    "lat": 35.7131,
-    "lon": 139.7895,
-    "when": "Tue 11:00-17:30 · English + French staff · free engraving",
-    "what": "Kama-Asa (釜浅商店) — Kappabashi-original since 1908. Sells knives + a curated selection of Japanese ironware and cookware. English + French speaking staff. Free hand-grinder engraving including cursive alphabet.",
-    "why": "Third-tier backup if both Kamata and Tsubaya don't have what you need. Aesthetic is more curated/design-forward than Kamata.",
-    "known": "Free engraving by hand-grinder including cursive; design-shop sensibility; English and French staff.",
-    "walk": "Same Kappabashi cluster, 2 min from Tsubaya"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Ganso Shokuhin Sample-ya (fake-food shop)",
-    "lat": 35.7138,
-    "lon": 139.7898,
-    "when": "Daily 10-17:30",
-    "what": "The original Japanese food-sample maker since 1932. The wax/resin sushi, ramen, parfait models you see in restaurant windows — invented here, still made here. Tiny shop with finished food samples plus keychains, magnets, gift items.",
-    "why": "Quirky 10-min stop on Kappabashi's main street. Karolina-shaped souvenir: a wax sushi piece keychain is the canonical Japan-quirky gift.",
-    "known": "Inventors of the food-sample industry; family-owned since 1932; keychain-sized food samples that are the iconic Kappabashi souvenir.",
-    "walk": "On Kappabashi-dori, 3 min from Kamata Hakensha"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Sensoji Temple (Asakusa quick stop)",
-    "lat": 35.7148,
-    "lon": 139.7967,
-    "when": "Anytime · grounds always open · 15-30 min",
-    "what": "Tokyo's oldest Buddhist temple (645 CE), with the iconic Kaminarimon thunder-gate and a 250m approach lined with traditional snack shops (Nakamise-dori).",
-    "why": "If you have 30 minutes between lunch and Kappabashi, walk through Nakamise-dori — sticky-rice senbei, melon pan, ningyo-yaki. Tourist-heavy but the architecture is worth the walk-through if you've never seen it.",
-    "known": "Tokyo's oldest temple; the Kaminarimon gate with the giant red lantern; Nakamise-dori as the canonical Japanese-temple-approach shopping street.",
-    "walk": "8 min walk from Kappabashi or Tawaramachi station"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Akihabara Radio Center (vintage electronics under tracks)",
-    "lat": 35.6989,
-    "lon": 139.7716,
-    "when": "Daily ~10-19 · cash typical",
-    "what": "The labyrinth of tiny vintage-electronics stalls packed under the JR Yamanote tracks at Akihabara — vacuum tubes, hand-wired switches, vintage transistors, military-surplus connectors, DIY parts.",
-    "why": "Walk-through curiosity for the engineering-minded Gavin. Cash-only, mostly Japanese, vendors are old men who've been there decades.",
-    "known": "Last surviving slice of pre-1980s Akihabara character; THE place in Japan for vintage tubes and DIY parts; cash-and-Japanese-only.",
-    "walk": "Under the JR tracks at Akihabara station Electric Town exit"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Don Quijote Akihabara (ドン・キホーテ秋葉原店)",
-    "lat": 35.7006,
-    "lon": 139.7716,
-    "when": "Daily ~09:00-05:00 (next day) · tax-free counter",
-    "what": "The iconic Akihabara branch of Japan's chaos-discount mega-chain. Multi-floor labyrinth: discount snacks, beauty, electronics, costumes, novelty Kit-Kats, sex shop, knockoff souvenirs. The 8F houses the AKB48 Theater, Japan's biggest girl-group's permanent performance space.",
-    "why": "If you've never seen a Don Quijote, this is the canonical experience — sensory overload Tokyo retail. Late-night option (open until 5am). Half-tourist half-locals stocking up on cheap snacks at 2am.",
-    "known": "Open until 5am most nights; AKB48 Theater on 8F (tickets via lottery); the densest single-building retail experience in Tokyo.",
-    "address": "4-3-3 Sotokanda, Chiyoda-ku · 5 min walk from Akihabara station Electric Town exit",
-    "walk": "5 min walk from Akihabara station Electric Town exit · between e-Earphone and Yodobashi"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "LOVOT MUSEUM Akihabara",
-    "lat": 35.6997,
-    "lon": 139.7733,
-    "when": "Daily 11:00-19:00 · ~¥1,500 entry · 30-60 min",
-    "what": "Showroom + cafe for LOVOT — Groove X's companion robot (¥600k each at retail). A touch-and-play floor where you can hold, pet, and interact with 6-8 LOVOTs at once. The robots are emotional companions, not utility robots — they purr, recognize faces, learn personalities.",
-    "why": "Quintessential Japanese AI-robotics moment — Japan leads the world on companion robots, and this is the only public showroom where you can actually interact with LOVOTs. Karolina will love the hold-a-robot experience; Gavin will be interested in the engineering (computer vision + emotion-modeling system).",
-    "known": "Groove X is the Tokyo-based startup behind LOVOT; the showroom doubles as a cafe so you can sit with the robots over coffee; the largest LOVOT installation accessible to the public.",
-    "address": "Akihabara UDX Building 2F, 4-14-1 Sotokanda, Chiyoda-ku",
-    "walk": "Inside Akihabara UDX building, 3 min walk from Akihabara station Electric Town exit"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Yodobashi Akiba — Floors 5F/6F/7F (bleeding-edge tech + robots)",
-    "lat": 35.6989,
-    "lon": 139.7717,
-    "when": "Daily 09:30-22:00 · tax-free B1",
-    "what": "Beyond the audio floors: 5F cameras + drones (Insta360, DJI, Sony A1 II, Canon R5 II); 6F smart home + AI gadgets (Apple Vision Pro demo, Meta Quest 3S, Rabbit R1, Humane successors, Xreal AR glasses, smart speakers with on-device LLMs); 7F toys + robots (AIBO display, Robi 3, Vstone Robovie, Kondo KHR humanoid kits — Japan's serious hobbyist robotics scene).",
-    "why": "Single largest showcase of bleeding-edge consumer tech in Tokyo. Three floors deep, all hands-on demo. Go after audio (already pin B) and stay 60-90 min upstairs.",
-    "known": "AIBO interactive demo; AR/VR full lineup demo-able; Japanese hobbyist humanoid robotics kits not sold outside Japan.",
-    "address": "1-1 Kanda Hanaoka-cho, Chiyoda-ku · directly outside Akihabara station Showa-dori exit",
-    "walk": "Direct from Akihabara station Showa-dori exit · take elevator to 5F-7F after the audio floors"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Tsukumo eX. (ツクモex.)",
-    "lat": 35.6997,
-    "lon": 139.771,
-    "when": "Daily 10:00-21:00 · cash + cc · tax-free",
-    "what": "PC builders' mecca in Akihabara. Multi-floor PC parts and custom builds: latest Nvidia 50-series GPUs, AMD CPUs, water-cooling rigs, premium mechanical keyboards (Topre Realforce, HHKB, Filco), eGPUs, premium monitors. Custom-build counter where techs assemble in front of you.",
-    "why": "If you want to see what serious PC enthusiasts are building in 2026, this is the floor. Premium mechanical-keyboard wall alone is worth the stop (HHKB and Realforce are Japan-domestic priced 30% less than US).",
-    "known": "The largest PC parts retailer in Akihabara; English-speaking enthusiast staff; the keyboard wall is the cult attraction; custom-build service while you wait.",
-    "address": "1-9-7 Sotokanda, Chiyoda-ku",
-    "walk": "3 min walk from Akihabara station Electric Town exit"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Sofmap AKIBA Amusement-kan",
-    "lat": 35.6997,
+    "name": "Tsukiji Hongan-ji (Indo-Saracenic Buddhist temple)",
+    "lat": 35.6647,
     "lon": 139.7715,
-    "when": "Daily 11:00-21:00 · tax-free",
-    "what": "Multi-floor used + new electronics retailer. Best place to see slightly-older bleeding edge at lower prices — VR headsets one generation back, last-year's flagship phones unlocked, used MacBooks/iPads, retro tech mixed with current.",
-    "why": "If you want last-gen iPad Pro or used flagship Android at substantial discount, Sofmap has Tokyo's most-mathematically-honest used-electronics pricing. Their used iPhone wall is famously fair.",
-    "known": "The most-trusted used-electronics chain in Tokyo; clearly-tiered grading (A/B/C condition with photos); 30-day warranty on used items.",
-    "address": "1-10-8 Sotokanda, Chiyoda-ku",
-    "walk": "2 min walk from Akihabara station Electric Town exit"
+    "when": "Tsukiji-adjacent · free entry · ~15 min",
+    "what": "Pre-WWII Indo-Saracenic Buddhist temple (1934). Architecturally startling — Indian + Buddhist + Art Deco fusion in a Tokyo neighborhood that otherwise reads as fish market. Designed by Chuta Ito.",
+    "why": "Gavin's pre-war architecture thread. 15-min walk-through worth doing while you're already at Tsukiji. Free.",
+    "known": "Chuta Ito's 1934 masterwork; the Buddhist-Indian-Deco fusion is unique in Tokyo; small Buddhist-themed pipe organ inside (used for services).",
+    "walk": "3 min walk from Tsukiji Outer Market"
   },
   {
     "cat": "bonus",
     "label": "·",
-    "name": "Asobitcity Akihabara (DIY robotics + maker)",
-    "lat": 35.6991,
-    "lon": 139.7708,
-    "when": "Daily 10:30-20:00",
-    "what": "Robotics kits + DIY electronics retailer. Real engineering supply: Arduino, Raspberry Pi, robot arm kits, drone parts, sensors, soldering benches, 3D-printer filament. The maker-culture floor of Akihabara.",
-    "why": "If you're at all interested in building something — drone, home automation, simple robot — this is where the parts come from. Browse-able even if you don't buy. Gavin's engineering thread + the bleeding-edge ask both fit.",
-    "known": "Japan's main hobbyist electronics retailer; Arduino + Pi authorized; the maker community's central supply point in Tokyo.",
-    "address": "1-13-2 Sotokanda, Chiyoda-ku",
-    "walk": "3 min walk from Akihabara station Electric Town exit"
+    "name": "Hama-rikyu Gardens (between Tsukiji and hotel)",
+    "lat": 35.6595,
+    "lon": 139.7634,
+    "when": "09:00-17:00 · ¥300 entry · 45-60 min",
+    "what": "18th-century shogunal duck-hunting estate. Saltwater pond fed by tidal channels, tea house on an island (Nakajima-no-Ochaya) serving matcha + wagashi for ¥850.",
+    "why": "On the walking route from Tsukiji back toward the hotel. Pre-modern Tokyo geometry surrounded by Shiodome high-rises. Tea-on-the-island is a Karolina moment.",
+    "known": "The two 300-year-old pine trees; the saltwater pond tide-fed from Tokyo Bay; Nakajima tea house on the island.",
+    "walk": "10 min walk south from Tsukiji along the bay"
   },
   {
     "cat": "bonus",
     "label": "·",
-    "name": "Akihabara Radio Kaikan (modern floors 1-6F)",
-    "lat": 35.6988,
-    "lon": 139.7716,
-    "when": "Daily 10:00-20:00",
-    "what": "Despite the anime/hobby reputation, floors 1-6 of Radio Kaikan still house legit current-electronics shops mixed with the figure/cosplay floors. Includes Cospa (functional-tech cosplay accessories with embedded electronics, LEDs, sensors) and Ami Ami (mecha/figure-tech, current Gundam/transformer kits at scale).",
-    "why": "Brief 15-20 min walkthrough of the Radio Kaikan modern floors gives a sense of the figure-tech subculture intersection with consumer electronics — the actual living Akihabara.",
-    "known": "Post-2014 rebuild; 90% anime/hobby BUT the electronics-adjacent floors are still real; the cosplay-tech corner (Cospa) is unique to Japan.",
-    "address": "1-15-16 Sotokanda, Chiyoda-ku · immediately outside Akihabara station Electric Town exit",
-    "walk": "Direct outside Akihabara station Electric Town exit"
+    "name": "Hagiso (converted-house art + cafe)",
+    "lat": 35.7245,
+    "lon": 139.7672,
+    "when": "Tue ~11-21 · cafe + small gallery",
+    "what": "Yanaka art-space + cafe in a converted 1955 wooden apartment building. Ground floor: cafe with seasonal Japanese plates. Upstairs: rotating small art exhibitions, occasional shop pop-ups.",
+    "why": "Quieter Yanaka alt to Kayaba Coffee. Modern-Yanaka aesthetic (converted-historic-building done thoughtfully). Light lunch alternative.",
+    "known": "The 1955 apartment building preserved + adapted; the breakfast plate (asaichi) until 11; cafe-with-gallery model.",
+    "walk": "5 min walk from Yanaka Ginza"
   },
   {
     "cat": "bonus",
     "label": "·",
-    "name": "Mandarake Complex Akihabara",
-    "lat": 35.7004,
-    "lon": 139.7706,
-    "when": "Daily 12-20",
-    "what": "8-floor flagship of Mandarake, Japan's largest vintage manga/anime/toys/collectibles chain. Includes a serious vintage-vinyl floor (basement) for those who care.",
-    "why": "Skip if not interested in manga/anime culture, BUT the basement vinyl floor is a real used-record stop with deep Japanese jazz, city pop, and vintage J-rock at fair prices.",
-    "known": "Largest vintage subculture inventory in Tokyo; the basement vinyl section is a Japanese-only record-collector destination.",
-    "walk": "5 min walk from Akihabara station"
+    "name": "Niku no Suzuki menchi-katsu (Yanaka Ginza)",
+    "lat": 35.727,
+    "lon": 139.766,
+    "when": "Yanaka Ginza · ~¥100 · standing snack",
+    "what": "Butcher shop on Yanaka Ginza famous for ¥100 menchi-katsu (deep-fried minced-beef cake). Locals eat them standing on the street.",
+    "why": "Quick standing snack while walking Yanaka Ginza. The Yanaka-canonical street bite.",
+    "known": "¥100 menchi-katsu; the line forms by midday; cash only.",
+    "walk": "On Yanaka Ginza shopping street"
   },
   {
     "cat": "bonus",
     "label": "·",
-    "name": "BUYING ADVICE — Knives + Audio (read in browser)",
-    "lat": 35.6991,
-    "lon": 139.772,
-    "when": "Reference pin — tap to read",
-    "what": "Pin includes a Knives section (the friend's full loadout + how to ask Kamata for whetstone demo) and an Audio section (voltage warning, warranty trap, Japan-only categories worth buying).",
-    "why": "Carry the loadout on your phone; reference these notes when negotiating with shop staff.",
-    "known": "Synthesizes your friend's expert knife list with verified Akihabara audio research.",
-    "walk": "View at the deployed map URL — the Buying-Advice doc is bundled in the repo: https://gcmead.github.io/tokyo-tuesday-may26-map/BuyingAdvice.html"
+    "name": "Nippori Fabric Town (Karolina pick if interested)",
+    "lat": 35.729,
+    "lon": 139.773,
+    "when": "Tue 10-19 most shops · ~90 min if you commit",
+    "what": "A 1km stretch of Nippori between the station and Yanaka with 80+ fabric and sewing-notion shops. Tomato Fabric is the flagship — 5 floors of textiles at wholesale prices.",
+    "why": "If Karolina sews or wants distinctive Japanese fabrics for any project — this is THE Tokyo destination. Otherwise skip.",
+    "known": "Tomato Fabric (5 floors); the largest concentration of fabric shops in Tokyo; the 1km street layout.",
+    "walk": "From Yanaka Ginza: 10 min walk east"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Asakura Museum of Sculpture (Yanaka)",
+    "lat": 35.7257,
+    "lon": 139.7672,
+    "when": "Tue 09:30-16:30 (closed Mon/Thu — verify Tue OK) · ¥500",
+    "what": "The studio-residence of sculptor Fumio Asakura (1883-1964), preserved as a museum. Tatami rooms, a central pond, sculpture in every corner, a rooftop garden with city views.",
+    "why": "If you want one small museum in Yanaka, this is it. The building itself is the attraction as much as the work.",
+    "known": "Asakura's bronzes; the rooftop garden; the tatami studio with floor-level sculpture display.",
+    "walk": "5 min walk from Yanaka cemetery"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Buying Guide (knives + audio + marine + scuba)",
+    "lat": 35.727,
+    "lon": 139.766,
+    "when": "Reference — tap to read",
+    "what": "Full buying guide covering Kappabashi knives (which you bought today), Akihabara audio (which you saw today), marine optics (Fujinon stabilized binoculars at Yodobashi), and Tokyo scuba gear (Gull Mew fins at MIC21 Ginza).",
+    "why": "If you have follow-up purchases this week — audio gear in Tokyo Friday before flight, dive gear at MIC21 Ginza if you detour, etc.",
+    "known": "Built up across Mon-Tue with research; covers all 4 categories.",
+    "walk": "Tap the link below — opens https://gcmead.github.io/tokyo-tuesday-may26-map/BuyingAdvice.html"
   },
   {
     "cat": "station",
@@ -475,34 +385,34 @@ const PINS = [
     "lat": 35.6553,
     "lon": 139.7569,
     "when": "hotel-side · 8 min walk",
-    "what": "JR Yamanote loop. To Akihabara ~12 min northbound; to Shinjuku ~22 min westbound (transfer)."
+    "what": "JR Yamanote loop. To Shimbashi 1 stop (then Hibiya to Tsukiji). To Shinjuku ~22 min westbound for Kokekokko."
   },
   {
     "cat": "station",
     "label": "S",
-    "name": "Akihabara (JR + Hibiya + Tsukuba Express)",
-    "lat": 35.6984,
-    "lon": 139.7731,
-    "when": "audio district · Yodobashi · e-Earphone",
-    "what": "Use Electric Town exit for e-Earphone, Dynamic Audio, Oyaide; Showa-dori exit for Yodobashi."
+    "name": "Tsukiji (Hibiya line)",
+    "lat": 35.6657,
+    "lon": 139.7706,
+    "when": "Tsukiji Outer Market arrival",
+    "what": "Hibiya line. From Shimbashi (1 stop from Hamamatsuchō) take Asakusa line 1 stop to Higashi-Ginza, transfer Hibiya 1 stop. Total ~22 min from hotel."
   },
   {
     "cat": "station",
     "label": "S",
-    "name": "Tawaramachi (Ginza line)",
-    "lat": 35.7115,
-    "lon": 139.7886,
-    "when": "Kappabashi access · Exit 3",
-    "what": "5 min walk to Kamata Hakensha. Ginza line connects to Shinjuku via Akasaka-mitsuke → Marunouchi line transfer."
+    "name": "Nippori (JR Yamanote + Keisei)",
+    "lat": 35.728,
+    "lon": 139.7711,
+    "when": "Yanaka entry station",
+    "what": "JR Yamanote. From Hamamatsuchō ~25 min northbound. 5 min walk to Yanaka Ginza via the Yuyake Dandan stairs."
   },
   {
     "cat": "station",
     "label": "S",
-    "name": "Asakusa (Ginza + Toei Asakusa lines)",
-    "lat": 35.7113,
-    "lon": 139.7967,
-    "when": "Sensoji · Asakusa Hirayama lunch",
-    "what": "Ginza line terminus. 5 min walk to Sensoji; 7 min to Kappabashi."
+    "name": "Sendagi (Chiyoda line)",
+    "lat": 35.7236,
+    "lon": 139.7656,
+    "when": "Yanaka south entry",
+    "what": "Chiyoda subway. Drops you on the south side of Yanaka near Kayaba Coffee and SCAI The Bathhouse."
   },
   {
     "cat": "station",
@@ -511,10 +421,10 @@ const PINS = [
     "lat": 35.6896,
     "lon": 139.7006,
     "when": "Kokekokko dinner",
-    "what": "West exit + 7 min walk to Kokekokko. Back to hotel: Yamanote to Hamamatsuchō, ~16 min."
+    "what": "West exit + 7 min walk to Kokekokko. From hotel: Yamanote to Shinjuku ~22 min (or change at Shibuya)."
   }
 ];
-const COUNTS = {"locked":1,"major":8,"bonus":14,"station":5};
+const COUNTS = {"locked":1,"major":8,"bonus":7,"station":5};
 
 // Business-name links (NOT coordinates) — opens the actual business listing
 function appleMapsLink(p) {
@@ -527,7 +437,7 @@ function googleMapsLink(p) {
 }
 
 // ===== MAP VIEW =====
-const map = L.map('map').setView([35.69962142857144, 139.77123928571427], 13);
+const map = L.map('map').setView([35.69778571428571, 139.76120952380953], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap', maxZoom: 19
 }).addTo(map);

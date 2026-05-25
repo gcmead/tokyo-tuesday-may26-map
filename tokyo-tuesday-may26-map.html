@@ -159,7 +159,7 @@
   <div class="header-top">
     <div>
       <h1>Tuesday Tokyo · May 26</h1>
-      <div class="sub">Tsukiji dawn · Yanaka shitamachi · Kokekokko 19:00 (yakitori)</div>
+      <div class="sub">Yanesen old-Tokyo day · Ueno museums · Kokekokko 19:00 (yakitori)</div>
     </div>
     <button class="locate-btn" id="locate">📍 Where am I</button>
   </div>
@@ -171,9 +171,9 @@
 
 <div class="legend" id="legend">
   <label><input type="checkbox" id="show-locked" checked> <span class="swatch locked"></span> Locked (1)</label>
-  <label><input type="checkbox" id="show-major" checked> <span class="swatch major"></span> Planned (8)</label>
-  <label><input type="checkbox" id="show-bonus" checked> <span class="swatch bonus"></span> Discovery (7)</label>
-  <label><input type="checkbox" id="show-station" checked> <span class="swatch station"></span> Stations (5)</label>
+  <label><input type="checkbox" id="show-major" checked> <span class="swatch major"></span> Planned (7)</label>
+  <label><input type="checkbox" id="show-bonus" checked> <span class="swatch bonus"></span> Discovery (14)</label>
+  <label><input type="checkbox" id="show-station" checked> <span class="swatch station"></span> Stations (7)</label>
 </div>
 
 <div id="map"></div>
@@ -190,7 +190,7 @@ const PINS = [
     "when": "19:00 sharp · 2 adults · counter seating",
     "booking": "✅ CONCIERGE CONFIRMED · Mr. Gavin Mead · 2 adults · counter · Nishishinjuku B2F · cashless cc typical",
     "what": "Specialist shamo (heritage gamecock) yakitori counter in the basement of Nishi-Shinjuku Itoyama Tower. Cooks heritage Japanese gamecock — slower-growing, free-roaming, longer-fibered muscle = deeper flavor than commodity chicken. Part-by-part skewer omakase including organ meats and tare-glazed thigh-skin.",
-    "why": "Pure single-tradition cuisine, counter intimacy with the grill master in front of you, ingredient-led — exactly your pattern. NOT the streetside Omoide Yokocho stalls (touristy, smoke-blown); this is the serious basement counter version.",
+    "why": "Pure single-tradition cuisine, counter intimacy with the grill master in front of you — exactly your pattern. NOT the streetside Omoide Yokocho stalls; this is the serious basement counter version.",
     "known": "Heritage Japanese shamo chicken; part-by-part skewer omakase; charcoal-grill technique; counter only.",
     "address": "1-1-1 Nishishinjuku B2F, Shinjuku-ku · 新宿区⻄新宿1-1-1 B2F",
     "walk": "Shinjuku station west exit ~7 min walk through Nishi-Shinjuku office canyon · BE ON TIME"
@@ -198,149 +198,239 @@ const PINS = [
   {
     "cat": "major",
     "label": "A",
-    "name": "Tsukiji Outer Market (08:00 arrival)",
+    "name": "Tsukiji Outer Market (optional quick stop)",
     "lat": 35.6654,
     "lon": 139.7705,
-    "when": "08:00 · alive-and-humming hour · ~2 hrs · cash mostly",
-    "what": "The outer market of the historic Tsukiji wholesale fish market (the inner wholesale operation moved to Toyosu in 2018, but the OUTER market — the food-and-knife retail and standing-eating-counters lane — stayed intact and is thriving). 5 narrow blocks of vendors selling sushi, tamagoyaki, uni, scallops grilled over coals, oysters, sliced maguro cheek, fresh wasabi, ceramics, knives.",
-    "why": "Karolina's market thread at its purest. Mid-morning breakfast = grazing your way through a 400-vendor lane of Tokyo's best raw materials. Original Monday plan; shifted to today.",
-    "known": "Standing-counter sushi at the source (the boats unload at 03:00; the best stuff hits the outer-market counters by 07:00). Cash mostly. The energy is the experience.",
+    "when": "~08:30-09:30 · OPTIONAL brief stop · cash",
+    "what": "Tokyo's preserved outer fish market (the inner wholesale moved to Toyosu in 2018; the outer retail-and-eating lanes are intact). Vendor stalls for tamagoyaki on a stick, uni, scallops grilled over coals, oysters, fresh wasabi, knives.",
+    "why": "You've been doing Tsukiji-style breakfasts already. Skip altogether OR pop in for one tamagoyaki stick and one quick scallop skewer — 45 min max — then transit north to Yanaka.",
+    "known": "Standing-counter sushi at Sushi-Dai / Daiwa is the famous play but the lines are 45-90 min; skip if you're trying to keep this brief.",
     "address": "5 Chome, Tsukiji, Chuo-ku",
-    "walk": "From hotel: 8 min walk to Hamamatsuchō → Yamanote 1 stop to Shimbashi → Hibiya line 2 stops to Tsukiji · ~22 min · OR ~25 min walk along the bay"
+    "walk": "From hotel: Yurikamome to Shimbashi 1 stop + Hibiya line 2 stops to Tsukiji · 18 min · OR skip and go direct to Nezu/Yanaka"
   },
   {
     "cat": "major",
     "label": "B",
-    "name": "Sushi-Dai / Daiwa Sushi (Tsukiji standing sushi)",
-    "lat": 35.6651,
-    "lon": 139.7708,
-    "when": "~08:30 if you want sushi for breakfast · queues form",
-    "what": "Two famous standing-sushi counters in the Tsukiji Outer Market. Sushi-Dai is the historic name (relocated post-2018), Daiwa is its near-twin. Both serve omakase nigiri from the day's auction, 10-15 pieces, ~¥4-5k.",
-    "why": "Sushi-for-breakfast at the source. The lines are real (45-90 min) — go EARLY (08:00 arrival = ~30 min wait) or skip in favor of standing tamagoyaki + uni at vendors.",
-    "known": "Daiwa is generally faster line than Sushi-Dai; both pour first cup of green tea immediately upon seating; tuna cuts include otoro on most omakase.",
-    "walk": "Inside the Tsukiji Outer Market area"
+    "name": "Nezu Shrine (start the Yanesen day)",
+    "lat": 35.7204,
+    "lon": 139.7619,
+    "when": "~10:00 · grounds always open · azalea garden ¥500 · ~45 min",
+    "what": "1900-year-old Shinto shrine, current buildings 1706 (Edo period). One of the few central Tokyo shrines that retains its original Edo wooden architecture intact. Famous for a vermillion torii-gate tunnel that climbs a small hill — a mini Fushimi Inari in Tokyo.",
+    "why": "The perfect Yanesen day-opener. The torii tunnel is the iconic photo; the azalea garden (Tsutsuji Sono) is the highlight in late April but still beautiful in May with leafy greens. Pure Edo wooden architecture, almost no tourists vs Meiji Jingū.",
+    "known": "1900-year founding (claimed); Edo-era wooden buildings (1706, designated Important Cultural Properties); the Otome Inari torii tunnel; the spring azalea garden (3,000 azalea plants in 100 varieties).",
+    "address": "1-28-9 Nezu, Bunkyo-ku",
+    "walk": "From Sendagi station Chiyoda line: 5 min walk south · OR from Yanaka: 10 min walk south"
   },
   {
     "cat": "major",
     "label": "C",
-    "name": "Tsukiji vendor crawl (grazing, ~90 min)",
-    "lat": 35.6654,
-    "lon": 139.7702,
-    "when": "08:00-10:00 · grazing pace · cash",
-    "what": "Walk the lanes once before committing. Must-eat stalls: Yamacho or Marutomo for tamagoyaki-on-a-stick (¥150), Marutake for uni in the shell, oyster bars for raw oysters, scallop skewer over coals at Kitsune, maguro cheek skewers, fresh wasabi root from Yamamoto Yamasa-en. Most stalls cash only.",
-    "why": "Grazing beats committing to one sit-down meal. You hit 6-8 vendors in 90 min, eat a full breakfast across them, total ~¥3-4k each.",
-    "known": "Tamagoyaki on a stick is the iconic Tsukiji bite; uni-in-the-shell is the splurge; ceramics shops scattered through the lanes if you want a small pottery piece.",
-    "walk": "Just walk the lanes"
+    "name": "Sasanoyuki — 1691-founded tofu restaurant",
+    "lat": 35.7224,
+    "lon": 139.7773,
+    "when": "Tue 11:30-14:00 lunch · ~¥2,500-4,000 · counter + tatami",
+    "what": "Tofu restaurant founded 1691 (over 330 years continuous operation). Started serving the imperial family in the Edo period. Multi-course tofu lunch sets — silken tofu, grilled tofu (yakidofu), tofu skin (yuba), hot-spring tofu, tofu sashimi. Tatami seating with low tables, also counter.",
+    "why": "Pure single-tradition cuisine, oldest tofu restaurant in Tokyo, ~10 min walk from Yanaka. Quintessential shitamachi cuisine — light, vegetarian-friendly, deeply Japanese.",
+    "known": "1691 founding (oldest tofu restaurant in Tokyo); served the imperial family historically; the silken kinugoshi tofu is the standout; English menu available; lunch sets ¥2,500-4,000 are far cheaper than the dinner kaiseki.",
+    "address": "2-15-10 Negishi, Taito-ku",
+    "walk": "10 min walk east from Yanaka, 5 min from Uguisudani station"
   },
   {
     "cat": "major",
     "label": "D",
-    "name": "Yanaka Ginza shopping street (10:30 arrival)",
+    "name": "Yanaka Ginza shopping street",
     "lat": 35.727,
     "lon": 139.766,
-    "when": "10:30 · old-Tokyo shitamachi · ~90 min walk",
-    "what": "A 170m covered shopping street in Yanaka — one of central Tokyo's few preserved shitamachi (old-town low-city) neighborhoods. Survived WWII firebombing intact. ~70 small shops: dried fish, croquettes, dorayaki, rice crackers, ceramics, small antiques. Cats everywhere (Yanaka is famously cat-friendly).",
-    "why": "Old Tokyo that doesn't exist elsewhere in central Tokyo. The wooden buildings, the cats, the family-run shops that haven't changed in 50 years. Karolina's market+craft thread, Gavin's pre-war thread — both fed here.",
-    "known": "The Yuyake Dandan stairs at the entrance (sunset overlook); the seven lucky cats hidden in shop signs; Kanekichi-en tea shop; Hibikiya for dorayaki; Niku no Suzuki for ¥100 menchi-katsu (deep-fried beef cake) eaten standing.",
-    "address": "Yanaka 3-chome area, Taito-ku",
-    "walk": "From Tsukiji: Hibiya line to Roppongi → Chiyoda line to Sendagi (~25 min) · OR JR to Nippori + 5 min walk"
+    "when": "~13:00 arrival · ~90 min walk · ~70 shops",
+    "what": "A 170m covered shopping street through Yanaka — one of central Tokyo's few preserved shitamachi (low-city merchant district) neighborhoods. Wooden buildings, ~70 small family-run shops: dried fish, croquettes, dorayaki, rice crackers, ceramics, small antiques. The narrow alley is famously cat-populated (Yanaka has 70+ resident cats — locals call it 'Cat Town').",
+    "why": "Old Tokyo that doesn't exist elsewhere in central Tokyo. Wooden buildings + family-run shops + cats + the absence of chains. Karolina's market+craft thread, Gavin's pre-war thread — both fed here.",
+    "known": "The Yuyake Dandan stairs at the entrance (sunset photo spot); the seven lucky cats hidden in shop signs (find them all); Niku no Suzuki for ¥100 menchi-katsu (standing snack); Hibikiya for dorayaki; Yanaka Coffee for third-wave roastery; Kanekichi-en for Edo-style brewed tea.",
+    "address": "Yanaka 3-chome, Taito-ku",
+    "walk": "From Sasanoyuki: 8 min walk · OR from Nippori JR station: 5 min walk via Yuyake Dandan stairs"
   },
   {
     "cat": "major",
     "label": "E",
-    "name": "Yanaka Reien (Cemetery) walk-through",
+    "name": "Yanaka Cemetery (Reien) — last shogun's grave",
     "lat": 35.7269,
     "lon": 139.7692,
-    "when": "After Yanaka Ginza · ~30 min · free · always open",
-    "what": "Tokyo's most atmospheric Edo-era cemetery. 100,000+ graves including the last Tokugawa shogun (Yoshinobu). Cherry-tree-lined central avenue (Sakura-dori). Cats live here. The cemetery is a public walking park as much as a graveyard — locals jog here.",
-    "why": "The opposite of central Tokyo's chaos. Quiet, leafy, contemplative, distinctly old-Tokyo. 30 min through Sakura-dori, exits near Yanaka Ginza.",
-    "known": "Tokugawa Yoshinobu's grave (last shogun, 1837-1913); the wide cherry-blossom avenue (May = leafy green, not pink); the cats that have lived here for generations.",
-    "walk": "Connects Yanaka Ginza to Nippori station naturally"
+    "when": "After Yanaka Ginza · ~30-45 min · free · always open",
+    "what": "Tokyo's most atmospheric Edo-era cemetery, 25 acres. 100,000+ graves include Tokugawa Yoshinobu (the last shogun, 1837-1913, who voluntarily abdicated in 1867, ending 700 years of shogunate rule). Wide central avenue (Sakura-dori) lined with cherry trees (May = leafy green, not pink). Cats live throughout.",
+    "why": "The opposite of central Tokyo's chaos. Quiet, leafy, contemplative. Tokugawa Yoshinobu's grave is a real historic moment — you're standing where the Edo period formally ended. 30-45 min walk-through, exits naturally toward SCAI The Bathhouse.",
+    "known": "Tokugawa Yoshinobu's grave (last shogun); Sakura-dori cherry avenue; the cats (multiple generations have lived here); the Tenno-ji five-story pagoda site (pagoda burned down 1957 but the foundation remains).",
+    "walk": "Direct from Yanaka Ginza area · winds toward Sendagi/Nippori"
   },
   {
     "cat": "major",
     "label": "F",
-    "name": "Kayaba Coffee (Yanaka lunch / coffee)",
-    "lat": 35.7187,
-    "lon": 139.772,
-    "when": "Open Tue ~08-18 · breakfast/lunch + coffee · cash + cc",
-    "what": "Historic Yanaka kissaten (coffee shop) in a 1916 wooden two-story house. Reopened 2009 after a restoration that preserved the original interior. Coffee, egg sandwiches, light lunch.",
-    "why": "Lunch in a 110-year-old wooden Yanaka building. Egg sandwich is the canonical order. The room is the experience.",
-    "known": "The 1916 building (one of the oldest still-operating Tokyo cafes); the egg sandwich (rumored Tokyo's best); the second-floor tatami room you can sit upstairs in.",
-    "address": "6-1-29 Yanaka, Taito-ku · 5 min walk from Nezu or Sendagi",
-    "walk": "Between Yanaka Ginza and the cemetery, walking route"
+    "name": "Tokyo National Museum (Ueno)",
+    "lat": 35.7188,
+    "lon": 139.7766,
+    "when": "Tue 09:30-17:00 (last entry 16:30) · ¥1,000 · 90-120 min focused",
+    "what": "Japan's oldest and largest national museum, founded 1872. Six buildings, 110,000+ objects. The Honkan (main building, 1937) houses the Japanese art permanent collection: swords, calligraphy, ceramics, lacquer, ukiyo-e prints, Buddhist sculpture, samurai armor, Heian-era painted scrolls. The Toyokan houses Asian art beyond Japan. Heiseikan has special exhibitions.",
+    "why": "The single most concentrated dose of Japanese craft and art mastery anywhere — and crucially, it's CLOSED MONDAYS, OPEN TUESDAYS. If you only do one museum in Tokyo, this is it. Focus on Honkan 1F (Buddhist sculpture) + 2F (the swords gallery + ceramics + ukiyo-e) for 90 minutes; skip the rest.",
+    "known": "Japan's premier sword collection (rotating display of national treasures); Heian-period yamato-e scrolls; Jomon-era pottery (10,000+ years old); the Gallery of Horyu-ji Treasures (separate building, ancient Buddhist bronzes).",
+    "address": "13-9 Ueno Park, Taito-ku",
+    "walk": "From Yanaka Cemetery: 15 min walk south through Ueno Park · OR Nippori → Yamanote 1 stop to Ueno + 10 min walk"
   },
   {
     "cat": "major",
     "label": "G",
-    "name": "SCAI The Bathhouse (contemporary art in old bathhouse)",
+    "name": "InterContinental Tokyo Bay (HOTEL — decompress)",
+    "lat": 35.6549,
+    "lon": 139.7591,
+    "when": "~17:00-18:00 · rest before Shinjuku dinner",
+    "what": "Back to the hotel for shower + 60 min rest before Kokekokko 19:00 in Shinjuku.",
+    "walk": "From Ueno: Yamanote southbound to Hamamatsuchō ~22 min + 8 min walk · OR if you skip Ueno museums, you'll be back earlier"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Kayaba Coffee — historic kissaten",
+    "lat": 35.7187,
+    "lon": 139.772,
+    "when": "Open Tue ~08-23 (cafe by day, bar by night)",
+    "what": "Yanaka coffee shop in a 1916 wooden two-story house. Reopened 2009 after preservation restoration. Ground floor counter for coffee + light lunch; upstairs tatami room you can sit in. Egg sandwich on milk-bread is the canonical order.",
+    "why": "If Sasanoyuki for tofu lunch doesn't appeal, Kayaba is the alt — lunch in a 110-year-old wooden Yanaka building. The room IS the experience.",
+    "known": "1916 building (one of oldest still-operating Tokyo cafes); egg sandwich (rumored Tokyo's best); the upstairs tatami room; converts to a bar/cocktail program in the evenings.",
+    "address": "6-1-29 Yanaka, Taito-ku",
+    "walk": "Between Yanaka Ginza and the cemetery"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "SCAI The Bathhouse — art in old sento",
     "lat": 35.7176,
     "lon": 139.77,
-    "when": "Tue 12:00-18:00 (verify — closed some weekdays) · free · ~20 min",
-    "what": "Contemporary art gallery in a 200-year-old converted public bathhouse (sento). Shiraishi Contemporary Art's flagship. Rotating exhibitions of Japanese and international contemporary artists.",
-    "why": "Old Tokyo + contemporary art crossover. The bathhouse building alone is worth the 20-min stop. Verify it's open Tuesday before going (closed some weekdays).",
-    "known": "The 200-year sento building (preserved exterior); Mariko Mori and other major Japanese contemporary artists have shown here; quietly one of Tokyo's most-respected small galleries.",
+    "when": "Tue 12:00-18:00 (closed Sun/Mon/holidays — verify Tue OK) · free · ~20 min",
+    "what": "Contemporary art gallery in a 200-year-old converted public bathhouse (sento). Shiraishi Contemporary Art's flagship. Rotating exhibitions of Japanese and international contemporary artists. The bathhouse exterior is preserved (white walls, tile signage); the interior is a stark white modern gallery.",
+    "why": "Old Tokyo + contemporary art crossover in one room. The 200-year sento building is worth the 20-min stop alone.",
+    "known": "The preserved sento exterior; Mariko Mori, Tatsuo Miyajima, and other major Japanese contemporary artists have shown here; quietly one of Tokyo's most-respected small galleries.",
     "address": "6-1-23 Yanaka, Taito-ku",
     "walk": "2 min from Kayaba Coffee"
   },
   {
-    "cat": "major",
-    "label": "H",
-    "name": "InterContinental Tokyo Bay (HOTEL — afternoon decompress)",
-    "lat": 35.6549,
-    "lon": 139.7591,
-    "when": "~15:00-17:30 · rest before dinner",
-    "what": "Back to hotel for an afternoon decompress before the Shinjuku dinner. Tuesday is a foot-heavy morning (Tsukiji + Yanaka) — bank some energy.",
-    "why": "Kokekokko is 19:00 in Shinjuku, 30 min from hotel. You'll want a shower + 60 min of rest before the dinner.",
-    "walk": "From Yanaka: Chiyoda line Sendagi → Hibiya → Yurikamome to Takeshiba OR JR Nippori → Yamanote to Hamamatsuchō. ~40 min."
-  },
-  {
     "cat": "bonus",
     "label": "·",
-    "name": "Tsukiji Hongan-ji (Indo-Saracenic Buddhist temple)",
-    "lat": 35.6647,
-    "lon": 139.7715,
-    "when": "Tsukiji-adjacent · free entry · ~15 min",
-    "what": "Pre-WWII Indo-Saracenic Buddhist temple (1934). Architecturally startling — Indian + Buddhist + Art Deco fusion in a Tokyo neighborhood that otherwise reads as fish market. Designed by Chuta Ito.",
-    "why": "Gavin's pre-war architecture thread. 15-min walk-through worth doing while you're already at Tsukiji. Free.",
-    "known": "Chuta Ito's 1934 masterwork; the Buddhist-Indian-Deco fusion is unique in Tokyo; small Buddhist-themed pipe organ inside (used for services).",
-    "walk": "3 min walk from Tsukiji Outer Market"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Hama-rikyu Gardens (between Tsukiji and hotel)",
-    "lat": 35.6595,
-    "lon": 139.7634,
-    "when": "09:00-17:00 · ¥300 entry · 45-60 min",
-    "what": "18th-century shogunal duck-hunting estate. Saltwater pond fed by tidal channels, tea house on an island (Nakajima-no-Ochaya) serving matcha + wagashi for ¥850.",
-    "why": "On the walking route from Tsukiji back toward the hotel. Pre-modern Tokyo geometry surrounded by Shiodome high-rises. Tea-on-the-island is a Karolina moment.",
-    "known": "The two 300-year-old pine trees; the saltwater pond tide-fed from Tokyo Bay; Nakajima tea house on the island.",
-    "walk": "10 min walk south from Tsukiji along the bay"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Hagiso (converted-house art + cafe)",
-    "lat": 35.7245,
+    "name": "Asakura Museum of Sculpture",
+    "lat": 35.7257,
     "lon": 139.7672,
-    "when": "Tue ~11-21 · cafe + small gallery",
-    "what": "Yanaka art-space + cafe in a converted 1955 wooden apartment building. Ground floor: cafe with seasonal Japanese plates. Upstairs: rotating small art exhibitions, occasional shop pop-ups.",
-    "why": "Quieter Yanaka alt to Kayaba Coffee. Modern-Yanaka aesthetic (converted-historic-building done thoughtfully). Light lunch alternative.",
-    "known": "The 1955 apartment building preserved + adapted; the breakfast plate (asaichi) until 11; cafe-with-gallery model.",
-    "walk": "5 min walk from Yanaka Ginza"
+    "when": "Tue 09:30-16:30 (closed Mon/Thu — Tue OK) · ¥500",
+    "what": "The studio-residence of sculptor Fumio Asakura (1883-1964), Japan's foremost realist sculptor of the early 20th century. Asakura designed every part of the building himself — tatami rooms, central pond, sculpture niches, rooftop garden. His bronzes + the building together.",
+    "why": "Small focused museum where the architecture and the work were designed by the same person. 45-60 min. Get a sense of early-20th-century Tokyo intellectual-bohemian life.",
+    "known": "Asakura's bronzes (figurative, often female and animal subjects); the rooftop garden with Tokyo skyline; the studio with floor-level sculpture displays.",
+    "address": "7-18-10 Yanaka, Taito-ku",
+    "walk": "Edge of Yanaka cemetery, near Nippori station"
   },
   {
     "cat": "bonus",
     "label": "·",
-    "name": "Niku no Suzuki menchi-katsu (Yanaka Ginza)",
+    "name": "Niku no Suzuki — ¥100 menchi-katsu standing",
     "lat": 35.727,
     "lon": 139.766,
-    "when": "Yanaka Ginza · ~¥100 · standing snack",
-    "what": "Butcher shop on Yanaka Ginza famous for ¥100 menchi-katsu (deep-fried minced-beef cake). Locals eat them standing on the street.",
-    "why": "Quick standing snack while walking Yanaka Ginza. The Yanaka-canonical street bite.",
-    "known": "¥100 menchi-katsu; the line forms by midday; cash only.",
-    "walk": "On Yanaka Ginza shopping street"
+    "when": "Yanaka Ginza · cash · standing snack",
+    "what": "Butcher shop on Yanaka Ginza famous for ¥100 menchi-katsu (deep-fried minced-beef cake). Locals eat them standing on the street with a beer.",
+    "why": "The canonical Yanaka Ginza street bite. ¥100 = under $1 = no commitment. Line forms by midday.",
+    "known": "¥100 menchi-katsu; the line; cash only; eat-standing tradition.",
+    "walk": "Mid-way along Yanaka Ginza"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Hibikiya — dorayaki specialist",
+    "lat": 35.727,
+    "lon": 139.7656,
+    "when": "Yanaka Ginza · daily ~10-19",
+    "what": "Small Yanaka Ginza wagashi shop specializing in dorayaki (pancake-sandwich filled with sweet azuki bean paste). Made fresh hourly. Eat one walking, take a box back to the room.",
+    "why": "Dorayaki is the canonical Tokyo shitamachi sweet — Doraemon's favorite food. Hibikiya is one of Yanaka Ginza's most-loved shops.",
+    "known": "Hand-grilled pancakes; chunky azuki filling; rotating seasonal versions (chestnut in fall, matcha in spring).",
+    "walk": "Yanaka Ginza"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Yanaka Coffee Honten — third-wave roaster",
+    "lat": 35.727,
+    "lon": 139.7665,
+    "when": "Daily ~10-19 · stand + small seating",
+    "what": "Indie third-wave coffee roastery on Yanaka Ginza. House-roasted beans, espresso + pour-over, fresh-roasted beans for sale. Local-favorite shop, not a chain.",
+    "why": "Real coffee break during the Yanaka walk. Not as ceremonial as Kayaba, more contemporary.",
+    "known": "House-roasted single-origin beans; the location ON Yanaka Ginza itself; bean retail for take-home.",
+    "walk": "On Yanaka Ginza"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Kanekichi-en — Edo-style tea",
+    "lat": 35.7268,
+    "lon": 139.7661,
+    "when": "Tue ~10-18 · cash + cc",
+    "what": "Traditional Yanaka tea shop established 1879. Sells loose-leaf Japanese tea (sencha, hojicha, genmaicha) by weight. Will brew a cup for you to sample at the counter — Edo-style preparation, no English ceremony required.",
+    "why": "Casual tea moment without the formal tearoom commitment (you rejected Sakurai-style). 5-10 min, leave with a bag of premium loose-leaf tea for home.",
+    "known": "1879 founding; loose-leaf tea by weight; Edo-merchant sensibility (no ceremony, just craft).",
+    "walk": "On Yanaka Ginza"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Yanaka Beer Hall — craft beer in converted home",
+    "lat": 35.7234,
+    "lon": 139.7659,
+    "when": "Tue 17:00-23:00 · 10 craft taps + sake",
+    "what": "Craft-beer bar inside a converted Yanaka wooden home (Edo-era construction). 10 rotating Japanese craft taps (Yo-Ho Brewing, Coedo, Baird, Iwate Kura) + local sake. Standing + counter, ~15 seats.",
+    "why": "If you want a Yanaka beer break OR a pre-transit drink before heading to Shinjuku. The wooden setting is the point — drinking craft beer in a 150-year-old Tokyo home.",
+    "known": "Rotating Japanese craft tap list; the wooden home setting; Yanaka local crowd vs tourist crowd; cash + cc.",
+    "address": "2-15-6 Yanaka, Taito-ku",
+    "walk": "5 min walk south of Yanaka Ginza"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "National Museum of Western Art (Le Corbusier UNESCO)",
+    "lat": 35.7152,
+    "lon": 139.7758,
+    "when": "Tue 09:30-17:30 (closed Mon) · ¥500 permanent",
+    "what": "1959 museum designed by Le Corbusier — one of his few buildings outside Europe and a UNESCO World Heritage site (designated 2016, part of '17 buildings by Le Corbusier' transnational nomination). Collection: Rodin sculptures (The Thinker on the front terrace), Monet, Manet, Renoir, Cézanne — donated from the Matsukata Collection (Japanese shipping magnate who collected Western art in Paris in the 1910s, art was returned to Japan after WWII).",
+    "why": "Gavin's architecture thread + actual Le Corbusier on Japanese soil + Rodin's The Thinker in the front courtyard. 60 min suffices. Closed Monday, open Tuesday — your window.",
+    "known": "Le Corbusier 1959 design; UNESCO World Heritage (2016); Rodin's The Thinker in the courtyard; the Matsukata Collection (Monet, Manet, Renoir, Cézanne); the concrete-and-pilotis architecture characteristic of Le Corbusier.",
+    "address": "7-7 Ueno Park, Taito-ku",
+    "walk": "5 min from Ueno station, opposite Tokyo National Museum"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Ueno Toshogu Shrine (Edo-era gold leaf)",
+    "lat": 35.7166,
+    "lon": 139.7728,
+    "when": "Tue daily · ¥500 to enter shrine building · 30 min",
+    "what": "1627 Shinto shrine dedicated to Tokugawa Ieyasu (the founder of the Tokugawa shogunate). Gold-leaf exterior survived all of Tokyo's destruction (1923 earthquake + WWII firebombing + multiple fires). One of the most ornate Edo-era buildings in central Tokyo. Designated National Treasure.",
+    "why": "Tokugawa heritage continuity from Yanaka Cemetery (last shogun's grave) to Ueno Toshogu (founder's shrine). 30 min walk-through. The gold-leaf exterior is the photo.",
+    "known": "1627 founding; gold-leaf detailing; one of the few Edo-era buildings to survive everything; designated National Treasure.",
+    "address": "Inside Ueno Park, 9-88 Uenokoen, Taito-ku",
+    "walk": "5 min walk from Tokyo National Museum, en route to Le Corbusier museum"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Shinobazu Pond + Bentendo (Ueno Park)",
+    "lat": 35.7124,
+    "lon": 139.7702,
+    "when": "Daily · free · ~30 min loop",
+    "what": "Large natural lotus pond in southern Ueno Park. Walking path around the perimeter; an island in the middle with Bentendo (a small octagonal temple to Benzaiten, goddess of music and water). Lotus flowers cover the pond July-August (May = green leaves emerging).",
+    "why": "If you want a quiet 30-min nature pause between museum stops. Bentendo on the island is a nice photo.",
+    "known": "The lotus pond (peak July-August); Bentendo octagonal temple on island; locals come here at dawn for tai chi.",
+    "walk": "10 min south of Tokyo National Museum"
+  },
+  {
+    "cat": "bonus",
+    "label": "·",
+    "name": "Ameyoko Market (Ueno · gritty market street)",
+    "lat": 35.7099,
+    "lon": 139.7745,
+    "when": "Daily ~10-20 · ~30-45 min",
+    "what": "400m open-air market street under and beside the JR Yamanote tracks south of Ueno station. Originated as a black market post-WWII, evolved into food/sundries/discount-shopping street. Loud, crowded, real-Tokyo. Korean/Vietnamese food, fresh fish, sneakers, cosmetics, fake luxury.",
+    "why": "If you want a more chaotic counter-point to peaceful Yanaka. Quick 30-min walkthrough on the way back from Ueno museums.",
+    "known": "Post-WWII black market origin; the chaos under the JR tracks; the fish/shellfish stalls at the south end.",
+    "walk": "5 min south of Ueno station"
   },
   {
     "cat": "bonus",
@@ -348,23 +438,11 @@ const PINS = [
     "name": "Nippori Fabric Town (Karolina pick if interested)",
     "lat": 35.729,
     "lon": 139.773,
-    "when": "Tue 10-19 most shops · ~90 min if you commit",
-    "what": "A 1km stretch of Nippori between the station and Yanaka with 80+ fabric and sewing-notion shops. Tomato Fabric is the flagship — 5 floors of textiles at wholesale prices.",
-    "why": "If Karolina sews or wants distinctive Japanese fabrics for any project — this is THE Tokyo destination. Otherwise skip.",
-    "known": "Tomato Fabric (5 floors); the largest concentration of fabric shops in Tokyo; the 1km street layout.",
+    "when": "Tue 10-19 most shops · ~90 min if committing",
+    "what": "1km of Nippori between the station and Yanaka with 80+ fabric and sewing-notion shops. Tomato Fabric is the flagship — 5 floors of textiles at wholesale prices.",
+    "why": "If Karolina sews or wants distinctive Japanese fabrics — THE Tokyo destination. Otherwise skip.",
+    "known": "Tomato Fabric 5 floors; largest concentration of fabric shops in Tokyo; the 1km street layout.",
     "walk": "From Yanaka Ginza: 10 min walk east"
-  },
-  {
-    "cat": "bonus",
-    "label": "·",
-    "name": "Asakura Museum of Sculpture (Yanaka)",
-    "lat": 35.7257,
-    "lon": 139.7672,
-    "when": "Tue 09:30-16:30 (closed Mon/Thu — verify Tue OK) · ¥500",
-    "what": "The studio-residence of sculptor Fumio Asakura (1883-1964), preserved as a museum. Tatami rooms, a central pond, sculpture in every corner, a rooftop garden with city views.",
-    "why": "If you want one small museum in Yanaka, this is it. The building itself is the attraction as much as the work.",
-    "known": "Asakura's bronzes; the rooftop garden; the tatami studio with floor-level sculpture display.",
-    "walk": "5 min walk from Yanaka cemetery"
   },
   {
     "cat": "bonus",
@@ -373,10 +451,10 @@ const PINS = [
     "lat": 35.727,
     "lon": 139.766,
     "when": "Reference — tap to read",
-    "what": "Full buying guide covering Kappabashi knives (which you bought today), Akihabara audio (which you saw today), marine optics (Fujinon stabilized binoculars at Yodobashi), and Tokyo scuba gear (Gull Mew fins at MIC21 Ginza).",
-    "why": "If you have follow-up purchases this week — audio gear in Tokyo Friday before flight, dive gear at MIC21 Ginza if you detour, etc.",
-    "known": "Built up across Mon-Tue with research; covers all 4 categories.",
-    "walk": "Tap the link below — opens https://gcmead.github.io/tokyo-tuesday-may26-map/BuyingAdvice.html"
+    "what": "Full guide: Kappabashi knives (which you bought today), Akihabara audio (which you saw today), marine optics (Fujinon stabilized binoculars), Tokyo scuba (Gull Mew fins at MIC21 Ginza).",
+    "why": "Carry for any follow-up purchases this week (audio in Tokyo Fri before flight, dive gear at MIC21 if you detour).",
+    "known": "Built up Mon-Tue; covers all 4 categories.",
+    "walk": "Tap link: https://gcmead.github.io/tokyo-tuesday-may26-map/BuyingAdvice.html"
   },
   {
     "cat": "station",
@@ -385,7 +463,7 @@ const PINS = [
     "lat": 35.6553,
     "lon": 139.7569,
     "when": "hotel-side · 8 min walk",
-    "what": "JR Yamanote loop. To Shimbashi 1 stop (then Hibiya to Tsukiji). To Shinjuku ~22 min westbound for Kokekokko."
+    "what": "JR Yamanote loop. To Ueno northbound ~16 min for Yanesen day."
   },
   {
     "cat": "station",
@@ -393,17 +471,17 @@ const PINS = [
     "name": "Tsukiji (Hibiya line)",
     "lat": 35.6657,
     "lon": 139.7706,
-    "when": "Tsukiji Outer Market arrival",
-    "what": "Hibiya line. From Shimbashi (1 stop from Hamamatsuchō) take Asakusa line 1 stop to Higashi-Ginza, transfer Hibiya 1 stop. Total ~22 min from hotel."
+    "when": "Optional morning Tsukiji",
+    "what": "Hibiya line. From Shimbashi 1 stop transfer."
   },
   {
     "cat": "station",
     "label": "S",
-    "name": "Nippori (JR Yamanote + Keisei)",
-    "lat": 35.728,
-    "lon": 139.7711,
-    "when": "Yanaka entry station",
-    "what": "JR Yamanote. From Hamamatsuchō ~25 min northbound. 5 min walk to Yanaka Ginza via the Yuyake Dandan stairs."
+    "name": "Nezu (Chiyoda line)",
+    "lat": 35.7204,
+    "lon": 139.7634,
+    "when": "Nezu Shrine entry",
+    "what": "Chiyoda subway. 5 min walk to Nezu Shrine torii tunnel."
   },
   {
     "cat": "station",
@@ -412,7 +490,25 @@ const PINS = [
     "lat": 35.7236,
     "lon": 139.7656,
     "when": "Yanaka south entry",
-    "what": "Chiyoda subway. Drops you on the south side of Yanaka near Kayaba Coffee and SCAI The Bathhouse."
+    "what": "Chiyoda subway. Drops you on south side of Yanaka near Kayaba/SCAI/Asakura."
+  },
+  {
+    "cat": "station",
+    "label": "S",
+    "name": "Nippori (JR Yamanote + Keisei)",
+    "lat": 35.728,
+    "lon": 139.7711,
+    "when": "Yanaka north entry / Fabric Town",
+    "what": "JR Yamanote. 5 min walk to Yanaka Ginza via the Yuyake Dandan stairs. From Hamamatsuchō ~25 min."
+  },
+  {
+    "cat": "station",
+    "label": "S",
+    "name": "Ueno (JR Yamanote + multiple)",
+    "lat": 35.7141,
+    "lon": 139.7774,
+    "when": "Ueno Park / museums",
+    "what": "JR Yamanote. 10 min walk to Tokyo National Museum + Le Corbusier museum. From Hamamatsuchō ~18 min."
   },
   {
     "cat": "station",
@@ -421,10 +517,10 @@ const PINS = [
     "lat": 35.6896,
     "lon": 139.7006,
     "when": "Kokekokko dinner",
-    "what": "West exit + 7 min walk to Kokekokko. From hotel: Yamanote to Shinjuku ~22 min (or change at Shibuya)."
+    "what": "West exit + 7 min walk to Kokekokko. From Ueno: Yamanote ~25 min."
   }
 ];
-const COUNTS = {"locked":1,"major":8,"bonus":7,"station":5};
+const COUNTS = {"locked":1,"major":7,"bonus":14,"station":7};
 
 // Business-name links (NOT coordinates) — opens the actual business listing
 function appleMapsLink(p) {
@@ -437,7 +533,7 @@ function googleMapsLink(p) {
 }
 
 // ===== MAP VIEW =====
-const map = L.map('map').setView([35.69778571428571, 139.76120952380953], 13);
+const map = L.map('map').setView([35.71133448275862, 139.76401034482757], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap', maxZoom: 19
 }).addTo(map);
